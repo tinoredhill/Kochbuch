@@ -513,11 +513,10 @@
       },
       "naehrwerte": {
         "kcal": 570,
-        "protein_g_min": 25,
-        "protein_g_max": 30,
         "kohlenhydrate_g": 50,
         "fett_g": 32,
-        "geschaetzt": true
+        "geschaetzt": true,
+        "protein_g": 20
       }
     },
     {
@@ -715,11 +714,10 @@
       },
       "naehrwerte": {
         "kcal": 415,
-        "protein_g_min": 20,
-        "protein_g_max": 25,
         "kohlenhydrate_g": 65,
         "fett_g": 10,
-        "geschaetzt": true
+        "geschaetzt": true,
+        "protein_g": 16
       }
     }
   ]
