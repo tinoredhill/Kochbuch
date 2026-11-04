@@ -424,6 +424,14 @@ function viewListe() {
    </div>
    <div id="ergebnis">${listeErgebnis()}</div>`;
 }
+function naehrHTML(nw) {
+  if (!nw) return '';
+  const ca = nw.geschaetzt ? 'ca. ' : '';
+  const prot = nw.protein_g_min != null && nw.protein_g_max != null ? `${nw.protein_g_min}–${nw.protein_g_max} g` : (nw.protein_g != null ? `${nw.protein_g} g` : '');
+  const z = [['Energie', nw.kcal != null ? `${nw.kcal} kcal` : ''], ['Protein', prot], ['Kohlenhydrate', nw.kohlenhydrate_g != null ? `${nw.kohlenhydrate_g} g` : ''], ['Fett', nw.fett_g != null ? `${nw.fett_g} g` : '']].filter(x => x[1]);
+  if (!z.length) return '';
+  return `<section class="naehr"><h2>Nährwerte pro Portion${nw.geschaetzt ? ' <small>(geschätzt)</small>' : ''}</h2><dl>${z.map(([l, v]) => `<div><dt>${l}</dt><dd>${ca}${esc(v)}</dd></div>`).join('')}</dl>${nw.geschaetzt ? '<p class="hinweis">Richtwerte, aus den Zutatenmengen geschätzt.</p>' : ''}</section>`;
+}
 function viewRezept(rid) {
   const r = R[rid]; if (!r) return viewFehlt();
   const w = getScale(r), f = factorOf(r, w);
@@ -447,6 +455,7 @@ function viewRezept(rid) {
      <div class="stepper"><button class="icon" data-scale="-1" aria-label="Weniger">${ico('minus')}</button><div class="val">${scaleLabel(r, w)}</div><button class="icon" data-scale="1" aria-label="Mehr">${ico('plus')}</button></div>
      ${zutatenListe(r, f)}
      ${f !== 1 ? '<p class="hinweis">Die Mengen in der Zubereitung gelten für die Grundmenge.</p>' : ''}
+     ${naehrHTML(r.naehrwerte)}
     </aside>
     <section class="rechts">
      <h2>Zubereitung</h2>

@@ -1,5 +1,5 @@
 'use strict';
-const C = 'kochbuch-v4';
+const C = 'kochbuch-v5';
 const F = ['./', 'index.html', 'style.css', 'firebase-config.js', 'store.js', 'icons.js', 'app.js', 'fonts/cormorant-garamond-latin-500-normal.woff2', 'fonts/cormorant-garamond-latin-600-normal.woff2', 'manifest.webmanifest', 'rezepte/rezepte.json',
   'icons/app-icon.svg', 'icons/favicon-32.png', 'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(F.map(u => new Request(u, { cache: 'reload' }))))); });

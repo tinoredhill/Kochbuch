@@ -173,7 +173,11 @@
         }
       },
       "naehrwerte": {
-        "protein_g": 27
+        "kcal": 470,
+        "protein_g": 27,
+        "kohlenhydrate_g": 45,
+        "fett_g": 20,
+        "geschaetzt": true
       }
     },
     {
@@ -269,7 +273,7 @@
           ]
         },
         {
-          "text": "Zwiebel und [[knoblauch-nudeln|Knoblauch]] ca. 3 Min. [[andaempfen|andämpfen]] und den [[wuerfelgroesse|gewürfelten]] [[kuerbis-schaelen|Kürbis]] kurz mitdämpfen.",
+          "text": "Den [[kuerbis-schneiden|Kürbis sicher zerteilen]] und würfeln. Zwiebel und [[knoblauch-nudeln|Knoblauch]] ca. 3 Min. [[andaempfen|andämpfen]] und den [[wuerfelgroesse|gewürfelten]] [[kuerbis-schaelen|Kürbis]] kurz mitdämpfen.",
           "timer": [
             {
               "label": "Andämpfen",
@@ -323,7 +327,11 @@
         }
       },
       "naehrwerte": {
-        "protein_g": 25
+        "kcal": 730,
+        "protein_g": 25,
+        "kohlenhydrate_g": 67,
+        "fett_g": 39,
+        "geschaetzt": true
       }
     },
     {
@@ -461,7 +469,7 @@
           ]
         },
         {
-          "text": "Das Tomatenpüree ca. 3 Min. mitdämpfen. Die restliche Sojasauce, [[nudeln-schaerfe|Chili Crunch]], Kokosmilch und Bouillon dazugeben und [[aufkochen-koecheln|aufkochen]]. Die [[nudeln-schaerfe|Nudeln]] und den [[edamame-tofu|Protein-Boost]] darin ca. 5 Min. kochen.",
+          "text": "Das Tomatenpüree ca. 3 Min. mitdämpfen. Die restliche Sojasauce, [[nudeln-schaerfe|Chili Crunch]], Kokosmilch und Bouillon dazugeben und [[aufkochen-koecheln|aufkochen]]. Die [[nudeln-schaerfe|Nudeln]] und den [[edamame-tofu|Protein-Boost]] darin ca. 5 Min. kochen. [[eier-boost|Eier]] lieber separat wachsweich kochen.",
           "timer": [
             {
               "label": "Tomatenpüree mitdämpfen",
@@ -502,6 +510,14 @@
           "begriff": "Nudeln & Schärfe",
           "text": "Ramen-Nudeln nicht zu lange kochen, sonst werden sie weich – Packungsangabe beachten. Chili Crunch ist je nach Marke unterschiedlich scharf: lieber zuerst etwas weniger nehmen und beim Anrichten nachlegen."
         }
+      },
+      "naehrwerte": {
+        "kcal": 570,
+        "protein_g_min": 25,
+        "protein_g_max": 30,
+        "kohlenhydrate_g": 50,
+        "fett_g": 32,
+        "geschaetzt": true
       }
     },
     {
@@ -659,7 +675,7 @@
           ]
         },
         {
-          "text": "Wasser, [[kartoffeln|Kartoffelstücke]] und den [[kichererbsen|Protein-Boost]] dazugeben und zugedeckt ca. 25 Min. köcheln lassen. Den Zimt untermischen.",
+          "text": "Wasser, [[kartoffeln|Kartoffelstücke]] und den [[kichererbsen|Protein-Boost]] (oder [[rote-linsen|rote Linsen]]) dazugeben und zugedeckt ca. 25 Min. köcheln lassen. Den Zimt untermischen.",
           "timer": [
             {
               "label": "Curry köcheln",
@@ -696,6 +712,14 @@
           "begriff": "Joghurt",
           "text": "Erst beim Anrichten dazugeben und nicht mitkochen, sonst kann er gerinnen."
         }
+      },
+      "naehrwerte": {
+        "kcal": 415,
+        "protein_g_min": 20,
+        "protein_g_max": 25,
+        "kohlenhydrate_g": 65,
+        "fett_g": 10,
+        "geschaetzt": true
       }
     }
   ]

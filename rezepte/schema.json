@@ -395,6 +395,18 @@
             },
             "kohlenhydrate_g": {
               "type": "number"
+            },
+            "protein_g_min": {
+              "type": "number",
+              "description": "Untere Grenze, wenn die Quelle eine Protein-Spanne nennt"
+            },
+            "protein_g_max": {
+              "type": "number",
+              "description": "Obere Grenze der Protein-Spanne"
+            },
+            "geschaetzt": {
+              "type": "boolean",
+              "description": "true = Richtwerte, in der App als «geschätzt» markiert"
             }
           },
           "additionalProperties": false

@@ -262,3 +262,9 @@ body.koch #toast{bottom:calc(var(--tb) + var(--safe-b) + 110px)}
 #codeTxt{flex:1;min-width:0;min-height:var(--hit);border:0;border-bottom:1.5px solid var(--ink);background:none;padding:0 4px;font-size:17px;outline:none;font-family:ui-monospace,Menlo,monospace;text-transform:uppercase}
 #codeTxt::placeholder{text-transform:none;font-family:var(--sans,system-ui);letter-spacing:0}
 .einst{max-width:680px}
+.naehr{margin-top:28px}
+.naehr h2 small{font-size:.6em;font-weight:400;color:var(--muted)}
+.naehr dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px}
+.naehr dl div{border-bottom:1px solid var(--line);padding:6px 0}
+.naehr dt{color:var(--muted);font-size:14px}
+.naehr dd{margin:0;font-size:17px;font-weight:600}
