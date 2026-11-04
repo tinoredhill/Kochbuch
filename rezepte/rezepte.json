@@ -1,0 +1,58 @@
+{
+  "format": "kochbuch-rezepte",
+  "version": 1,
+  "grundlagen": {
+    "scharfes-messer": {"begriff": "Scharfes Messer", "text": "Ein scharfes Messer ist sicherer als ein stumpfes: Es gleitet sauber durchs Gemüse und rutscht weniger ab. Regelmässig nachschärfen bzw. abziehen."},
+    "krallengriff": {"begriff": "Krallengriff", "text": "Die Finger der Haltehand leicht einkrümmen, sodass die Fingerkuppen nach innen zeigen. Die Messerklinge führt an den Fingerknöcheln entlang – so bleiben die Fingerspitzen ausser Reichweite."},
+    "rutschfestes-brett": {"begriff": "Rutschfestes Brett", "text": "Ein feuchtes Tuch oder Küchenpapier unter das Schneidebrett legen, dann verrutscht es nicht."},
+    "mise-en-place": {"begriff": "Mise en place", "text": "Vor dem Kochen alle Zutaten abwägen, waschen und schneiden und bereitstellen. Gerade bei kurzen Garzeiten (z. B. Ramen) bleibt danach keine Zeit zum Schnippeln."},
+    "andaempfen": {"begriff": "Andämpfen", "text": "Zwiebeln, Knoblauch, Lauch oder Ingwer bei mittlerer Hitze in wenig Öl weich und glasig werden lassen, ohne dass sie Farbe annehmen. Wird es zu heiss, Hitze reduzieren."},
+    "aufkochen-koecheln": {"begriff": "Aufkochen und köcheln", "text": "Aufkochen heisst: einmal kurz sprudelnd kochen lassen. Köcheln heisst: Hitze reduzieren, sodass nur noch kleine Blasen aufsteigen."},
+    "masse": {"begriff": "Masse", "text": "1 EL (Esslöffel) ≈ 15 ml, 1 TL (Teelöffel) ≈ 5 ml, 1 dl = 100 ml."},
+    "abschmecken": {"begriff": "Abschmecken", "text": "Am Schluss probieren und erst dann mit Salz, Pfeffer oder Säure (Zitrone, Limette) nachwürzen."}
+  },
+  "rezepte": [
+    {
+      "id": "wurzelgemuesesalat-rindfleisch",
+      "titel": "Wurzelgemüsesalat mit Rindfleischstreifen",
+      "untertitel": "27 g Protein pro Portion",
+      "quelle": {"name": "Rezeptsammlung «Herbstküche mit Protein», Rezept 1", "url": ""},
+      "portionen_basis": null,
+      "zeit_total_min": 70,
+      "kategorien": ["Herbst", "Protein"],
+      "zutaten": [
+        {"menge": 250, "einheit": "g", "name": "Schwarzwurzeln"},
+        {"menge": 150, "einheit": "g", "name": "Pastinaken"},
+        {"menge": 3, "einheit": "EL", "plus": {"menge": 1, "einheit": "TL"}, "name": "Sesamöl"},
+        {"menge": 1, "einheit": "", "name": "Limette"},
+        {"menge": 1, "einheit": "", "name": "Passionsfrucht"},
+        {"menge": 2, "einheit": "EL", "name": "Teriyaki-Sauce"},
+        {"je": true, "menge": 0.5, "einheit": "Bund", "name": "Pfefferminze und Koriander"},
+        {"menge": 200, "einheit": "g", "name": "Rindsplätzli", "alternative": {"text": "für mehr Protein", "menge": 300, "einheit": "g"}},
+        {"menge": null, "einheit": "", "name": "Salz"}
+      ],
+      "schritte": [
+        {
+          "text": "Die [[schwarzwurzeln|Schwarzwurzeln]] abbürsten und vierteln, die [[pastinaken|Pastinaken]] in Scheiben von ca. 5 mm schneiden. Beides mit 1 EL Sesamöl, dem Saft einer halben [[limette|Limette]] und etwas Salz bei 200 °C ca. 40 Min. backen.",
+          "timer": [{"label": "Gemüse backen", "min": 40}]
+        },
+        {
+          "text": "Für die Sauce die [[passionsfrucht|Passionsfrucht]], den Saft der anderen Limettenhälfte, 1 EL Sesamöl, die Teriyaki-Sauce, Salz und die fein geschnittenen [[kraeuter|Kräuter]] verrühren."
+        },
+        {
+          "text": "Das [[rindsplaetzli|Fleisch]] salzen und im restlichen Öl pro Seite ca. 1½ Min. braten. In Streifen schneiden und mit dem Gemüse und der Sauce mischen.",
+          "timer": [{"label": "Fleisch 1. Seite", "min": 1.5}, {"label": "Fleisch 2. Seite", "min": 1.5}]
+        }
+      ],
+      "glossar": {
+        "schwarzwurzeln": {"begriff": "Schwarzwurzeln", "text": "Der klebrige Milchsaft färbt die Hände braun – am besten Einweghandschuhe tragen. Unter fliessendem Wasser gründlich abbürsten (so sieht es das Rezept vor); wer mag, kann sie auch mit dem Sparschäler schälen. Die geschnittenen Stücke bis zum Backen in Wasser mit einem Schuss Essig oder Zitronensaft legen, damit sie nicht braun werden – danach gut abtropfen und trockentupfen."},
+        "pastinaken": {"begriff": "Pastinaken", "text": "Schälen oder gründlich abbürsten. Bei dicken Exemplaren den holzigen Kern herausschneiden. Gleich dicke Scheiben garen gleichmässig."},
+        "passionsfrucht": {"begriff": "Passionsfrucht", "text": "Reif ist sie, wenn die Schale schrumpelig ist. Halbieren und das Fruchtfleisch samt Kernen mit einem Teelöffel herauslöffeln."},
+        "limette": {"begriff": "Limette", "text": "Vor dem Halbieren mit etwas Druck auf der Arbeitsfläche rollen – so gibt sie mehr Saft."},
+        "rindsplaetzli": {"begriff": "Rindsplätzli", "text": "Ca. 30 Min. vor dem Braten aus dem Kühlschrank nehmen und mit Küchenpapier trockentupfen. Die Pfanne sehr heiss werden lassen und das Fleisch nicht hin- und herschieben. Nach dem Braten ca. 2 Min. ruhen lassen, dann quer zur Faser in Streifen schneiden – so bleibt es zart."},
+        "kraeuter": {"begriff": "Kräuter", "text": "Erst kurz vor dem Mischen fein schneiden; die zarten Korianderstiele haben viel Aroma und können mitverwendet werden."}
+      },
+      "naehrwerte": {"protein_g": 27}
+    }
+  ]
+}
