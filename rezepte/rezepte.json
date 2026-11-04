@@ -45,10 +45,10 @@
         "url": ""
       },
       "portionen_basis": 2,
-      "zeit_vorbereitung_min": null,
+      "zeit_vorbereitung_min": 25,
       "zeit_kochen_min": 43,
       "zeit_total_min": 70,
-      "schwierigkeit": null,
+      "schwierigkeit": "einfach",
       "kueche": "Fusion",
       "hauptzutat": "Rindfleisch",
       "saison": [
