@@ -6,12 +6,14 @@
    Ein Adapter ist ein Objekt mit:
      load(key)              -> Wert oder undefined (synchron, z.B. aus lokalem Zwischenspeicher)
      save(key, value)       -> speichert (darf asynchron weiterreichen, z.B. an Firestore)
+     remove(key)            -> löscht einen Schlüssel
      watch(key, onChange)   -> optional: meldet Änderungen von anderen Geräten (onChange(value)); gibt Abmelde-Funktion zurück
-   Geteilte Schlüssel (synchronisierbar): einkauf, wochenplan, notizen
+   Geteilte Schlüssel (synchronisierbar): plan, einkauf_eigen, einkauf_haken, einkauf_weg, notizen, favoriten, zuletzt
+   (bis v1: wochenplan, einkauf – werden beim ersten Start von v3 übernommen und gelöscht)
    Nur auf diesem Gerät: timer, einstellungen  (siehe LOCAL_ONLY)
    Zugangsdaten gehören NICHT in diese Datei. */
 (function (global) {
-  const PREFIX = 'kochbuch-v1:';
+  const PREFIX = 'kochbuch-v1:';   // Präfix bleibt, damit gespeicherte Daten (Notizen, Sterne) erhalten bleiben
   const LOCAL_ONLY = new Set(['timer', 'einstellungen']);
   const subs = new Map();
   const cache = new Map();
@@ -19,6 +21,7 @@
   const localAdapter = {
     load(key) { try { const s = localStorage.getItem(PREFIX + key); return s == null ? undefined : JSON.parse(s); } catch (e) { return undefined; } },
     save(key, value) { try { localStorage.setItem(PREFIX + key, JSON.stringify(value)); } catch (e) { console.warn('Speichern nicht möglich', e); } },
+    remove(key) { try { localStorage.removeItem(PREFIX + key); } catch (e) {} },
     watch(key, onChange) {
       const h = ev => { if (ev.key === PREFIX + key) { try { onChange(ev.newValue == null ? undefined : JSON.parse(ev.newValue)); } catch (e) {} } };
       global.addEventListener('storage', h);
@@ -44,6 +47,7 @@
       return v === undefined ? clone(fallback) : clone(v);
     },
     set(key, value) { cache.set(key, clone(value)); adapterFor(key).save(key, clone(value)); emit(key, clone(value)); },
+    remove(key) { cache.set(key, undefined); const a = adapterFor(key); if (a.remove) a.remove(key); emit(key, undefined); },
     update(key, fallback, fn) { const v = Store.get(key, fallback); const r = fn(v); Store.set(key, r === undefined ? v : r); return Store.get(key); },
     subscribe(key, cb) {
       ensureWatch(key);

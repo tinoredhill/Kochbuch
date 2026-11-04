@@ -1,23 +1,20 @@
 <!doctype html><html lang="de-CH"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#c2561a">
+<meta name="theme-color" content="#fbfaf7">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Kochbuch">
 <meta name="format-detection" content="telephone=no">
 <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="icons/app-icon.svg"><link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="preload" href="fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"><title>Kochbuch</title></head>
 <body>
 <div id="update" hidden><span>Neue Version verfügbar</span><button id="updateBtn" class="btn small">Aktualisieren</button></div>
 <main id="app"><p class="laden">Rezepte werden geladen …</p></main>
 <div id="timerbar" hidden></div>
-<nav id="nav">
- <button data-v="rezepte"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 17a3 3 0 0 1 3-3h11" fill="none" stroke="currentColor" stroke-width="2"/></svg>Rezepte</button>
- <button data-v="plan"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Wochenplan</button>
- <button data-v="einkauf"><svg viewBox="0 0 24 24"><path d="M4 5h2l2 11h10l2-8H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.6"/><circle cx="17" cy="19.5" r="1.6"/></svg>Einkauf<span id="badge" hidden></span></button>
-</nav>
-<div id="sheet" hidden><div class="sheet-bg" data-close></div><div class="sheet-box" role="dialog" aria-modal="true"><div class="sheet-grip"></div><div id="sheetBody"></div><button class="btn wide" data-close>Schliessen</button></div></div>
+<nav id="nav"></nav>
+<div id="sheet" hidden><div class="sheet-bg" data-close></div><div class="sheet-box" role="dialog" aria-modal="true"><div class="sheet-grip"></div><div id="sheetBody"></div><button class="btn wide ghost" data-close>Schliessen</button></div></div>
 <div id="alarm" hidden></div>
 <div id="toast" hidden></div>
-<script src="store.js"></script><script src="app.js"></script></body></html>
+<script src="store.js"></script><script src="icons.js"></script><script src="app.js"></script></body></html>

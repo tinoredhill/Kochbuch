@@ -1,6 +1,6 @@
 {
   "format": "kochbuch-rezepte",
-  "version": 1,
+  "version": 2,
   "grundlagen": {
     "scharfes-messer": {
       "begriff": "Scharfes Messer",
@@ -45,11 +45,23 @@
         "url": ""
       },
       "portionen_basis": 2,
+      "zeit_vorbereitung_min": null,
+      "zeit_kochen_min": 43,
       "zeit_total_min": 70,
+      "schwierigkeit": null,
+      "kueche": "Fusion",
+      "hauptzutat": "Rindfleisch",
+      "saison": [
+        "Herbst"
+      ],
       "kategorien": [
         "Herbst",
         "Protein"
       ],
+      "bild": {
+        "datei": "wurzelgemuesesalat-rindfleisch.jpg",
+        "alt": "Wurzelgemüsesalat mit gebratenen Rindfleischstreifen, Kräutern, Passionsfrucht-Sauce und einer Limettenspalte auf einem hellen Teller"
+      },
       "zutaten": [
         {
           "menge": 250,

@@ -114,6 +114,22 @@
           "minimum": 1,
           "description": "Für wie viele Portionen die Mengen gelten; null = nicht angegeben (App rechnet dann mit Faktor)"
         },
+        "zeit_vorbereitung_min": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0,
+          "description": "Vorbereitungszeit in Minuten; unbekannt: null"
+        },
+        "zeit_kochen_min": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0,
+          "description": "Koch-/Backzeit in Minuten; unbekannt: null"
+        },
         "zeit_total_min": {
           "type": [
             "number",
@@ -121,11 +137,66 @@
           ],
           "exclusiveMinimum": 0
         },
+        "schwierigkeit": {
+          "enum": [
+            "einfach",
+            "mittel",
+            "anspruchsvoll",
+            null
+          ],
+          "description": "einfach | mittel | anspruchsvoll; unbekannt: null"
+        },
+        "kueche": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "z.B. «Schweizer», «Italienisch», «Asiatisch», «Fusion»"
+        },
+        "hauptzutat": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "z.B. «Rindfleisch», «Tofu», «Kürbis»"
+        },
+        "saison": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Frühling",
+              "Sommer",
+              "Herbst",
+              "Winter",
+              "Ganzjährig"
+            ]
+          }
+        },
         "kategorien": {
           "type": "array",
           "items": {
             "type": "string"
           }
+        },
+        "bild": {
+          "type": "object",
+          "required": [
+            "datei",
+            "alt"
+          ],
+          "properties": {
+            "datei": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*\\.jpe?g$",
+              "description": "Dateiname des Fotos in bilder/, gleich wie die Rezept-id, z.B. «kuerbis-ramen-tofu.jpg»"
+            },
+            "alt": {
+              "type": "string",
+              "minLength": 1,
+              "description": "kurze Bildbeschreibung für Screenreader"
+            }
+          },
+          "additionalProperties": false
         },
         "zutaten": {
           "type": "array",
@@ -197,6 +268,10 @@
                   }
                 },
                 "additionalProperties": false
+              },
+              "abteilung": {
+                "$ref": "#/$defs/abteilung",
+                "description": "optional; sonst ordnet die App automatisch zu"
               }
             },
             "additionalProperties": false
@@ -264,6 +339,19 @@
         }
       },
       "additionalProperties": false
+    },
+    "abteilung": {
+      "enum": [
+        "Gemüse & Früchte",
+        "Fleisch & Fisch",
+        "Milchprodukte & Eier",
+        "Brot & Backwaren",
+        "Vorrat & Gewürze",
+        "Öl & Saucen",
+        "Tiefkühl",
+        "Getränke",
+        "Diverses"
+      ]
     }
   }
 }
