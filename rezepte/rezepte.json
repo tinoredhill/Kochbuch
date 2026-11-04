@@ -185,9 +185,9 @@
         "url": ""
       },
       "portionen_basis": 2,
-      "zeit_vorbereitung_min": 5,
+      "zeit_vorbereitung_min": 15,
       "zeit_kochen_min": 23,
-      "zeit_total_min": 25,
+      "zeit_total_min": 40,
       "schwierigkeit": "einfach",
       "kueche": "Asiatisch",
       "hauptzutat": "Tofu",
