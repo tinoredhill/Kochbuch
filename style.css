@@ -193,10 +193,7 @@ ul.woche>li.heute .tagname strong{color:var(--acc)}
 .mini span{min-width:92px;text-align:center;font-weight:650;font-size:15px}
 .frei{color:var(--muted);font-style:italic;white-space:nowrap}
 @media (max-width:520px){.titelzeile .kreis{width:46px;height:46px}.titelzeile .kreis .ico{width:24px;height:24px}.titelzeile h1{font-size:33px}
- ul.woche>li{grid-template-columns:104px 1fr;grid-template-areas:"tag bild" "info info";row-gap:10px}
- .tagname{grid-area:tag}.wbild{grid-area:bild;width:120px;justify-self:end}.winfo{grid-area:info}
- .tagname strong{font-size:20px} ul.woche>li:has(.frei){grid-template-columns:104px 1fr 1fr;grid-template-areas:"tag info info"}ul.woche>li:has(.frei) .wbild{display:none}
- ul.woche>li:has(.frei) .winfo{flex-direction:row;align-items:center;justify-content:space-between;width:100%}}
+}
 /* Einkauf */
 .schnell{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 12px}
 .sbtn{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:76px;border:1.5px solid var(--line);border-radius:14px;background:var(--paper);font-size:13px;font-weight:600;padding:6px 2px;min-width:0}
@@ -268,3 +265,102 @@ body.koch #toast{bottom:calc(var(--tb) + var(--safe-b) + 110px)}
 .naehr dl div{border-bottom:1px solid var(--line);padding:6px 0}
 .naehr dt{color:var(--muted);font-size:14px}
 .naehr dd{margin:0;font-size:17px;font-weight:600}
+/* ===== v7 ===== */
+/* Akzentfarbe nach Jahreszeit (nur in der App; Symbol und Manifest bleiben neutral). Kontrast weiss auf --acc und --acc-d auf --acc-l ≥ 4.5:1 */
+:root[data-saison="herbst"]{--acc:#b9541c;--acc-d:#94420f;--acc-l:#f6ece3}
+:root[data-saison="fruehling"]{--acc:#4a7a2a;--acc-d:#365c1d;--acc-l:#eaf2e1}
+:root[data-saison="sommer"]{--acc:#c0392b;--acc-d:#922b20;--acc-l:#fbe9e6}
+:root[data-saison="winter"]{--acc:#2d5f46;--acc-d:#1f4533;--acc-l:#e3eee8}
+.farbpunkt{display:inline-block;width:16px;height:16px;border-radius:50%;flex:none}
+.farbpunkt[data-s="herbst"]{background:#b9541c}.farbpunkt[data-s="fruehling"]{background:#4a7a2a}.farbpunkt[data-s="sommer"]{background:#c0392b}.farbpunkt[data-s="winter"]{background:#2d5f46}
+/* Wochenplan: Woche wählen, Hinweise, gekocht */
+.wochenleiste{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:0 0 14px}
+.segment{display:flex;gap:8px;flex-wrap:wrap}
+.abw{display:flex;gap:10px;align-items:flex-start;background:var(--acc-l);color:var(--acc-d);border-radius:10px;padding:10px 14px;margin:0 0 14px;font-size:15.5px}
+.abw .ico{width:22px;height:22px;margin-top:1px}
+.tagname .kurz{display:none}
+.tagname .datum{display:block;color:var(--muted);font-size:13px;line-height:1.3}
+.frei small.gw{display:flex;align-items:center;gap:5px;font-style:normal;font-size:13.5px;color:var(--acc-d);white-space:normal}
+.frei small.gw .ico{width:16px;height:16px}
+.gkbtn.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.gkbtn .ico{stroke-width:2.2}
+.gkmarke{display:inline-flex;align-items:center;gap:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ok)}
+.gkmarke .ico{width:16px;height:16px;stroke-width:2.4}
+ul.woche>li.gekocht .wbild{opacity:.55}
+ul.woche>li.gekocht .wtitel{color:var(--muted)}
+.wkompakt{display:none}
+.wahlbtn span{white-space:nowrap}
+/* Auswahl-Fenster (3 Stufen) */
+.sheet-h{display:flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:18px 0 8px;font-family:var(--sans)}
+.sheet-h .ico{width:18px;height:18px}
+.vorschlaege{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.vorschlaege .kachel{flex:0 0 168px;scroll-snap-align:start}
+.chips.scroll{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
+.chips.scroll .chip{flex:none}
+.sheet-box .suche{margin:10px 0 4px}
+.kacheln{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (min-width:600px){.kacheln{grid-template-columns:1fr 1fr 1fr}}
+.kachel{display:flex;flex-direction:column;align-items:stretch;text-align:left;gap:0;padding:0;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);overflow:hidden;min-height:var(--hit);color:var(--ink)}
+.kachel:active{transform:scale(.98)}
+.kbild{display:block;aspect-ratio:3/2;background:var(--tint);overflow:hidden}
+.kbild .foto{width:100%;height:100%;object-fit:cover;display:flex}
+.ktext{display:flex;flex-direction:column;gap:2px;padding:8px 10px 10px}
+.ktext strong{font-family:var(--serif);font-size:18px;line-height:1.15;font-weight:600}
+.kmeta{display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;color:var(--muted);font-size:13.5px}
+.kmeta .ico{width:16px;height:16px}
+.kachel .grund{font-size:12px;color:var(--acc-d);font-weight:650}
+.kwarn{font-size:12.5px;color:#8a4b00}
+.likes{display:inline-flex;align-items:center;gap:4px;color:var(--muted);font-size:13.5px}
+.likes .ico{width:15px;height:15px;fill:#c0392b;stroke:#c0392b}
+.frei-eintrag{margin-top:16px}
+.gwliste{list-style:none;padding:0;margin:0 0 14px}
+.gwliste li{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
+.gwliste strong{font-family:var(--serif);font-size:20px}
+.gwliste .frei{white-space:normal}
+.sheetknoepfe{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 14px}
+.sheetknoepfe .btn{padding:0 12px}
+/* Person, Bewertung */
+.personwahl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+.personwahl .btn{min-height:72px;font-size:20px}
+.meinebew{display:flex;flex-direction:column;gap:6px}
+.meinebew .wer{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:15px;flex-wrap:wrap}
+.meinebew .wer span{flex:1;min-width:150px}
+.meinebew .wer strong{color:var(--ink)}
+.stars{align-items:center;flex-wrap:wrap}
+.herz.inline{box-shadow:none;border:1.5px solid var(--line);margin-left:8px}
+ul.bewliste{list-style:none;padding:0;margin:8px 0 10px}
+ul.bewliste li{display:flex;align-items:center;gap:14px;padding:6px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.bname{font-weight:650;min-width:110px}
+/* Zutatenbild im Erklärfenster */
+.zbild{margin:0 0 12px}
+.zbild img{display:block;width:240px;max-width:60%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:var(--tint)}
+.zbild figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.h3klein{font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:22px 0 8px}
+.einst h2{font-size:26px;margin:26px 0 8px}
+/* iPhone: kompakter Wochenplan (iPad bleibt wie v6) */
+@media (max-width:520px){
+ ul.woche>li{grid-template-columns:50px 84px minmax(0,1fr);grid-template-areas:"tag bild info" "tag bild knopf";column-gap:12px;row-gap:2px;padding:10px 0;align-items:center}
+ ul.woche .tagname{grid-area:tag;align-self:center}
+ ul.woche .tagname strong{display:none}
+ ul.woche .tagname .kurz{display:block;font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.05}
+ ul.woche>li.heute .tagname .kurz{color:var(--acc)}
+ ul.woche .tagname .datum{font-size:12.5px}
+ ul.woche .tagname small{font-size:10.5px;letter-spacing:.08em}
+ ul.woche .wbild{grid-area:bild;width:84px;align-self:center}
+ ul.woche .winfo{grid-area:info;gap:0;align-self:end}
+ ul.woche .wtitel{font-size:19px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ ul.woche .wknoepfe{display:none}
+ ul.woche .wkompakt{grid-area:knopf;display:flex;align-items:center;gap:6px}
+ ul.woche .portkurz{flex:1;color:var(--muted);font-size:14px;font-weight:600}
+ ul.woche>li:not(.voll){grid-template-columns:50px minmax(0,1fr);grid-template-areas:"tag info";padding:4px 0}
+ ul.woche>li:not(.voll) .wbild{display:none}
+ ul.woche>li:not(.voll) .winfo{flex-direction:row;align-items:center;justify-content:space-between;gap:10px;align-self:center}
+ ul.woche .frei{white-space:normal}
+ ul.woche .wahlbtn{width:var(--hit);padding:0;border-radius:50%;flex:none}
+ ul.woche .wahlbtn span{display:none}
+ .wochenleiste .btn{flex:1 1 auto}
+ .sheetknoepfe{grid-template-columns:1fr}
+ ul.woche>li.vorbei .tagname .kurz{color:var(--muted)}
+}
+/* iPhone: fünf Sterne und Herz auf eine Zeile */
+@media (max-width:520px){.meinebew .stars{gap:2px}.meinebew .stars .herz.inline{margin-left:2px}}

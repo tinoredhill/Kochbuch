@@ -1,8 +1,9 @@
 'use strict';
-const C = 'kochbuch-v6';
+const C = 'kochbuch-v7';
 const F = ['./', 'index.html', 'style.css', 'firebase-config.js', 'store.js', 'icons.js', 'app.js', 'fonts/cormorant-garamond-latin-500-normal.woff2', 'fonts/cormorant-garamond-latin-600-normal.woff2', 'manifest.webmanifest', 'rezepte/rezepte.json',
-  'icons/app-icon.svg', 'icons/favicon-32.png', 'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png'];
-self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(F.map(u => new Request(u, { cache: 'reload' }))))); });
+  'icons/v7/apple-touch-icon-180.png', 'icons/v7/favicon-32.png', 'icons/v7/favicon-16.png', 'icons/v7/icon-192.png', 'icons/v7/icon-512.png', 'icons/v7/icon-maskable-512.png'];
+// v7: neue Version übernimmt sofort (kein Warten auf «Aktualisieren»); die offene Seite lädt dann einmal neu (siehe app.js, controllerchange)
+self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(F.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== C).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
 self.addEventListener('message', e => { if (e.data === 'SKIP_WAITING') self.skipWaiting(); });
 self.addEventListener('fetch', e => {

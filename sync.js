@@ -1,4 +1,4 @@
-/* Kochbuch – Live-Synchronisation über Firebase Firestore (wird nur geladen, wenn firebase-config.js gefüllt ist).
+/* Kochbuch v7 – Live-Synchronisation über Firebase Firestore (wird nur geladen, wenn firebase-config.js gefüllt ist).
    Datenmodell:  haushalte/{code}/daten/{schluessel}  =  { e: { <eintrag>: { <geraet>: { v: Wert, t: Zeit, x: gelöscht } } } }
    - Jeder Eintrag (z.B. ein Haken, ein Wochentag, eine Notiz) wird einzeln gespeichert.
    - Jedes Gerät schreibt nur in sein eigenes Unterfeld; gelesen wird pro Eintrag der Wert mit der jüngsten Zeit
@@ -8,7 +8,9 @@ import { initializeApp, getApps } from './vendor/firebase/firebase-app.js';
 import { getAuth, signInAnonymously, onAuthStateChanged, connectAuthEmulator } from './vendor/firebase/firebase-auth.js';
 import { initializeFirestore, getFirestore, persistentLocalCache, persistentMultipleTabManager, doc, setDoc, onSnapshot, connectFirestoreEmulator } from './vendor/firebase/firebase-firestore.js';
 
-const KEYS = ['plan', 'einkauf_eigen', 'einkauf_haken', 'einkauf_weg', 'notizen', 'favoriten', 'zuletzt'];
+const KEYS_V6 = ['plan', 'einkauf_eigen', 'einkauf_haken', 'einkauf_weg', 'notizen', 'favoriten', 'zuletzt'];
+const KEYS_V7 = ['tagesplan', 'gewohnheiten', 'bewertungen'];   // neu in v7 – brauchen die Regeln v7 in der Firebase-Konsole
+const KEYS = [...KEYS_V6, ...KEYS_V7];
 const local = Store.localAdapter;
 
 /* ---- Werte <-> Einträge ---- */
@@ -42,7 +44,18 @@ export const _test = { zuEintraegen, ausEintraegen, enc, dec };
 
 /* ---- Verbindung ---- */
 let status = { zustand: 'aus', text: 'Nicht verbunden' }, statusCbs = [];
-function setStatus(zustand, text) { status = { zustand, text }; statusCbs.forEach(cb => { try { cb(status); } catch (e) {} }); }
+let regelnAlt = false;   // true, wenn die Konsole noch die Regeln v6 hat (neue Schlüssel abgewiesen)
+const REGELN_ALT = 'Verbunden, aber die Firebase-Regeln sind noch alt: Wochenplan, Gewohnheiten und Likes bleiben vorerst nur auf diesem Gerät.';
+function setStatus(zustand, text) {
+  if (regelnAlt && (zustand === 'verbunden')) { zustand = 'fehler'; text = REGELN_ALT; }
+  status = { zustand, text }; statusCbs.forEach(cb => { try { cb(status); } catch (e) {} });
+}
+/* Stand pro Schlüssel: 'cache' (nur Zwischenspeicher), 'server' (Serverstand gesehen), 'fehler' (abgewiesen).
+   Die App startet Migration und Aufräumen erst, wenn alle nötigen Schlüssel 'server' oder 'fehler' sind. */
+const keyStand = {}, keyCbs = [];
+function setKeyStand(key, st) { if (keyStand[key] === st) return; keyStand[key] = st; keyCbs.forEach(cb => { try { cb(key, st); } catch (e) {} }); }
+export function keyZustand(key) { return keyStand[key]; }
+export function aufKeyZustand(cb) { keyCbs.push(cb); }
 
 export async function starten(config, code, geraet, optionen = {}) {
   setStatus('verbinde', 'Verbinde …');
@@ -74,6 +87,7 @@ export async function starten(config, code, geraet, optionen = {}) {
       else if (!(id in a) || !gleich(a[id], b[id])) e[enc(id)] = { [geraet]: { v: b[id], t } };
     }
     if (!Object.keys(e).length) return Promise.resolve();
+    if (keyStand[key] === 'fehler') return Promise.resolve();   // z.B. alte Regeln: bleibt lokal, wird beim nächsten Verbinden nachgeladen
     return setDoc(ref(key), { e }, { merge: true }).catch(err => { console.warn('Sync-Schreibfehler', err); setStatus('fehler', 'Fehler beim Speichern: ' + (err.code || err.message)); });
   }
 
@@ -113,13 +127,20 @@ export async function starten(config, code, geraet, optionen = {}) {
       setStatus(snap.metadata.fromCache ? 'offline' : 'verbunden', snap.metadata.fromCache ? 'Offline – Änderungen werden später übertragen' : 'Verbunden');
     }
     if (!gleich(wert, letzter[key])) { letzter[key] = wert; local.save(key, wert); if (onChange[key]) onChange[key](wert); }
-  }, err => { console.warn('Sync-Lesefehler', err); setStatus('fehler', 'Keine Berechtigung oder Fehler: ' + (err.code || err.message)); }));
+    setKeyStand(key, snap.metadata.fromCache ? (keyStand[key] === 'server' ? 'server' : 'cache') : 'server');
+  }, err => {
+    console.warn('Sync-Lesefehler', key, err.code || err.message);
+    if (!ersterSnapshot[key]) { ersterSnapshot[key] = true; offen--; }
+    if (err.code === 'permission-denied' && KEYS_V7.includes(key)) { regelnAlt = true; setKeyStand(key, 'fehler'); setStatus('fehler', REGELN_ALT); return; }
+    setKeyStand(key, 'fehler');
+    setStatus('fehler', 'Keine Berechtigung oder Fehler: ' + (err.code || err.message));
+  }));
 
   KEYS.forEach(k => adapter.load(k));
   Store.useAdapter(adapter);
   window.addEventListener('online', () => status.zustand === 'offline' && setStatus('verbinde', 'Verbinde …'));
   window.addEventListener('offline', () => setStatus('offline', 'Offline – Änderungen werden später übertragen'));
-  return { stoppen: () => { abmelden.forEach(f => f()); Store.useAdapter(null); setStatus('aus', 'Nicht verbunden'); } };
+  return { stoppen: () => { abmelden.forEach(f => f()); Store.useAdapter(null); Object.keys(keyStand).forEach(k => delete keyStand[k]); regelnAlt = false; setStatus('aus', 'Nicht verbunden'); } };
 }
 export function aufStatus(cb) { statusCbs.push(cb); cb(status); }
 export function aktuellerStatus() { return status; }

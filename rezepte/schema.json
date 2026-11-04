@@ -59,6 +59,33 @@
           "text": {
             "type": "string",
             "minLength": 1
+          },
+          "bild": {
+            "type": "object",
+            "description": "Optional: kleines Bild der Zutat im Erklärfenster. Datei unter app/bilder/zutaten/ als <name>.webp (320×240) und <name>-640.webp (640×480). Nur freie Lizenzen (gemeinfrei, CC0, CC BY) oder eigene/KI-Bilder; Quelle in bilder/zutaten/QUELLEN.md eintragen.",
+            "required": [
+              "datei",
+              "alt",
+              "nachweis"
+            ],
+            "properties": {
+              "datei": {
+                "type": "string",
+                "pattern": "^zutaten/[a-z0-9]+(-[a-z0-9]+)*\\.webp$",
+                "description": "Pfad relativ zu app/bilder/, z.B. zutaten/pastinaken.webp"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Kurze Bildbeschreibung für Screenreader"
+              },
+              "nachweis": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Kurz-Nachweis unter dem Bild, z.B. «Bild: Daderot, CC0, Wikimedia Commons»"
+              }
+            },
+            "additionalProperties": false
           }
         },
         "additionalProperties": false

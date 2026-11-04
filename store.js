@@ -9,8 +9,10 @@
      remove(key)            -> löscht einen Schlüssel
      watch(key, onChange)   -> optional: meldet Änderungen von anderen Geräten (onChange(value)); gibt Abmelde-Funktion zurück
    Geteilte Schlüssel (synchronisierbar): plan, einkauf_eigen, einkauf_haken, einkauf_weg, notizen, favoriten, zuletzt
+   ab v7 zusätzlich: tagesplan (Wochenplan nach Datum; «wochenplan» war der v1-Name und bleibt für die alte Migration reserviert), gewohnheiten, bewertungen (Likes/Sterne pro Person)
+   («plan» nach Wochentag wird von v7 in «tagesplan» übernommen; favoriten und Sterne in notizen bleiben als «früher, gemeinsam» lesbar)
    (bis v1: wochenplan, einkauf – werden beim ersten Start von v3 übernommen und gelöscht)
-   Nur auf diesem Gerät: timer, einstellungen, sync (Haushalts-Code), sync_meta  (siehe LOCAL_ONLY)
+   Nur auf diesem Gerät: timer, einstellungen (Person, Farbe, Einkaufs-Zeitraum), sync (Haushalts-Code), sync_meta  (siehe LOCAL_ONLY)
    Der Firestore-Adapter steht in sync.js und wird nur geladen, wenn firebase-config.js gefüllt ist.
    Zugangsdaten gehören NICHT in diese Datei. */
 (function (global) {

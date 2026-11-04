@@ -149,27 +149,57 @@
       "glossar": {
         "schwarzwurzeln": {
           "begriff": "Schwarzwurzeln",
-          "text": "Der klebrige Milchsaft färbt die Hände braun – am besten Einweghandschuhe tragen. Unter fliessendem Wasser gründlich abbürsten (so sieht es das Rezept vor); wer mag, kann sie auch mit dem Sparschäler schälen. Die geschnittenen Stücke bis zum Backen in Wasser mit einem Schuss Essig oder Zitronensaft legen, damit sie nicht braun werden – danach gut abtropfen und trockentupfen."
+          "text": "Der klebrige Milchsaft färbt die Hände braun – am besten Einweghandschuhe tragen. Unter fliessendem Wasser gründlich abbürsten (so sieht es das Rezept vor); wer mag, kann sie auch mit dem Sparschäler schälen. Die geschnittenen Stücke bis zum Backen in Wasser mit einem Schuss Essig oder Zitronensaft legen, damit sie nicht braun werden – danach gut abtropfen und trockentupfen.",
+          "bild": {
+            "datei": "zutaten/schwarzwurzeln.webp",
+            "alt": "Bündel Schwarzwurzeln (alte Kochbuch-Illustration)",
+            "nachweis": "Bild: Iduns kokbok, gemeinfrei, Wikimedia Commons"
+          }
         },
         "pastinaken": {
           "begriff": "Pastinaken",
-          "text": "Schälen oder gründlich abbürsten. Bei dicken Exemplaren den holzigen Kern herausschneiden. Gleich dicke Scheiben garen gleichmässig."
+          "text": "Schälen oder gründlich abbürsten. Bei dicken Exemplaren den holzigen Kern herausschneiden. Gleich dicke Scheiben garen gleichmässig.",
+          "bild": {
+            "datei": "zutaten/pastinaken.webp",
+            "alt": "Pastinaken auf einem Marktstand",
+            "nachweis": "Bild: Daderot, CC0, Wikimedia Commons"
+          }
         },
         "passionsfrucht": {
           "begriff": "Passionsfrucht",
-          "text": "Reif ist sie, wenn die Schale schrumpelig ist. Halbieren und das Fruchtfleisch samt Kernen mit einem Teelöffel herauslöffeln."
+          "text": "Reif ist sie, wenn die Schale schrumpelig ist. Halbieren und das Fruchtfleisch samt Kernen mit einem Teelöffel herauslöffeln.",
+          "bild": {
+            "datei": "zutaten/passionsfrucht.webp",
+            "alt": "Halbierte Passionsfrucht mit Kernen",
+            "nachweis": "Bild: Alexander Klink, CC BY 3.0, Wikimedia Commons"
+          }
         },
         "limette": {
           "begriff": "Limette",
-          "text": "Vor dem Halbieren mit etwas Druck auf der Arbeitsfläche rollen – so gibt sie mehr Saft."
+          "text": "Vor dem Halbieren mit etwas Druck auf der Arbeitsfläche rollen – so gibt sie mehr Saft.",
+          "bild": {
+            "datei": "zutaten/limette.webp",
+            "alt": "Limette, ganz und halbiert",
+            "nachweis": "Bild: Jiafei Slay Queen, CC0, Wikimedia Commons"
+          }
         },
         "rindsplaetzli": {
           "begriff": "Rindsplätzli",
-          "text": "Ca. 30 Min. vor dem Braten aus dem Kühlschrank nehmen und mit Küchenpapier trockentupfen. Die Pfanne sehr heiss werden lassen und das Fleisch nicht hin- und herschieben. Nach dem Braten ca. 2 Min. ruhen lassen, dann quer zur Faser in Streifen schneiden – so bleibt es zart."
+          "text": "Ca. 30 Min. vor dem Braten aus dem Kühlschrank nehmen und mit Küchenpapier trockentupfen. Die Pfanne sehr heiss werden lassen und das Fleisch nicht hin- und herschieben. Nach dem Braten ca. 2 Min. ruhen lassen, dann quer zur Faser in Streifen schneiden – so bleibt es zart.",
+          "bild": {
+            "datei": "zutaten/rindsplaetzli.webp",
+            "alt": "Rohes Rindsstück",
+            "nachweis": "Bild: Jellaluna, CC BY 2.0, Wikimedia Commons"
+          }
         },
         "kraeuter": {
           "begriff": "Kräuter",
-          "text": "Erst kurz vor dem Mischen fein schneiden; die zarten Korianderstiele haben viel Aroma und können mitverwendet werden."
+          "text": "Erst kurz vor dem Mischen fein schneiden; die zarten Korianderstiele haben viel Aroma und können mitverwendet werden.",
+          "bild": {
+            "datei": "zutaten/kraeuter.webp",
+            "alt": "Bund frischer Koriander",
+            "nachweis": "Bild: Miansari66, gemeinfrei, Wikimedia Commons"
+          }
         }
       },
       "naehrwerte": {
@@ -303,7 +333,12 @@
       "glossar": {
         "kuerbis-schaelen": {
           "begriff": "Kürbis – schälen oder nicht?",
-          "text": "Hokkaido kann mit Schale gegessen werden; sie wird beim Kochen weich. Butternut und Muskatkürbis dagegen schälen."
+          "text": "Hokkaido kann mit Schale gegessen werden; sie wird beim Kochen weich. Butternut und Muskatkürbis dagegen schälen.",
+          "bild": {
+            "datei": "zutaten/kuerbis-schaelen.webp",
+            "alt": "Hokkaido- und Butternusskürbisse",
+            "nachweis": "Bild: George Chernilevsky, gemeinfrei, Wikimedia Commons"
+          }
         },
         "kuerbis-schneiden": {
           "begriff": "Kürbis sicher schneiden",
@@ -319,7 +354,12 @@
         },
         "miso": {
           "begriff": "Miso (optional)",
-          "text": "Die Paste zuerst in etwas Flüssigkeit glatt rühren, dann gibt es keine Klümpchen. Miso mag kein starkes Sprudeln – die Suppe lieber sanft köcheln lassen."
+          "text": "Die Paste zuerst in etwas Flüssigkeit glatt rühren, dann gibt es keine Klümpchen. Miso mag kein starkes Sprudeln – die Suppe lieber sanft köcheln lassen.",
+          "bild": {
+            "datei": "zutaten/miso.webp",
+            "alt": "Miso-Paste in einer Schale",
+            "nachweis": "Bild: publicdomainq.net, CC0, Wikimedia Commons"
+          }
         },
         "knoblauch-nudeln": {
           "begriff": "Knoblauch & Nudeln",
@@ -488,15 +528,30 @@
       "glossar": {
         "austernpilze": {
           "begriff": "Austernpilze",
-          "text": "Von Hand in Streifen zupfen statt schneiden. Nicht waschen oder einweichen – Pilze saugen sich mit Wasser voll. Schmutz mit einem Pinsel oder Küchenpapier entfernen. Die Pfanne nicht überfüllen (sonst dämpfen sie statt zu braten), nötigenfalls in zwei Portionen braten, bis sie goldbraun sind."
+          "text": "Von Hand in Streifen zupfen statt schneiden. Nicht waschen oder einweichen – Pilze saugen sich mit Wasser voll. Schmutz mit einem Pinsel oder Küchenpapier entfernen. Die Pfanne nicht überfüllen (sonst dämpfen sie statt zu braten), nötigenfalls in zwei Portionen braten, bis sie goldbraun sind.",
+          "bild": {
+            "datei": "zutaten/austernpilze.webp",
+            "alt": "Austernpilze",
+            "nachweis": "Bild: Flocci Nivis, CC BY 4.0, Wikimedia Commons"
+          }
         },
         "lauch": {
           "begriff": "Lauch",
-          "text": "Längs aufschneiden und unter fliessendem Wasser zwischen den Schichten den Sand auswaschen, dann in feine Ringe schneiden."
+          "text": "Längs aufschneiden und unter fliessendem Wasser zwischen den Schichten den Sand auswaschen, dann in feine Ringe schneiden.",
+          "bild": {
+            "datei": "zutaten/lauch.webp",
+            "alt": "Lauchstange",
+            "nachweis": "Bild: KI-Bild (Craiyon), gemeinfrei, Wikimedia Commons"
+          }
         },
         "ingwer": {
           "begriff": "Ingwer",
-          "text": "Die Schale lässt sich mit der Kante eines Teelöffels abschaben – so geht kaum etwas verloren."
+          "text": "Die Schale lässt sich mit der Kante eines Teelöffels abschaben – so geht kaum etwas verloren.",
+          "bild": {
+            "datei": "zutaten/ingwer.webp",
+            "alt": "Frische Ingwerknolle",
+            "nachweis": "Bild: Rubel Das, CC0, Wikimedia Commons"
+          }
         },
         "eier-boost": {
           "begriff": "Eier als Protein-Boost",
@@ -504,7 +559,12 @@
         },
         "edamame-tofu": {
           "begriff": "Edamame & Tofu",
-          "text": "Am einfachsten sind bereits geschälte Edamame (z. B. tiefgekühlt). Tofu in Würfel schneiden und gut trockentupfen."
+          "text": "Am einfachsten sind bereits geschälte Edamame (z. B. tiefgekühlt). Tofu in Würfel schneiden und gut trockentupfen.",
+          "bild": {
+            "datei": "zutaten/edamame-tofu.webp",
+            "alt": "Edamame-Schoten auf einem Teller",
+            "nachweis": "Bild: Daderot, CC0, Wikimedia Commons"
+          }
         },
         "nudeln-schaerfe": {
           "begriff": "Nudeln & Schärfe",
@@ -689,27 +749,57 @@
       "glossar": {
         "kartoffeln": {
           "begriff": "Mehligkochende Kartoffeln",
-          "text": "Sie zerfallen beim Köcheln leicht und binden so die Sauce schön sämig. Schälen und in gleich grosse Stücke (ca. 2–3 cm) schneiden, damit alle gleichzeitig weich sind."
+          "text": "Sie zerfallen beim Köcheln leicht und binden so die Sauce schön sämig. Schälen und in gleich grosse Stücke (ca. 2–3 cm) schneiden, damit alle gleichzeitig weich sind.",
+          "bild": {
+            "datei": "zutaten/kartoffeln.webp",
+            "alt": "Frisch geerntete Kartoffeln in der Hand",
+            "nachweis": "Bild: Jonn Leffmann, CC BY 4.0, Wikimedia Commons"
+          }
         },
         "rote-linsen": {
           "begriff": "Rote Linsen",
-          "text": "Kurz in einem Sieb abspülen. Sie quellen und brauchen dafür Flüssigkeit: Wird das Curry zu dick, einfach etwas Wasser nachgiessen. Gelegentlich umrühren, damit nichts ansetzt."
+          "text": "Kurz in einem Sieb abspülen. Sie quellen und brauchen dafür Flüssigkeit: Wird das Curry zu dick, einfach etwas Wasser nachgiessen. Gelegentlich umrühren, damit nichts ansetzt.",
+          "bild": {
+            "datei": "zutaten/rote-linsen.webp",
+            "alt": "Schale mit roten Linsen",
+            "nachweis": "Bild: Yuvalif, gemeinfrei, Wikimedia Commons"
+          }
         },
         "kichererbsen": {
           "begriff": "Kichererbsen",
-          "text": "In einem Sieb abgiessen und unter kaltem Wasser abspülen."
+          "text": "In einem Sieb abgiessen und unter kaltem Wasser abspülen.",
+          "bild": {
+            "datei": "zutaten/kichererbsen.webp",
+            "alt": "Getrocknete Kichererbsen",
+            "nachweis": "Bild: Fumikas Sagisavas, CC0, Wikimedia Commons"
+          }
         },
         "gewuerze": {
           "begriff": "Gewürze",
-          "text": "Wer mag, röstet die trockenen Gewürze vor dem Dazugeben ca. 30 Sek. kurz im Öl an – das setzt Aromen frei. Aber nicht zu lange: Verbrannte Gewürze werden bitter."
+          "text": "Wer mag, röstet die trockenen Gewürze vor dem Dazugeben ca. 30 Sek. kurz im Öl an – das setzt Aromen frei. Aber nicht zu lange: Verbrannte Gewürze werden bitter.",
+          "bild": {
+            "datei": "zutaten/gewuerze.webp",
+            "alt": "Teller mit indischen Gewürzen",
+            "nachweis": "Bild: spurekar, CC BY 2.0, Wikimedia Commons"
+          }
         },
         "ingwer-kurkuma": {
           "begriff": "Ingwer & Kurkuma",
-          "text": "Ingwer mit einem Teelöffel schälen. Kurkuma färbt stark – Schneidebrett und Kleider schützen."
+          "text": "Ingwer mit einem Teelöffel schälen. Kurkuma färbt stark – Schneidebrett und Kleider schützen.",
+          "bild": {
+            "datei": "zutaten/ingwer-kurkuma.webp",
+            "alt": "Frische Kurkumawurzel und Kurkumapulver",
+            "nachweis": "Bild: formulatehealth, CC BY 2.0, Wikimedia Commons"
+          }
         },
         "joghurt": {
           "begriff": "Joghurt",
-          "text": "Erst beim Anrichten dazugeben und nicht mitkochen, sonst kann er gerinnen."
+          "text": "Erst beim Anrichten dazugeben und nicht mitkochen, sonst kann er gerinnen.",
+          "bild": {
+            "datei": "zutaten/joghurt.webp",
+            "alt": "Joghurt in einer Glasschale mit Löffel",
+            "nachweis": "Bild: Julikalucky, CC0, Wikimedia Commons"
+          }
         }
       },
       "naehrwerte": {
