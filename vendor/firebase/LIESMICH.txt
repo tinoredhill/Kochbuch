@@ -1,0 +1,4 @@
+Firebase JS SDK 13.2.0 (modulare Browser-Builds von https://www.gstatic.com/firebasejs/13.2.0/),
+unverändert bis auf den Import-Pfad von firebase-app.js (lokal statt gstatic).
+Lizenz: Apache License 2.0 – https://www.apache.org/licenses/LICENSE-2.0 (Copyright Google LLC).
+Wird nur geladen, wenn in firebase-config.js eine Konfiguration eingetragen ist.

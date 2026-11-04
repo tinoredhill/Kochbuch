@@ -28,7 +28,7 @@ const WOERTER = {
   'Diverses': 'zahnpasta zahnbürste shampoo seife duschmittel waschmittel wc-papier toilettenpapier haushaltpapier küchenpapier abwaschmittel schwamm alufolie backpapier'
 };
 const ICON_WOERTER = {
-  root: 'schwarzwurzel schwarzwurzeln pastinake pastinaken wurzel', carrot: 'karotte rüebli', citrus: 'limette zitrone orange', fruit: 'passionsfrucht frucht beeren',
+  pumpkin: 'kürbis', mushroom: 'pilze austernpilze pilz champignon', noodles: 'nudeln ramen-nudeln ramen pasta spaghetti', cube: 'tofu', onion: 'zwiebel knoblauch knoblauchzehe knoblauchzehen', can: 'dose kichererbsen gehackte kokosmilch tomatenpüree', bean: 'edamame linsen bohnen', root: 'schwarzwurzel schwarzwurzeln pastinake pastinaken wurzel', carrot: 'karotte rüebli', citrus: 'limette zitrone orange', fruit: 'passionsfrucht frucht beeren',
   apple: 'apfel äpfel', banana: 'banane bananen', herbs: 'kräuter minze pfefferminze koriander petersilie basilikum schnittlauch', meat: 'fleisch rind rindsplätzli plätzli steak poulet speck schinken',
   fish: 'fisch lachs crevetten thon', bottle: 'öl sesamöl olivenöl erdnussöl', sauce: 'sauce teriyaki-sauce sojasauce essig', salt: 'salz pfeffer', milk: 'milch', bread: 'brot zopf',
   egg: 'ei eier', butter: 'butter', cheese: 'käse', yogurt: 'joghurt', coffee: 'kaffee', roll: 'wc-papier toilettenpapier'
@@ -49,11 +49,11 @@ const SCHNELL = [['Milch', 'milk'], ['Brot', 'bread'], ['Eier', 'egg'], ['Butter
 /* ---------- Zahlen ---------- */
 function roundUnit(v, einheit) {
   const e = (einheit || '').toLowerCase();
-  const step = (e === 'g' || e === 'ml') ? (v < 100 ? 1 : 5) : (['kg', 'l', 'dl', 'cl'].includes(e) ? 0.05 : 0.25);
+  const step = (e === 'g' || e === 'ml') ? (v < 100 ? 1 : 5) : (['kg', 'l', 'dl', 'cl'].includes(e) ? 0.05 : (v < 0.5 ? 0.125 : 0.25));   // kleine Löffelmengen in Achteln
   const r = Math.round(v / step) * step;
-  return r > 0 ? +r.toFixed(2) : +step.toFixed(2);
+  return r > 0 ? +r.toFixed(3) : +step.toFixed(3);
 }
-const num = n => String(+(+n).toFixed(2));
+const num = n => String(+(+n).toFixed(3));
 const fmtMenge = (m, e) => num(m) + (e ? ' ' + e : '');
 const factorOf = (r, wert) => r.portionen_basis ? wert / r.portionen_basis : wert;
 const scaled = (m, e, f) => f === 1 ? m : roundUnit(m * f, e);
@@ -61,16 +61,26 @@ const defaultScale = r => r.portionen_basis || 1;
 const getScale = r => scaleState[r.id] != null ? scaleState[r.id] : defaultScale(r);
 const scaleLabel = (r, w) => r.portionen_basis ? `${num(w)} ${w === 1 ? 'Portion' : 'Portionen'}` : `Menge × ${num(w)}`;
 function stepScale(r, w, dir) { return r.portionen_basis ? Math.min(30, Math.max(1, w + dir)) : Math.min(6, Math.max(0.5, +(w + dir * 0.5).toFixed(2))); }
+const qty = (x, f) => fmtMenge(scaled(x.menge, x.einheit, f), x.einheit);
 function zutatTeile(z, f) {
   if (z.menge == null) return ['', esc(z.name) + (z.notiz ? ', ' + esc(z.notiz) : '')];
-  let m = (z.je ? 'je ' : '') + esc(fmtMenge(scaled(z.menge, z.einheit, f), z.einheit));
-  if (z.plus) m += ' plus ' + esc(fmtMenge(scaled(z.plus.menge, z.plus.einheit, f), z.plus.einheit));
+  let m = (z.je ? 'je ' : '') + esc(qty(z, f));
+  if (z.plus) m += ' plus ' + esc(qty(z.plus, f));
   let n = esc(z.name);
-  if (z.alternative) n += `, ${esc(z.alternative.text)} ${esc(fmtMenge(scaled(z.alternative.menge, z.alternative.einheit, f), z.alternative.einheit))}`;
+  if (z.oder && z.oder.length) { const o = z.oder.map(x => `${qty(x, f)} ${x.name}`); n += esc((o.length > 1 ? ', ' + o.slice(0, -1).join(', ') : '') + ' oder ' + o[o.length - 1]); }
+  for (const k of ['alternative', 'zusatz']) if (z[k]) n += esc(`, ${z[k].text} ${qty(z[k], f)}${z[k].text_nach ? ' ' + z[k].text_nach : ''}`);
   if (z.notiz) n += ', ' + esc(z.notiz);
   return [m, n];
 }
-const zutatenListe = (r, f) => `<ul class="zut">${r.zutaten.map(z => { const [m, n] = zutatTeile(z, f); return `<li><span class="m">${m}</span><span class="n">${n}</span></li>`; }).join('')}</ul>`;
+function zutatenListe(r, f) {
+  let g = null, html = '';
+  for (const z of r.zutaten) {
+    if ((z.gruppe || null) !== g) { g = z.gruppe || null; if (g) html += `<li class="gruppe">${esc(g)}</li>`; }
+    const [m, n] = zutatTeile(z, f);
+    html += `<li class="${z.gruppe ? 'in-gruppe' : ''}">${z.vor ? `<span class="vor">${esc(z.vor)}</span>` : ''}<span class="m">${m}</span><span class="n">${n}</span></li>`;   // «vor» steht wie in der Vorlage vor der Menge
+  }
+  return `<ul class="zut">${html}</ul>`;
+}
 const minText = m => m == null ? '' : `ca. ${num(m)} Min.`;
 const mmss = ms => { const t = Math.max(0, Math.ceil(ms / 1000)); const h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), s = t % 60; return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(s).padStart(2, '0'); };
 const datumKurz = ts => { const d = new Date(ts); return `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.`; };
@@ -150,12 +160,15 @@ function planZutaten() {
     const e = p[k]; if (!e || !R[e.rid]) continue;
     const r = R[e.rid], f = factorOf(r, e.portionen);
     for (const z of r.zutaten) {
+      if (z.einkaufen === false) continue;   // z.B. Wasser
       const key = 'z:' + (z.je ? 'je|' : '') + z.name.trim().toLowerCase();
       if (!map.has(key)) { const abt = abteilungVon(z.name, z.abteilung); map.set(key, { key, name: z.name, je: !!z.je, mengen: {}, alts: {}, notizen: [], rezepte: [], abt, icon: iconVon(z.name, abt) }); }
       const it = map.get(key);
       const add = (m, ei) => { const u = ei || ''; it.mengen[u] = roundUnit((it.mengen[u] || 0) + m * f, u); };
       if (z.menge != null) add(z.menge, z.einheit);
       if (z.plus) add(z.plus.menge, z.plus.einheit);
+      if (z.zusatz) add(z.zusatz.menge, z.zusatz.einheit);
+      if (z.oder && z.oder.length) { const o = 'oder ' + z.oder.map(x => `${qty(x, f)} ${x.name}`).join(' oder '); if (!it.notizen.includes(o)) it.notizen.push(o); }
       if (z.alternative) { const a = z.alternative.text + '|' + (z.alternative.einheit || ''); it.alts[a] = roundUnit((it.alts[a] || 0) + z.alternative.menge * f, z.alternative.einheit); }
       if (z.notiz && !it.notizen.includes(z.notiz)) it.notizen.push(z.notiz);
       if (!it.rezepte.includes(r.titel)) it.rezepte.push(r.titel);
@@ -203,7 +216,7 @@ function migrieren() {
 }
 
 /* ---------- Timer ---------- */
-const timers = () => Store.get('timer', []);
+const timers = () => { const l = Store.get('timer', []); return Array.isArray(l) ? l : []; };
 const timerLeft = t => t.status === 'laeuft' ? t.ende - Date.now() : t.status === 'pause' ? t.rest : 0;
 function startTimer(rid, si, ti) {
   unlockAudio();
@@ -224,7 +237,7 @@ function timerAktion(id, a) {
   Store.set('timer', list);
 }
 function tchipHTML(t, mitName) {
-  const name = mitName && R[t.rid] ? `${esc(t.label)} · Schritt ${t.si + 1}` : esc(t.label);
+  const name = mitName && R[t.rid] ? `${esc(t.label)} <i class="sn">· Schritt ${t.si + 1}</i>` : esc(t.label);
   const pp = t.status === 'laeuft' ? `<button class="icon" data-ta="pause" data-tid="${t.id}" aria-label="Pause">${ico('pause')}</button>`
     : t.status === 'pause' ? `<button class="icon" data-ta="weiter" data-tid="${t.id}" aria-label="Weiter">${ico('play')}</button>` : '';
   return `<div class="tchip ${t.status}">${ico('timer', 'ti')}<div class="tl"><span>${name}</span><strong data-left="${t.id}">${t.status === 'fertig' ? 'Fertig!' : mmss(timerLeft(t))}</strong></div>
@@ -310,6 +323,60 @@ function showWake() {
 }
 document.addEventListener('visibilitychange', () => { if (wakeWanted && !document.hidden) requestWake(); });
 
+
+/* ---------- Synchronisation (Firebase, optional) ---------- */
+const B32 = '0123456789abcdefghjkmnpqrstvwxyz';
+const zufall = n => { const b = new Uint8Array(n); crypto.getRandomValues(b); return [...b].map(x => B32[x & 31]).join(''); };   // 5 Bit pro Zeichen
+const neuerCode = () => zufall(28);                                   // 28 × 5 = 140 Bit
+function codeNorm(t) { const c = String(t || '').toLowerCase().replace(/[^0-9a-z]/g, '').replace(/[il]/g, '1').replace(/o/g, '0').replace(/u/g, 'v'); return /^[0-9a-hjkmnp-tv-z]{28}$/.test(c) ? c : null; }
+const codeAnzeige = c => c.toUpperCase().match(/.{1,4}/g).join('-');
+const syncCfg = () => (window.FIREBASE_CONFIG && window.FIREBASE_CONFIG.apiKey && window.FIREBASE_CONFIG.projectId) ? window.FIREBASE_CONFIG : null;
+const syncEinst = () => Store.get('sync', {});
+const SYNC = { mod: null, handle: null, status: null, laeuft: false };
+function syncStatus() {
+  if (!syncCfg()) return { zustand: 'aus', text: 'Nur auf diesem Gerät – Synchronisation ist noch nicht eingeschaltet' };
+  if (!syncEinst().code) return { zustand: 'aus', text: 'Nur auf diesem Gerät – noch kein Haushalts-Code' };
+  return SYNC.status || { zustand: 'verbinde', text: 'Verbinde …' };
+}
+async function syncStarten() {
+  const s = syncEinst();
+  if (!syncCfg() || !s.code || SYNC.laeuft) return;
+  SYNC.laeuft = true;
+  try {
+    if (!SYNC.mod) { SYNC.mod = await import('./sync.js'); SYNC.mod.aufStatus(st => { SYNC.status = st; if (route.v === 'einstellungen') render(true); }); }
+    SYNC.handle = await SYNC.mod.starten(syncCfg(), s.code, s.geraet);
+  } catch (e) {
+    console.warn('Synchronisation', e); SYNC.laeuft = false;
+    SYNC.status = { zustand: 'fehler', text: 'Verbindung fehlgeschlagen: ' + (e.code || e.message) };
+    if (route.v === 'einstellungen') render(true);
+  }
+}
+function syncStoppen() { if (SYNC.handle) SYNC.handle.stoppen(); SYNC.handle = null; SYNC.laeuft = false; SYNC.status = null; }
+function codeSetzen(code) {
+  syncStoppen();
+  Store.set('sync', { code, geraet: syncEinst().geraet || zufall(12) });
+  syncStarten(); render(true);
+}
+const haushaltLink = c => location.origin + location.pathname + '#haushalt=' + codeAnzeige(c);
+function linkPruefen() {
+  const m = location.hash.match(/^#haushalt=([0-9A-Za-z-]+)/);
+  if (!m) return false;
+  const code = codeNorm(m[1]);
+  history.replaceState(null, '', location.pathname + '#/einstellungen');
+  if (!code) { toast('Der Haushalts-Link ist ungültig.'); return true; }
+  if (syncEinst().code === code) { toast('Dieses Gerät ist schon mit dem Haushalt verbunden.'); return true; }
+  openSheet(`<h3>Haushalt beitreten?</h3><p>Dieses Gerät mit dem Haushalt <strong class="code">${codeAnzeige(code)}</strong> verbinden. Wochenplan, Einkaufsliste, Notizen, Sterne, Favoriten und «Zuletzt gekocht» werden dann geteilt; was schon auf diesem Gerät ist, wird dazugenommen.</p>
+    <button class="btn wide" data-beitreten="${code}">${ico('sync')}Beitreten</button>`);
+  return true;
+}
+function qrZeigen() {
+  const c = syncEinst().code; if (!c) return;
+  const zeigen = () => { const q = qrcode(0, 'M'); q.addData(haushaltLink(c)); q.make();
+    openSheet(`<h3>Haushalts-Code teilen</h3><div class="qr">${q.createSvgTag({ cellSize: 6, margin: 4, scalable: true })}</div><p>Mit der Kamera des anderen Geräts scannen und den Link öffnen. Den Code nur im eigenen Haushalt weitergeben.</p>`); };
+  if (window.qrcode) return zeigen();
+  const sc = document.createElement('script'); sc.src = 'vendor/qrcode/qrcode.js'; sc.onload = zeigen; sc.onerror = () => toast('QR-Code konnte nicht geladen werden.'); document.head.appendChild(sc);
+}
+
 /* ---------- Ansichten ---------- */
 const sterneHTML = n => n ? `<span class="stars-s" aria-label="${n} von 5 Sternen">${'★'.repeat(n)}${'☆'.repeat(5 - n)}</span>` : '';
 const herzBtn = (rid, cls) => `<button class="herz ${istFav(rid) ? 'on' : ''} ${cls || ''}" data-fav="${rid}" aria-label="${istFav(rid) ? 'Aus Favoriten entfernen' : 'Zu Favoriten'}" aria-pressed="${istFav(rid)}">${ico('heart')}</button>`;
@@ -349,7 +416,7 @@ function listeErgebnis() {
 }
 function viewListe() {
   const chip = (g, w, label) => `<button class="chip ${ui.filter[g] === w ? 'on' : ''}" data-filter="${g}" data-wert="${esc(w)}" aria-pressed="${ui.filter[g] === w}">${label || esc(w)}</button>`;
-  app.innerHTML = `<header class="kopf"><div class="eyebrow">${DATA.rezepte.length} ${DATA.rezepte.length === 1 ? 'Rezept' : 'Rezepte'}</div><h1 class="titel-gross">Kochbuch</h1></header>
+  app.innerHTML = `<header class="kopf mit-knopf"><div><div class="eyebrow">${DATA.rezepte.length} ${DATA.rezepte.length === 1 ? 'Rezept' : 'Rezepte'}</div><h1 class="titel-gross">Kochbuch</h1></div><button class="icon" data-go="#/einstellungen" aria-label="Einstellungen und Synchronisation">${ico(syncEinst().code && syncCfg() ? 'sync' : 'gear')}</button></header>
    <label class="suche">${ico('search')}<input type="search" id="suche" placeholder="Suchen: Rezept, Zutat, Stichwort" value="${esc(ui.suche)}" autocomplete="off" enterkeyhint="search"></label>
    <div class="filter">
      <div class="fgruppe"><div class="flabel">Merkliste</div><div class="chips"><button class="chip ${ui.filter.fav ? 'on' : ''}" data-filter="fav" data-wert="1" aria-pressed="${!!ui.filter.fav}">${ico('heart')}Favoriten</button></div></div>
@@ -457,6 +524,22 @@ function viewWissen() {
    <label class="suche">${ico('search')}<input type="search" id="wsuche" placeholder="Suchen, z.B. Limette oder andämpfen" value="${esc(ui.wissen)}" autocomplete="off" enterkeyhint="search"></label>
    <div id="wergebnis">${wissenErgebnis()}</div>`;
 }
+function viewEinstellungen() {
+  const s = syncEinst(), st = syncStatus(), cfg = syncCfg();
+  app.innerHTML = `<div class="top"><button class="icon" data-go="#/" aria-label="Zurück">${ico('back')}</button></div>
+   <header class="kopf"><div class="eyebrow">Einstellungen</div><h1 class="titel-gross">Synchronisieren</h1></header>
+   <div class="einst"><p class="status ${st.zustand}"><span class="punkt"></span>${esc(st.text)}</p>
+   <p class="erkl">Mit einem gemeinsamen Haushalts-Code sehen alle Geräte im Haushalt denselben Wochenplan, dieselbe Einkaufsliste, Notizen, Sterne, Favoriten und «Zuletzt gekocht» – live. Stoppuhren bleiben auf jedem Gerät für sich.</p>
+   ${!cfg ? `<p class="hinweis-box">${ico('key')}<span>Die Synchronisation ist noch nicht eingeschaltet (Firebase-Konfiguration fehlt). Einen Code kann man trotzdem schon erstellen oder eingeben; verbunden wird, sobald die Konfiguration eingetragen ist.</span></p>` : ''}
+   <h2>Haushalts-Code</h2>
+   ${s.code ? `<p class="code gross">${codeAnzeige(s.code)}</p>
+     <div class="aktionen"><button class="btn sec" data-qr>${ico('qr')}QR-Code anzeigen</button><button class="btn sec" data-linkkopie>${ico('link')}Link kopieren</button></div>
+     <div class="aktionen"><button class="btn ghost" data-trennen>Dieses Gerät trennen</button></div>
+     <p class="klein">Der Code ist wie ein Schlüssel: Wer ihn kennt, sieht die geteilten Daten. Er ist nur auf diesem Gerät gespeichert.</p>`
+   : `<div class="aktionen"><button class="btn" data-neucode>${ico('key')}Neuen Haushalts-Code erstellen</button></div>
+     <form class="add" id="codeForm"><input type="text" id="codeTxt" placeholder="Haushalts-Code eingeben" autocomplete="off" autocapitalize="characters" spellcheck="false"><button class="btn" aria-label="Verbinden">${ico('check')}</button></form>
+     <p class="klein">Auf dem ersten Gerät einen Code erstellen, auf den weiteren Geräten den QR-Code scannen oder den Code eingeben. Daten, die schon auf einem Gerät sind, werden beim ersten Verbinden dazugenommen.</p>`}</div>`;
+}
 function viewFehlt() { app.innerHTML = `<p class="leer">Dieses Rezept gibt es nicht (mehr).<br><br><button class="btn" data-go="#/">Zur Rezeptliste</button></p>`; }
 
 /* ---------- Navigation / Router ---------- */
@@ -466,7 +549,7 @@ function parse() {
   const p = location.hash.replace(/^#\/?/, '').split('/');
   if (p[0] === 'rezept') return { v: 'rezept', id: p[1] };
   if (p[0] === 'kochen') return { v: 'kochen', id: p[1], nr: +p[2] || 1 };
-  if (['einkauf', 'plan', 'wissen'].includes(p[0])) return { v: p[0] };
+  if (['einkauf', 'plan', 'wissen', 'einstellungen'].includes(p[0])) return { v: p[0] };
   return { v: 'rezepte' };
 }
 function render(keepScroll) {
@@ -477,13 +560,13 @@ function render(keepScroll) {
   document.body.classList.toggle('koch', route.v === 'kochen');
   document.body.classList.toggle('mit-hero', route.v === 'rezept');
   if (route.v === 'kochen') { if (!wakeWanted) { wakeWanted = true; requestWake(); } } else releaseWake();
-  ({ rezepte: viewListe, rezept: () => viewRezept(route.id), kochen: () => viewKochen(route.id, route.nr), einkauf: viewEinkauf, plan: viewPlan, wissen: viewWissen })[route.v]();
+  ({ rezepte: viewListe, rezept: () => viewRezept(route.id), kochen: () => viewKochen(route.id, route.nr), einkauf: viewEinkauf, plan: viewPlan, wissen: viewWissen, einstellungen: viewEinstellungen })[route.v]();
   document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.v === (route.v === 'rezept' ? 'rezepte' : route.v)));
   renderTimerbar(); badge();
-  if (fokus && ['suche', 'wsuche', 'addTxt'].includes(fokus) && $('#' + fokus)) { const i = $('#' + fokus); i.focus(); try { i.setSelectionRange(sel, sel); } catch (e) {} }
+  if (fokus && ['suche', 'wsuche', 'addTxt', 'codeTxt'].includes(fokus) && $('#' + fokus)) { const i = $('#' + fokus); i.focus(); try { i.setSelectionRange(sel, sel); } catch (e) {} }
   if (keepScroll && prev.v === route.v && prev.id === route.id && prev.nr === route.nr) window.scrollTo(0, y); else window.scrollTo(0, 0);
 }
-window.addEventListener('hashchange', () => { closeSheet(); $('#toast').hidden = true; render(); });
+window.addEventListener('hashchange', () => { if (linkPruefen()) { render(); return; } closeSheet(); $('#toast').hidden = true; render(); });
 $('#nav').addEventListener('click', e => { const b = e.target.closest('button'); if (b) location.hash = b.dataset.v === 'rezepte' ? '#/' : '#/' + b.dataset.v; });
 ['plan', 'einkauf_eigen', 'einkauf_haken', 'einkauf_weg', 'notizen', 'favoriten', 'zuletzt', 'timer'].forEach(k => Store.subscribe(k, () => {
   if (k === 'notizen' && document.activeElement && document.activeElement.id === 'notiz') return;
@@ -518,6 +601,11 @@ document.addEventListener('click', e => {
   if (d.check) return Store.update('einkauf_haken', {}, h => { if (h[d.check]) delete h[d.check]; else h[d.check] = true; return h; });
   if (d.edel) return Store.update('einkauf_eigen', [], l => l.filter(x => x.id !== d.edel));
   if (d.schnell) return eigenDazu(d.schnell, d.icon);
+  if ('neucode' in d) { codeSetzen(neuerCode()); return toast('Haushalts-Code erstellt.'); }
+  if (d.beitreten) { closeSheet(); codeSetzen(d.beitreten); return toast('Mit dem Haushalt verbunden.'); }
+  if ('qr' in d) return qrZeigen();
+  if ('linkkopie' in d) { const l = haushaltLink(syncEinst().code); if (navigator.share) { navigator.share({ title: 'Kochbuch – Haushalt', url: l }).catch(() => {}); return; } (navigator.clipboard ? navigator.clipboard.writeText(l) : Promise.reject()).then(() => toast('Link kopiert.'), () => openSheet(`<h3>Link</h3><p class="code url klein">${esc(l)}</p>`)); return; }
+  if ('trennen' in d) { if (!confirm('Dieses Gerät vom Haushalt trennen? Die Daten bleiben auf diesem Gerät, werden aber nicht mehr geteilt.')) return; syncStoppen(); Store.set('sync', { geraet: syncEinst().geraet }); return render(true); }
   if ('clear' in d) {
     const list = einkaufsListe().filter(i => i.erledigt), haken = Store.get('einkauf_haken', {}), weg = Store.get('einkauf_weg', {});
     list.forEach(i => { delete haken[i.key]; if (!i.eigen) weg[i.key] = mengenText(i); });
@@ -526,6 +614,7 @@ document.addEventListener('click', e => {
   }
 });
 document.addEventListener('submit', e => {
+  if (e.target.id === 'codeForm') { e.preventDefault(); const c = codeNorm($('#codeTxt').value); if (!c) return toast('Der Code ist nicht vollständig oder enthält Tippfehler.'); codeSetzen(c); return toast('Mit dem Haushalt verbunden.'); }
   if (e.target.id !== 'addForm') return; e.preventDefault();
   eigenDazu($('#addTxt').value); const i = $('#addTxt'); if (i) i.value = '';
 });
@@ -547,7 +636,9 @@ async function laden() {
     DATA = await res.json();
     R = {}; DATA.rezepte.forEach(r => R[r.id] = r); GLOBAL = DATA.grundlagen || {};
     migrieren();
+    if (!linkPruefen()) closeSheet();
     render();
+    syncStarten();
   } catch (e) {
     console.warn(e);
     app.innerHTML = '<p class="leer">Die Rezepte konnten nicht geladen werden. Bitte Internetverbindung prüfen und neu öffnen.</p>';

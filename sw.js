@@ -1,6 +1,6 @@
 'use strict';
-const C = 'kochbuch-v3';
-const F = ['./', 'index.html', 'style.css', 'store.js', 'icons.js', 'app.js', 'fonts/cormorant-garamond-latin-500-normal.woff2', 'fonts/cormorant-garamond-latin-600-normal.woff2', 'manifest.webmanifest', 'rezepte/rezepte.json',
+const C = 'kochbuch-v4';
+const F = ['./', 'index.html', 'style.css', 'firebase-config.js', 'store.js', 'icons.js', 'app.js', 'fonts/cormorant-garamond-latin-500-normal.woff2', 'fonts/cormorant-garamond-latin-600-normal.woff2', 'manifest.webmanifest', 'rezepte/rezepte.json',
   'icons/app-icon.svg', 'icons/favicon-32.png', 'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(F.map(u => new Request(u, { cache: 'reload' }))))); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== C).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
@@ -8,8 +8,8 @@ self.addEventListener('message', e => { if (e.data === 'SKIP_WAITING') self.skip
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
-  if (/\/rezepte\/[^/]+\.json$/.test(new URL(req.url).pathname)) {
-    // Rezepte: zuerst Netz (damit neue Rezepte ankommen), sonst Zwischenspeicher
+  if (/\/rezepte\/[^/]+\.json$|\/firebase-config\.js$/.test(new URL(req.url).pathname)) {
+    // Rezepte und Firebase-Konfiguration: zuerst Netz (damit Neues sofort ankommt), sonst Zwischenspeicher
     e.respondWith(fetch(req).then(r => { if (r.ok) { const cl = r.clone(); caches.open(C).then(c => c.put(req, cl)); } return r; })
       .catch(() => caches.match(req, { ignoreSearch: true })));
     return;

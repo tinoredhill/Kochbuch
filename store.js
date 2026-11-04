@@ -10,11 +10,12 @@
      watch(key, onChange)   -> optional: meldet Änderungen von anderen Geräten (onChange(value)); gibt Abmelde-Funktion zurück
    Geteilte Schlüssel (synchronisierbar): plan, einkauf_eigen, einkauf_haken, einkauf_weg, notizen, favoriten, zuletzt
    (bis v1: wochenplan, einkauf – werden beim ersten Start von v3 übernommen und gelöscht)
-   Nur auf diesem Gerät: timer, einstellungen  (siehe LOCAL_ONLY)
+   Nur auf diesem Gerät: timer, einstellungen, sync (Haushalts-Code), sync_meta  (siehe LOCAL_ONLY)
+   Der Firestore-Adapter steht in sync.js und wird nur geladen, wenn firebase-config.js gefüllt ist.
    Zugangsdaten gehören NICHT in diese Datei. */
 (function (global) {
   const PREFIX = 'kochbuch-v1:';   // Präfix bleibt, damit gespeicherte Daten (Notizen, Sterne) erhalten bleiben
-  const LOCAL_ONLY = new Set(['timer', 'einstellungen']);
+  const LOCAL_ONLY = new Set(['timer', 'einstellungen', 'sync', 'sync_meta']);   // nie synchronisiert
   const subs = new Map();
   const cache = new Map();
 

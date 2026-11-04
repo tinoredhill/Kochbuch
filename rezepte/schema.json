@@ -101,7 +101,7 @@
             },
             "url": {
               "type": "string",
-              "description": "https://… oder leer, falls keine Quelle bekannt"
+              "description": "https://… oder leer; name und url beide leer = eigenes Rezept (kein Hinweis)"
             }
           },
           "additionalProperties": false
@@ -265,6 +265,9 @@
                   },
                   "einheit": {
                     "type": "string"
+                  },
+                  "text_nach": {
+                    "type": "string"
                   }
                 },
                 "additionalProperties": false
@@ -272,6 +275,65 @@
               "abteilung": {
                 "$ref": "#/$defs/abteilung",
                 "description": "optional; sonst ordnet die App automatisch zu"
+              },
+              "vor": {
+                "type": "string",
+                "description": "Text vor der Menge, z.B. «als Protein-Boost»"
+              },
+              "zusatz": {
+                "type": "object",
+                "required": [
+                  "text",
+                  "menge",
+                  "einheit"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "menge": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "einheit": {
+                    "type": "string"
+                  },
+                  "text_nach": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "description": "zusätzliche Menge, wird in der Einkaufsliste dazugezählt, z.B. «, dazu 1 TL zum Anrichten»"
+              },
+              "oder": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "menge",
+                    "einheit",
+                    "name"
+                  ],
+                  "properties": {
+                    "menge": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "einheit": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "description": "Ersatz-Zutaten, z.B. «2 Eier oder 150 g Tofu»"
+              },
+              "einkaufen": {
+                "type": "boolean",
+                "description": "false = nicht auf die Einkaufsliste (z.B. Wasser)"
               }
             },
             "additionalProperties": false

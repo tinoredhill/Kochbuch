@@ -1,6 +1,6 @@
 {
   "format": "kochbuch-rezepte",
-  "version": 2,
+  "version": 3,
   "grundlagen": {
     "scharfes-messer": {
       "begriff": "Scharfes Messer",
@@ -41,7 +41,7 @@
       "titel": "Wurzelgemüsesalat mit Rindfleischstreifen",
       "untertitel": "27 g Protein pro Portion",
       "quelle": {
-        "name": "Rezeptsammlung «Herbstküche mit Protein», Rezept 1",
+        "name": "",
         "url": ""
       },
       "portionen_basis": 2,
@@ -174,6 +174,528 @@
       },
       "naehrwerte": {
         "protein_g": 27
+      }
+    },
+    {
+      "id": "kuerbis-ramen-tofu",
+      "titel": "Kürbis-Ramen mit Tofu",
+      "untertitel": "ca. 25 g Protein pro Portion",
+      "quelle": {
+        "name": "",
+        "url": ""
+      },
+      "portionen_basis": 2,
+      "zeit_vorbereitung_min": 5,
+      "zeit_kochen_min": 23,
+      "zeit_total_min": 25,
+      "schwierigkeit": "einfach",
+      "kueche": "Asiatisch",
+      "hauptzutat": "Tofu",
+      "saison": [
+        "Herbst"
+      ],
+      "kategorien": [
+        "Herbst",
+        "Protein"
+      ],
+      "bild": {
+        "datei": "kuerbis-ramen-tofu.jpg",
+        "alt": "Kürbis-Ramen mit Tofuwürfeln, Kürbisstücken und Kräutern in einer hellen Schale, daneben Stäbchen"
+      },
+      "zutaten": [
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "geräucherter Tofu",
+          "abteilung": "Milchprodukte & Eier"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "",
+          "name": "Zwiebel"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Kürbis"
+        },
+        {
+          "menge": 5,
+          "einheit": "dl",
+          "name": "Wasser",
+          "einkaufen": false
+        },
+        {
+          "menge": 2.5,
+          "einheit": "dl",
+          "name": "Kokosmilch"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Miso-Paste"
+        },
+        {
+          "menge": 125,
+          "einheit": "g",
+          "name": "Ramen-Nudeln"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "Zitronensaft",
+          "abteilung": "Gemüse & Früchte"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Olivenöl, Salz und Pfeffer",
+          "abteilung": "Öl & Saucen"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Den [[tofu-knusprig|Tofu]] in Würfel schneiden, ca. 5 Min. in Öl braten und beiseitestellen.",
+          "timer": [
+            {
+              "label": "Tofu braten",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Zwiebel und [[knoblauch-nudeln|Knoblauch]] ca. 3 Min. [[andaempfen|andämpfen]] und den [[wuerfelgroesse|gewürfelten]] [[kuerbis-schaelen|Kürbis]] kurz mitdämpfen.",
+          "timer": [
+            {
+              "label": "Andämpfen",
+              "min": 3
+            }
+          ]
+        },
+        {
+          "text": "Wasser, Kokosmilch und [[miso|Miso]] dazugeben, [[aufkochen-koecheln|aufkochen]] und ca. 10 Min. köcheln lassen.",
+          "timer": [
+            {
+              "label": "Suppe köcheln",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "[[knoblauch-nudeln|Nudeln]] und Tofu dazugeben und ca. 5 Min. mitkochen. Mit Zitronensaft, Salz und Pfeffer [[abschmecken|abschmecken]].",
+          "timer": [
+            {
+              "label": "Nudeln mitkochen",
+              "min": 5
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "kuerbis-schaelen": {
+          "begriff": "Kürbis – schälen oder nicht?",
+          "text": "Hokkaido kann mit Schale gegessen werden; sie wird beim Kochen weich. Butternut und Muskatkürbis dagegen schälen."
+        },
+        "kuerbis-schneiden": {
+          "begriff": "Kürbis sicher schneiden",
+          "text": "Ein schweres, scharfes Kochmesser verwenden. Zuerst eine dünne Scheibe abschneiden, damit der Kürbis auf einer flachen Seite stabil liegt. Dann halbieren, die Kerne mit einem Löffel auskratzen und die Hälften in Schnitze schneiden. Die Schnitze flach hinlegen und (falls nötig) mit dem Sparschäler oder Messer schälen."
+        },
+        "wuerfelgroesse": {
+          "begriff": "Würfelgrösse",
+          "text": "Würfel von ca. 1–1,5 cm werden in den ca. 15 Min. Koch- und Mitkochzeit weich. Grössere Stücke brauchen länger."
+        },
+        "tofu-knusprig": {
+          "begriff": "Tofu knusprig braten",
+          "text": "Die Würfel mit Küchenpapier gut trockentupfen bzw. leicht ausdrücken. Nicht zu eng in die Pfanne geben und erst wenden, wenn die Unterseite goldbraun ist."
+        },
+        "miso": {
+          "begriff": "Miso (optional)",
+          "text": "Die Paste zuerst in etwas Flüssigkeit glatt rühren, dann gibt es keine Klümpchen. Miso mag kein starkes Sprudeln – die Suppe lieber sanft köcheln lassen."
+        },
+        "knoblauch-nudeln": {
+          "begriff": "Knoblauch & Nudeln",
+          "text": "Die Knoblauchzehe mit der flachen Messerklinge andrücken, dann löst sich die Schale leicht. Bei den Nudeln die Garzeit auf der Packung im Auge behalten – sie sollen nicht verkochen."
+        }
+      },
+      "naehrwerte": {
+        "protein_g": 25
+      }
+    },
+    {
+      "id": "chili-ramen-pilze",
+      "titel": "Chili-Ramen mit Pilzen",
+      "untertitel": "mit Protein-Boost ca. 25–30 g Protein pro Portion",
+      "quelle": {
+        "name": "",
+        "url": ""
+      },
+      "portionen_basis": 2,
+      "zeit_vorbereitung_min": 5,
+      "zeit_kochen_min": 23,
+      "zeit_total_min": 30,
+      "schwierigkeit": "einfach",
+      "kueche": "Asiatisch",
+      "hauptzutat": "Pilze",
+      "saison": [
+        "Herbst"
+      ],
+      "kategorien": [
+        "Herbst",
+        "Protein"
+      ],
+      "bild": {
+        "datei": "chili-ramen-pilze.jpg",
+        "alt": "Chili-Ramen mit gebratenen Austernpilzen, Lauchringen, Chili Crunch und einem halbierten wachsweichen Ei in einer hellen Schale, daneben Stäbchen"
+      },
+      "zutaten": [
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "Austernpilze"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "Austernsauce"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "EL",
+          "name": "Sojasauce"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Lauch"
+        },
+        {
+          "menge": 1,
+          "einheit": "cm",
+          "name": "Ingwer"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "",
+          "name": "Knoblauchzehe"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Tomatenpüree"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "EL",
+          "name": "Chili Crunch",
+          "zusatz": {
+            "text": "dazu",
+            "menge": 1,
+            "einheit": "TL",
+            "text_nach": "zum Anrichten"
+          }
+        },
+        {
+          "menge": 1.25,
+          "einheit": "dl",
+          "name": "Kokosmilch"
+        },
+        {
+          "menge": 4,
+          "einheit": "dl",
+          "name": "Pilzbouillon",
+          "abteilung": "Vorrat & Gewürze"
+        },
+        {
+          "menge": 80,
+          "einheit": "g",
+          "name": "Ramen-Nudeln"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Sesam und Olivenöl",
+          "abteilung": "Vorrat & Gewürze"
+        },
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "Edamame",
+          "vor": "als Protein-Boost",
+          "abteilung": "Tiefkühl",
+          "oder": [
+            {
+              "menge": 2,
+              "einheit": "",
+              "name": "Eier"
+            },
+            {
+              "menge": 150,
+              "einheit": "g",
+              "name": "Tofu"
+            }
+          ]
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Die zerzupften [[austernpilze|Pilze]] ca. 10 Min. in Öl braten. Austernsauce und ½ EL Sojasauce untermischen und beiseitestellen.",
+          "timer": [
+            {
+              "label": "Pilze braten",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "[[lauch|Lauch]], [[ingwer|Ingwer]] und Knoblauch ca. 5 Min. [[andaempfen|andämpfen]] und 2 EL davon fürs Topping zur Seite nehmen.",
+          "timer": [
+            {
+              "label": "Andämpfen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Das Tomatenpüree ca. 3 Min. mitdämpfen. Die restliche Sojasauce, [[nudeln-schaerfe|Chili Crunch]], Kokosmilch und Bouillon dazugeben und [[aufkochen-koecheln|aufkochen]]. Die [[nudeln-schaerfe|Nudeln]] und den [[edamame-tofu|Protein-Boost]] darin ca. 5 Min. kochen.",
+          "timer": [
+            {
+              "label": "Tomatenpüree mitdämpfen",
+              "min": 3
+            },
+            {
+              "label": "Nudeln kochen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Mit den Pilzen, dem Lauch-Topping, Chili Crunch und Sesam anrichten."
+        }
+      ],
+      "glossar": {
+        "austernpilze": {
+          "begriff": "Austernpilze",
+          "text": "Von Hand in Streifen zupfen statt schneiden. Nicht waschen oder einweichen – Pilze saugen sich mit Wasser voll. Schmutz mit einem Pinsel oder Küchenpapier entfernen. Die Pfanne nicht überfüllen (sonst dämpfen sie statt zu braten), nötigenfalls in zwei Portionen braten, bis sie goldbraun sind."
+        },
+        "lauch": {
+          "begriff": "Lauch",
+          "text": "Längs aufschneiden und unter fliessendem Wasser zwischen den Schichten den Sand auswaschen, dann in feine Ringe schneiden."
+        },
+        "ingwer": {
+          "begriff": "Ingwer",
+          "text": "Die Schale lässt sich mit der Kante eines Teelöffels abschaben – so geht kaum etwas verloren."
+        },
+        "eier-boost": {
+          "begriff": "Eier als Protein-Boost",
+          "text": "Statt in der Suppe zu kochen, kann man die Eier auch separat wachsweich kochen: in kochendes Wasser geben, 6½ Min. kochen, kalt abschrecken, schälen und halbiert auf die Ramen legen."
+        },
+        "edamame-tofu": {
+          "begriff": "Edamame & Tofu",
+          "text": "Am einfachsten sind bereits geschälte Edamame (z. B. tiefgekühlt). Tofu in Würfel schneiden und gut trockentupfen."
+        },
+        "nudeln-schaerfe": {
+          "begriff": "Nudeln & Schärfe",
+          "text": "Ramen-Nudeln nicht zu lange kochen, sonst werden sie weich – Packungsangabe beachten. Chili Crunch ist je nach Marke unterschiedlich scharf: lieber zuerst etwas weniger nehmen und beim Anrichten nachlegen."
+        }
+      }
+    },
+    {
+      "id": "kartoffel-tomaten-curry",
+      "titel": "Kartoffel-Tomaten-Curry",
+      "untertitel": "mit Protein-Boost ca. 20–25 g Protein pro Portion",
+      "quelle": {
+        "name": "",
+        "url": ""
+      },
+      "portionen_basis": 2,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 40,
+      "zeit_total_min": 55,
+      "schwierigkeit": "einfach",
+      "kueche": "Indisch",
+      "hauptzutat": "Kartoffeln",
+      "saison": [
+        "Herbst"
+      ],
+      "kategorien": [
+        "Herbst",
+        "Protein"
+      ],
+      "bild": {
+        "datei": "kartoffel-tomaten-curry.jpg",
+        "alt": "Kartoffel-Tomaten-Curry mit Kichererbsen, einem Klecks Joghurt und Pfefferminze in einer hellen Schale, daneben Fladenbrot"
+      },
+      "zutaten": [
+        {
+          "menge": 1.5,
+          "einheit": "",
+          "name": "Knoblauchzehen"
+        },
+        {
+          "menge": 15,
+          "einheit": "g",
+          "name": "Ingwer"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "gehackte Tomaten"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Erdnussöl"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "Zucker"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "EL",
+          "name": "gemahlener Koriander",
+          "gruppe": "Gewürze",
+          "abteilung": "Vorrat & Gewürze"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "EL",
+          "name": "Kurkuma",
+          "gruppe": "Gewürze"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Kreuzkümmel",
+          "gruppe": "Gewürze"
+        },
+        {
+          "menge": 0.125,
+          "einheit": "TL",
+          "name": "Chili",
+          "gruppe": "Gewürze"
+        },
+        {
+          "menge": 0.75,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Gewürze"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "dl",
+          "name": "Wasser",
+          "einkaufen": false
+        },
+        {
+          "menge": 300,
+          "einheit": "g",
+          "name": "mehligkochende Kartoffeln"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Zimt"
+        },
+        {
+          "menge": 70,
+          "einheit": "g",
+          "name": "Joghurt"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfefferminze"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "Kichererbsen",
+          "vor": "als Protein-Boost",
+          "oder": [
+            {
+              "menge": 80,
+              "einheit": "g",
+              "name": "rote Linsen"
+            }
+          ]
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Knoblauch und [[ingwer-kurkuma|Ingwer]] mit ca. 100 g der Tomaten pürieren."
+        },
+        {
+          "text": "Die Zwiebel in Streifen schneiden und ca. 5 Min. in Öl [[andaempfen|andämpfen]]. Das Püree dazugeben und 5 Min. mitdämpfen.",
+          "timer": [
+            {
+              "label": "Zwiebel andämpfen",
+              "min": 5
+            },
+            {
+              "label": "Püree mitdämpfen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Die restlichen Tomaten, den Zucker und die [[gewuerze|Gewürze]] dazugeben und 5 Min. [[aufkochen-koecheln|köcheln]] lassen.",
+          "timer": [
+            {
+              "label": "Köcheln",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Wasser, [[kartoffeln|Kartoffelstücke]] und den [[kichererbsen|Protein-Boost]] dazugeben und zugedeckt ca. 25 Min. köcheln lassen. Den Zimt untermischen.",
+          "timer": [
+            {
+              "label": "Curry köcheln",
+              "min": 25
+            }
+          ]
+        },
+        {
+          "text": "Mit [[joghurt|Joghurt]] und Pfefferminze anrichten. Dazu passt Fladenbrot."
+        }
+      ],
+      "glossar": {
+        "kartoffeln": {
+          "begriff": "Mehligkochende Kartoffeln",
+          "text": "Sie zerfallen beim Köcheln leicht und binden so die Sauce schön sämig. Schälen und in gleich grosse Stücke (ca. 2–3 cm) schneiden, damit alle gleichzeitig weich sind."
+        },
+        "rote-linsen": {
+          "begriff": "Rote Linsen",
+          "text": "Kurz in einem Sieb abspülen. Sie quellen und brauchen dafür Flüssigkeit: Wird das Curry zu dick, einfach etwas Wasser nachgiessen. Gelegentlich umrühren, damit nichts ansetzt."
+        },
+        "kichererbsen": {
+          "begriff": "Kichererbsen",
+          "text": "In einem Sieb abgiessen und unter kaltem Wasser abspülen."
+        },
+        "gewuerze": {
+          "begriff": "Gewürze",
+          "text": "Wer mag, röstet die trockenen Gewürze vor dem Dazugeben ca. 30 Sek. kurz im Öl an – das setzt Aromen frei. Aber nicht zu lange: Verbrannte Gewürze werden bitter."
+        },
+        "ingwer-kurkuma": {
+          "begriff": "Ingwer & Kurkuma",
+          "text": "Ingwer mit einem Teelöffel schälen. Kurkuma färbt stark – Schneidebrett und Kleider schützen."
+        },
+        "joghurt": {
+          "begriff": "Joghurt",
+          "text": "Erst beim Anrichten dazugeben und nicht mitkochen, sonst kann er gerinnen."
+        }
       }
     }
   ]
