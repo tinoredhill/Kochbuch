@@ -363,6 +363,12 @@ function gekochtZurueck(datum) {
   if (e.rid && zuletztVon(e.rid) === e.gekocht) Store.update('zuletzt', [], l => { const r = l.filter(x => x.rid !== e.rid); if (e.vorher) r.push({ rid: e.rid, ts: e.vorher }); return r.sort((a, b) => b.ts - a.ts); });
   planAendern(p => { delete p[datum].gekocht; delete p[datum].vorher; });
 }
+/* v9.1c: Vorrat nachführen auch aus Rezept «Gekocht» und Plan-Häkchen (nicht nur Kochmodus) */
+function vorratNachfuehren(rid, portionen) {
+  const r = R[rid]; if (!r || typeof vrNachKochenSheet !== 'function') return;
+  const f = factorOf(r, portionen != null ? portionen : getScale(r));
+  setTimeout(() => { vrNachKochenSheet(r, f); }, 0);   // nach Store-subscribe/render, sonst wird das Sheet weggedrückt
+}
 
 /* Vorschläge: Favoriten, lange nicht gekocht, Saison */
 function vorschlaege(ausser) {
@@ -944,14 +950,20 @@ document.addEventListener('click', e => {
   if ('gewohnheiten' in d) return gewohnheitenSheet();
   if (d.gwtag) return wahlSheet({ tag: d.gwtag });
   if (d.gwweg) { Store.update('gewohnheiten', {}, g => { delete g[d.gwweg]; return g; }); return gewohnheitenSheet(); }
-  if (d.gk) { const tp = tagesplan(), en = tp[d.gk]; if (!en) return; const war = !$('#sheet').hidden; if (en.gekocht) gekochtZurueck(d.gk); else gekochtMarkieren(en.rid || null, d.gk); if (war) closeSheet(); return; }
+  if (d.gk) {   // v9.1c: beim Abhaken Vorrat nachführen (nicht beim Zurücknehmen)
+    const tp = tagesplan(), en = tp[d.gk]; if (!en) return; const war = !$('#sheet').hidden;
+    if (en.gekocht) { gekochtZurueck(d.gk); if (war) closeSheet(); return; }
+    gekochtMarkieren(en.rid || null, d.gk); if (war) closeSheet();
+    if (en.rid) vorratNachfuehren(en.rid, en.portionen || defaultScale(R[en.rid]));
+    return;
+  }
   if (d.eintrag) return eintragSheet(d.eintrag);
   if (d.wfilter) { ui.wahl.filter = ui.wahl.filter === d.wfilter ? null : d.wfilter; document.querySelectorAll('[data-wfilter]').forEach(b => { const on = b.dataset.wfilter === ui.wahl.filter; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }); $('#wahlErgebnis').innerHTML = wahlErgebnis(); return; }
   if (d.filter) { ui.filter[d.filter] === d.wert ? delete ui.filter[d.filter] : ui.filter[d.filter] = d.wert; return render(true); }
   if ('filterweg' in d) { ui.filter = {}; return render(true); }
   if (d.scale) { const r = R[route.id]; scaleState[r.id] = stepScale(r, getScale(r), +d.scale); return render(true); }
   if (d.woche) return dieseWoche(d.woche);
-  if (d.gekocht) return gekochtMarkieren(d.gekocht);
+  if (d.gekocht) { gekochtMarkieren(d.gekocht); vorratNachfuehren(d.gekocht); return; }   // v9.1c
   if (d.fertig) { gekochtMarkieren(d.fertig); const r = R[d.fertig]; nachKochenOffen = r ? { r, f: factorOf(r, getScale(r)) } : null; location.hash = '#/rezept/' + d.fertig; return; }   // v9.1: danach Vorrat nachführen
   if (d.tagwahl) return setzeTag(d.rid || null, d.von || null, d.tagwahl);
   if (d.verschieben) { const en = tagesplan()[d.verschieben]; return en && tagWahl(en.rid || null, d.verschieben, 'Auf welchen Tag verschieben?'); }
