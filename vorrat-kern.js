@@ -1,5 +1,5 @@
 'use strict';
-/* Kochbuch v9 – Vorrat: reine Logik ohne Anzeige (auch in Node testbar: tests/vorrat.test.mjs).
+/* Kochbuch v9.1 – Vorrat: reine Logik ohne Anzeige (auch in Node testbar: tests/vorrat.test.mjs).
    Daten unter dem NEUEN Schlüssel «vorrat» (synchronisiert): { <id>: Eintrag }
      id:  'c:<Strichcode>'  Produkt mit Code (gleicher Code = gleicher Eintrag, auf allen Geräten)
           'f:<frisch-id>'   Frischware aus der Auswahlliste (z.B. f:aepfel)
@@ -39,20 +39,45 @@
   ];
   /* Namens-Wörter (gleicher Inhalt wie WOERTER in app.js) – Fallback ohne Browser. */
   const WOERTER = {
-    'Gemüse & Früchte': 'gemüse frucht früchte wurzel schwarzwurzel pastinake karotte rüebli kartoffel zwiebel knoblauch lauch ingwer kürbis pilz pilze austernpilze champignon tomate tomaten salat spinat gurke zucchetti peperoni broccoli blumenkohl kohl sellerie fenchel randen limette zitrone orange apfel äpfel birne banane bananen beeren trauben passionsfrucht avocado kräuter minze pfefferminze koriander petersilie basilikum schnittlauch thymian rosmarin dill',
+    'Gemüse & Früchte': 'gemüse frucht früchte wurzel schwarzwurzel pastinake karotte rüebli kartoffel zwiebel knoblauch lauch ingwer kürbis pilz pilze austernpilze champignon tomate tomaten salat spinat gurke zucchetti peperoni broccoli blumenkohl kohl sellerie fenchel randen limette zitrone zitronensaft limettensaft orange apfel äpfel birne banane bananen beeren trauben passionsfrucht avocado kräuter minze pfefferminze koriander petersilie basilikum schnittlauch thymian rosmarin dill',
     'Fleisch & Fisch': 'fleisch rind rindfleisch rindsplätzli plätzli steak hackfleisch hack poulet huhn hähnchen schwein speck schinken wurst salami lamm kalb lachs fisch forelle crevetten thon',
     'Milchprodukte & Eier': 'milch vollmilch butter käse rahm sauerrahm joghurt quark ei eier mozzarella parmesan feta mascarpone hüttenkäse tofu',
-    'Brot & Backwaren': 'brot zopf gipfeli toast fladenbrot brötchen tortilla',
+    'Brot & Backwaren': 'brot zopf gipfeli toast fladenbrot brötchen tortilla butterzopf butterbrot buttergipfeli butterbrezel butterzöpfli',
     'Vorrat & Gewürze': 'salz pfeffer zucker mehl reis nudeln pasta spaghetti ramen ramen-nudeln linsen kichererbsen bohnen dose bouillon gewürz gewürze zimt kurkuma kreuzkümmel chili paprika sesam nüsse mandeln honig kaffee tee kokosmilch tomatenpüree gehackte haferflocken',
     'Öl & Saucen': 'öl olivenöl sesamöl erdnussöl rapsöl sauce teriyaki-sauce sojasauce austernsauce essig senf ketchup mayonnaise miso miso-paste chili crunch',
     'Tiefkühl': 'tiefkühl tiefgekühlt glace tk',
     'Getränke': 'wasser mineralwasser saft wein bier sirup',
     'Diverses': 'zahnpasta zahnbürste shampoo seife duschmittel waschmittel wc-papier toilettenpapier haushaltpapier küchenpapier abwaschmittel schwamm alufolie backpapier'
   };
+  /* v9.1 Zuordnung – gleiche Regel wie bester() in app.js:
+     1. Treffer sammeln: Wörter bis 3 Buchstaben nur als ganzes Wort, längere auch in Zusammensetzungen.
+     2. Verdeckt: steckt ein Treffer an derselben Stelle ganz in einem längeren Treffer, zählt er nicht (milch in kokosmilch).
+     3. Kopfwort: im Deutschen bestimmt das letzte Glied (Butterzopf = Zopf). Ein Treffer am Wortende
+        (danach höchstens 2 Buchstaben, z.B. Mehrzahl «-n») schlägt Treffer vorne oder in der Mitte.
+     4. Sonst das längere Wort, bei Gleichstand das weiter hinten. */
+  const BUCHST = /[a-zäöüéèàâçß]/;
   function besterWort(name, tabelle) {
+    const n = String(name || '').toLowerCase(), hits = [];
+    const grenze = i => i < 0 || i >= n.length || !BUCHST.test(n[i]);
+    for (const [ziel, liste] of Object.entries(tabelle)) for (const w of liste.split(' ')) {
+      if (!w) continue;
+      for (let i = n.indexOf(w); i >= 0; i = n.indexOf(w, i + 1)) {
+        if (w.length <= 3 && !(grenze(i - 1) && grenze(i + w.length))) continue;
+        let ende = i + w.length; while (ende < n.length && BUCHST.test(n[ende])) ende++;
+        hits.push({ ziel, a: i, b: i + w.length, len: w.length, kopf: ende - (i + w.length) <= 2 });
+      }
+    }
+    const frei = hits.filter(h => !hits.some(g => g.len > h.len && g.a <= h.a && g.b >= h.b));
+    frei.sort((x, y) => (y.kopf - x.kopf) || (y.len - x.len) || (y.a - x.a));
+    return frei.length ? frei[0].ziel : null;
+  }
+  /* Regel bis v9 (längstes Wort gewinnt blind) – nur um alte, automatisch gespeicherte abt zu erkennen. */
+  const NEU_V91 = new Set(['butterzopf', 'butterbrot', 'buttergipfeli', 'butterbrezel', 'butterzöpfli']);
+  function besterWortV9(name) {
     const n = String(name || '').toLowerCase(), worte = n.split(/[^a-zäöüéèàß-]+/);
     let best = null, len = 0;
-    for (const [ziel, liste] of Object.entries(tabelle)) for (const w of liste.split(' ')) {
+    for (const [ziel, liste] of Object.entries(WOERTER)) for (const w of liste.split(' ')) {
+      if (NEU_V91.has(w)) continue;
       const treffer = w.length <= 3 ? worte.includes(w) : n.includes(w);
       if (treffer && w.length > len) { best = ziel; len = w.length; }
     }
@@ -68,7 +93,14 @@
      fest=true: manuell gesetzt, nicht überschreiben (Aufrufer entscheidet). */
   function abtVon(e, tags) {
     if (!e) return 'Diverses';
-    if (e.abt && ABT.includes(e.abt)) return e.abt;
+    if (e.abt && ABT.includes(e.abt)) {
+      // Von Hand gewählt (abtHand, ab v9.1) oder Frischware: immer behalten.
+      if (e.abtHand || e.frisch) return e.abt;
+      // v9 hat abt ohne Kennzeichen automatisch gespeichert. Nur wenn es GENAU dem alten Namens-Ergebnis entspricht,
+      // war es automatisch -> neue Regel anzeigen (z.B. Butterzopf). Alles andere (von Hand korrigiert, aus OFF-Kategorien) bleibt.
+      if (e.abt === (besterWortV9(e.name) || 'Diverses')) return besterWort(e.name, WOERTER) || 'Diverses';
+      return e.abt;
+    }
     if (e.frisch) return 'Gemüse & Früchte';
     const ausTags = abtAusTags(tags || e.categories_tags);
     if (ausTags) return ausTags;
@@ -78,6 +110,14 @@
       if (a && ABT.includes(a)) return a;
     }
     return besterWort(e.name, WOERTER) || 'Diverses';
+  }
+  /* Encoding-Fehler aus Open Food Facts (UTF-8 als Latin-1 gelesen, «Ã¼» statt «ü») zurückbiegen. */
+  const MOJI = [['Ã¼', 'ü'], ['Ã¶', 'ö'], ['Ã¤', 'ä'], ['Ãœ', 'Ü'], ['Ã–', 'Ö'], ['Ã„', 'Ä'], ['Ã©', 'é'], ['Ã¨', 'è'], ['Ã¢', 'â'], ['Ã§', 'ç'], ['ÃŸ', 'ß'], ['Ã\u00a0', 'à']];
+  function textFix(s) { s = String(s == null ? '' : s); if (s.includes('Ã')) for (const [a, b] of MOJI) s = s.split(a).join(b); return s; }
+  /* Marke säubern (nicht aggressiv): Encoding-Fehler, Leerzeichen, «Cooü»/«coop» -> «Coop». Andere Marken bleiben wie sie sind. */
+  function markeSchoen(s) {
+    s = textFix(s).replace(/\s+/g, ' ').trim();
+    return s.replace(/(^|[^a-zäöüéèàâçß])coo(?:[üÜ]|p)(?=$|[^a-zäöüéèàâçß])/gi, '$1Coop');
   }
   /* Namen schön schreiben: bei komplett kleinem Text jedes Wort gross; sonst nur ersten Buchstaben.
      Umlaute bleiben; Marken mit Grossbuchstaben werden nicht umgeschrieben. Frischware-Namen nicht hier durchjagen. */
@@ -107,8 +147,8 @@
   function offAuswerten(j) {
     if (!j || j.status !== 1 || !j.product) return null;
     const p = j.product;
-    const nameRoh = String(p.product_name_de || p.product_name || p.generic_name_de || p.generic_name || '').trim();
-    const marke = String(p.brands || '').split(',')[0].trim();
+    const nameRoh = textFix(p.product_name_de || p.product_name || p.generic_name_de || p.generic_name || '').trim();
+    const marke = markeSchoen(String(p.brands || '').split(',')[0]);
     const bild = /^https:\/\//.test(p.image_front_small_url || '') ? p.image_front_small_url : (/^https:\/\//.test(p.image_small_url || '') ? p.image_small_url : '');
     let packung = null, einheit = null;
     const q = Number(p.product_quantity), u = String(p.product_quantity_unit || '').toLowerCase();
@@ -194,7 +234,7 @@
     const hatPack = !!p.packung;
     const name = nameSchoen(p.name || 'Unbekanntes Produkt');
     const abt = p.abt && ABT.includes(p.abt) ? p.abt : abtVon({ name, categories_tags: p.categories_tags }, p.categories_tags);
-    const e = sauber({ code, name, marke: p.marke, bild: p.bild, ort: ORTNAME[ort] ? ort : 'kuehlschrank', stueck: 1,
+    const e = sauber({ code, name, marke: p.marke ? markeSchoen(p.marke) : p.marke, bild: p.bild, ort: ORTNAME[ort] ? ort : 'kuehlschrank', stueck: 1,
       packung: p.packung, einheit: hatPack ? p.einheit : null, menge: hatPack ? p.packung : null, abt,
       wenigAb: wenigAbDefault(hatPack && (p.einheit === 'g' || p.einheit === 'ml') ? p.einheit : 'stueck') });
     v[id] = stempel(e, wer, jetzt); return { v, id, neu: true };
@@ -217,8 +257,89 @@
       return { ort: o, name, icon, eintraege, gruppen };
     });
   }
+  /* v9.1 Rezept-Zutat schon im Vorrat? Ohne KI, nur Wortvergleich:
+     Wörter klein, ohne Akzente/Umlaute, einfache Mehrzahl-Endung weg (Kartoffeln = Kartoffel, Äpfel = Apfel).
+     Treffer, wenn ein Wort gleich ist (alle Wörter gleich = bester Treffer) ODER das kürzere Wort (mind. 4 Buchstaben) mit einer
+     harmlosen Vorsilbe am Ende des längeren steht UND beide in derselben Abteilung landen (Vollmilch ↔ Milch ja, Kokosmilch ↔ Milch nein).
+     Nur Einträge mit Bestand > 0 (stueck > 0). */
+  const STOPP = new Set('und oder mit ohne von vom zum zur fur frisch frische frischer frisches fein feine gross grosse klein kleine bio rot rote roter gelb gelbe grun grune gruner weiss weisse etwas nach belieben servieren gemahlen gemahlener getrocknet getrocknete'.split(' '));
+  /* Kopf-Treffer nur mit harmloser Vorsilbe (Vollmilch ↔ Milch, Cherrytomaten ↔ Tomaten), nicht Knoblauch ↔ Lauch. */
+  const VORSILBE = new Set('voll halb mager magermilch vollrahm halbrahm bio weiss ruch dinkel vollkorn roh frisch extra cherry cocktail rispen jung alpen berg land'.split(' '));
+  const NACHSILBE = new Set('zeh zehe zehen knoll knolle stang stange stangen wurfel scheib scheibe scheiben'.split(' '));
+  const stamm = w => w.length > 4 ? w.replace(/(en|n|e|s)$/, '') : w;
+  const worteVon = s => normT(textFix(s)).split(/[^a-z]+/).filter(w => w.length >= 3 && !STOPP.has(w)).map(stamm);
+  function passt(zName, e) {
+    const zw = worteVon(zName), ew = worteVon(e.name);
+    if (!zw.length || !ew.length) return 0;
+    if (zw.some(a => ew.includes(a))) return zw.every(a => ew.includes(a)) && ew.every(b => zw.includes(b)) ? 3 : 2;
+    const za = besterWort(zName, WOERTER), ea = abtVon(e);
+    if (!za || za !== ea) return 0;
+    const kopf = (a, b) => a.length >= 4 && b.endsWith(a) && VORSILBE.has(b.slice(0, -a.length));
+    const teil = (a, b) => a.length >= 4 && b.startsWith(a) && NACHSILBE.has(b.slice(a.length));   // Knoblauchzehe ↔ Knoblauch
+    return zw.some(a => ew.some(b => kopf(a, b) || kopf(b, a) || teil(a, b) || teil(b, a))) ? 1 : 0;
+  }
+  function imVorrat(zName, v) {
+    const liste = Object.entries(v || {}).filter(([, e]) => e && (e.stueck || 0) > 0).map(([id, e]) => [id, e, passt(zName, e)]).filter(x => x[2]);
+    if (!liste.length) return null;
+    const best = Math.max(...liste.map(x => x[2]));
+    return liste.filter(x => x[2] === best).map(([id, e]) => [id, e]);
+  }
+  /* Mengen-Hinweis nur wenn klar vergleichbar: Rezept in g/kg bzw. ml/cl/dl/l und alle Treffer mit Gesamtmenge derselben Art,
+     oder Rezept in Stück (ohne Einheit) und kein Treffer mit Gesamtmenge. Sonst null (kein Warntext). */
+  const UMR = { g: [1, 'g'], kg: [1000, 'g'], ml: [1, 'ml'], cl: [10, 'ml'], dl: [100, 'ml'], l: [1000, 'ml'] };
+  function vorratReicht(menge, einheit, treffer) {
+    if (!treffer || !treffer.length || typeof menge !== 'number' || !(menge > 0)) return null;
+    const u = String(einheit || '').trim().toLowerCase();
+    if (!u) {
+      if (treffer.some(([, e]) => e.menge != null)) return null;
+      const hat = treffer.reduce((s, [, e]) => s + (e.stueck || 0), 0);
+      return { reicht: hat >= menge, hat, einheit: 'Stück' };
+    }
+    const k = UMR[u]; if (!k) return null;
+    if (!treffer.every(([, e]) => e.menge != null && e.einheit === k[1])) return null;
+    const hat = treffer.reduce((s, [, e]) => s + (e.menge || 0), 0);
+    return { reicht: hat >= menge * k[0], hat, einheit: k[1] };
+  }
+  /* v9.1 Nach dem Kochen: welche Vorrats-Einträge passen zu den Rezept-Zutaten (Bestand > 0)? Jeder Eintrag nur einmal.
+     f = Portionen-Faktor; need = benötigte Menge, wenn vergleichbar (sonst null). */
+  function kochTreffer(zutaten, v, f) {
+    const aus = [], ids = new Set(); f = f || 1;
+    for (const z of zutaten || []) {
+      const tr = imVorrat(z.name, v); if (!tr) continue;
+      for (const [id, e] of tr) {
+        if (ids.has(id)) continue; ids.add(id);
+        const rr = z.je || z.menge == null ? null : vorratReicht(z.menge * f, z.einheit, [[id, e]]);
+        let need = null;
+        if (rr) { const u = String(z.einheit || '').trim().toLowerCase(); need = Math.round(z.menge * f * (UMR[u] ? UMR[u][0] : 1)); }
+        aus.push({ id, e, zutat: z.name, need, basis: (e.menge != null && (e.einheit === 'g' || e.einheit === 'ml')) ? e.einheit : 'stueck' });
+      }
+    }
+    return aus;
+  }
+  /* Vorschlag für «Rest»: Bestand minus Rezeptmenge, wenn vergleichbar; sonst der jetzige Bestand. */
+  function restVorschlag(t) {
+    const hat = t.basis === 'stueck' ? (t.e.stueck || 0) : (t.e.menge || 0);
+    return t.need != null ? Math.max(0, hat - t.need) : hat;
+  }
+  /* Wahl anwenden: { id: 'aus' } -> Eintrag löschen (Bestand 0 = weg, Entscheid Tino);
+     { id: { rest: n } } -> Rest setzen (Stück, oder Gesamtmenge g/ml; Stück dann aus Packung gerundet); n <= 0 -> löschen. */
+  function nachKochen(v, wahl, wer, jetzt) {
+    v = Object.assign({}, v || {});
+    for (const [id, w] of Object.entries(wahl || {})) {
+      const e = v[id]; if (!e) continue;
+      if (w === 'aus') { delete v[id]; continue; }
+      if (!w || typeof w.rest !== 'number' || !Number.isFinite(w.rest)) continue;
+      const r = Math.max(0, Math.round(w.rest));
+      if (r <= 0) { delete v[id]; continue; }
+      const x = Object.assign({}, e);
+      if (x.menge != null && (x.einheit === 'g' || x.einheit === 'ml')) { x.menge = r; x.stueck = x.packung ? Math.max(1, Math.ceil(r / x.packung)) : Math.max(1, x.stueck || 0); }
+      else x.stueck = r;
+      v[id] = stempel(x, wer, jetzt);
+    }
+    return v;
+  }
   function wenigListe(v, q) { return Object.entries(v || {}).filter(([, e]) => e && wenig(e) && trifft(e, q)).sort(vergleich); }
-  const api = { ORTE, ORTNAME, FRISCH, FRISCH_ORT, ABT, WENIG_STUECK, WENIG_MENGE, codeOk, codeNorm, offAuswerten, nameSchoen, abtVon, abtAusTags,
-    wenigBasis, wenigAbDefault, wenigAbVon, wenig, wenigAbText, wenigAbRange, wenigAbNorm, plus, stempel, scanDazu, frischDazu, gruppiert, wenigListe, trifft, sauber };
+  const api = { ORTE, ORTNAME, FRISCH, FRISCH_ORT, ABT, WOERTER, WENIG_STUECK, WENIG_MENGE, codeOk, codeNorm, offAuswerten, nameSchoen, markeSchoen, textFix, besterWort, abtVon, abtAusTags,
+    wenigBasis, wenigAbDefault, wenigAbVon, wenig, wenigAbText, wenigAbRange, wenigAbNorm, plus, stempel, scanDazu, frischDazu, gruppiert, wenigListe, trifft, sauber, imVorrat, vorratReicht, kochTreffer, restVorschlag, nachKochen };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else global.VorratKern = api;
 })(typeof window !== 'undefined' ? window : globalThis);

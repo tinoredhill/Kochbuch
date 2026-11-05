@@ -15,12 +15,12 @@ const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\u030
 /* ---------- Ladenabteilungen und Zutaten-Icons ---------- */
 const ABT = ['Gemüse & Früchte', 'Fleisch & Fisch', 'Milchprodukte & Eier', 'Brot & Backwaren', 'Vorrat & Gewürze', 'Öl & Saucen', 'Tiefkühl', 'Getränke', 'Diverses'];
 const ABT_ICON = { 'Gemüse & Früchte': 'carrot', 'Fleisch & Fisch': 'meat', 'Milchprodukte & Eier': 'milk', 'Brot & Backwaren': 'bread', 'Vorrat & Gewürze': 'jar', 'Öl & Saucen': 'bottle', 'Tiefkühl': 'snow', 'Getränke': 'glass', 'Diverses': 'bag' };
-// Wörterliste: das längste passende Wort gewinnt (z.B. «pfefferminze» vor «pfeffer», «kokosmilch» vor «milch»)
+// Wörterliste: Regel siehe bester() (Kopfwort am Wortende, verdeckte Teilwörter zählen nicht, z.B. «kokosmilch» vor «milch»)
 const WOERTER = {
-  'Gemüse & Früchte': 'gemüse frucht früchte wurzel schwarzwurzel pastinake karotte rüebli kartoffel zwiebel knoblauch lauch ingwer kürbis pilz pilze austernpilze champignon tomate tomaten salat spinat gurke zucchetti peperoni broccoli blumenkohl kohl sellerie fenchel randen limette zitrone orange apfel äpfel birne banane bananen beeren trauben passionsfrucht avocado kräuter minze pfefferminze koriander petersilie basilikum schnittlauch thymian rosmarin dill',
+  'Gemüse & Früchte': 'gemüse frucht früchte wurzel schwarzwurzel pastinake karotte rüebli kartoffel zwiebel knoblauch lauch ingwer kürbis pilz pilze austernpilze champignon tomate tomaten salat spinat gurke zucchetti peperoni broccoli blumenkohl kohl sellerie fenchel randen limette zitrone zitronensaft limettensaft orange apfel äpfel birne banane bananen beeren trauben passionsfrucht avocado kräuter minze pfefferminze koriander petersilie basilikum schnittlauch thymian rosmarin dill',
   'Fleisch & Fisch': 'fleisch rind rindfleisch rindsplätzli plätzli steak hackfleisch hack poulet huhn hähnchen schwein speck schinken wurst salami lamm kalb lachs fisch forelle crevetten thon',
   'Milchprodukte & Eier': 'milch vollmilch butter käse rahm sauerrahm joghurt quark ei eier mozzarella parmesan feta mascarpone hüttenkäse tofu',
-  'Brot & Backwaren': 'brot zopf gipfeli toast fladenbrot brötchen tortilla',
+  'Brot & Backwaren': 'brot zopf gipfeli toast fladenbrot brötchen tortilla butterzopf butterbrot buttergipfeli butterbrezel butterzöpfli',
   'Vorrat & Gewürze': 'salz pfeffer zucker mehl reis nudeln pasta spaghetti ramen ramen-nudeln linsen kichererbsen bohnen dose bouillon gewürz gewürze zimt kurkuma kreuzkümmel chili paprika sesam nüsse mandeln honig kaffee tee kokosmilch tomatenpüree gehackte haferflocken',
   'Öl & Saucen': 'öl olivenöl sesamöl erdnussöl rapsöl sauce teriyaki-sauce sojasauce austernsauce essig senf ketchup mayonnaise miso miso-paste chili crunch',
   'Tiefkühl': 'tiefkühl tiefgekühlt glace tk',
@@ -33,14 +33,25 @@ const ICON_WOERTER = {
   fish: 'fisch lachs crevetten thon', bottle: 'öl sesamöl olivenöl erdnussöl', sauce: 'sauce teriyaki-sauce sojasauce essig', salt: 'salz pfeffer', milk: 'milch', bread: 'brot zopf',
   egg: 'ei eier', butter: 'butter', cheese: 'käse', yogurt: 'joghurt', coffee: 'kaffee', roll: 'wc-papier toilettenpapier'
 };
+/* v9.1 – gleiche Regel wie besterWort() in vorrat-kern.js:
+   1. Treffer sammeln (Wörter bis 3 Buchstaben nur als ganzes Wort). 2. Treffer, die ganz in einem längeren Treffer an derselben
+   Stelle stecken, zählen nicht (milch in kokosmilch). 3. Kopfwort am Wortende gewinnt (Butterzopf = Zopf, Apfelsaft = Saft).
+   4. Sonst das längere, bei Gleichstand das hintere Wort. */
+const BUCHST = /[a-zäöüéèàâçß]/;
 function bester(name, tabelle) {
-  const n = name.toLowerCase(), worte = n.split(/[^a-zäöüéèàß-]+/);
-  let best = null, len = 0;
+  const n = String(name || '').toLowerCase(), hits = [];
+  const grenze = i => i < 0 || i >= n.length || !BUCHST.test(n[i]);
   for (const [ziel, liste] of Object.entries(tabelle)) for (const w of liste.split(' ')) {
-    const treffer = w.length <= 3 ? worte.includes(w) : n.includes(w);
-    if (treffer && w.length > len) { best = ziel; len = w.length; }
+    if (!w) continue;
+    for (let i = n.indexOf(w); i >= 0; i = n.indexOf(w, i + 1)) {
+      if (w.length <= 3 && !(grenze(i - 1) && grenze(i + w.length))) continue;
+      let ende = i + w.length; while (ende < n.length && BUCHST.test(n[ende])) ende++;
+      hits.push({ ziel, a: i, b: i + w.length, len: w.length, kopf: ende - (i + w.length) <= 2 });
+    }
   }
-  return best;
+  const frei = hits.filter(h => !hits.some(g => g.len > h.len && g.a <= h.a && g.b >= h.b));
+  frei.sort((x, y) => (y.kopf - x.kopf) || (y.len - x.len) || (y.a - x.a));
+  return frei.length ? frei[0].ziel : null;
 }
 const abteilungVon = (name, fest) => fest || bester(name, WOERTER) || 'Diverses';
 const iconVon = (name, abt) => bester(name, ICON_WOERTER) || ABT_ICON[abt] || 'bag';
@@ -72,12 +83,22 @@ function zutatTeile(z, f) {
   if (z.notiz) n += ', ' + esc(z.notiz);
   return [m, n];
 }
+/* v9.1: Zutat schon im Vorrat (Bestand > 0)? Abgleich in vorrat-kern.js (imVorrat, ohne KI). Mengen-Hinweis nur wenn klar vergleichbar. */
+function vorratMarke(z, f, v) {
+  const VKx = window.VorratKern; if (!VKx || !v || !Object.keys(v).length) return '';
+  const tr = VKx.imVorrat(z.name, v); if (!tr) return '';
+  const orte = [...new Set(tr.map(([, e]) => VKx.ORTNAME[e.ort] || ''))].filter(Boolean).join(', ');
+  const rr = z.je || z.menge == null ? null : VKx.vorratReicht(scaled(z.menge, z.einheit, f), z.einheit, tr);
+  if (rr && !rr.reicht) return `<span class="imv wenig" title="${esc(orte)}">${ico('check')}im Vorrat: nur ${esc(num(rr.hat))} ${esc(rr.einheit)}</span>`;
+  return `<span class="imv" title="${esc(orte)}">${ico('check')}im Vorrat</span>`;
+}
 function zutatenListe(r, f) {
   let g = null, html = '';
+  const v = Store.get('vorrat', {});
   for (const z of r.zutaten) {
     if ((z.gruppe || null) !== g) { g = z.gruppe || null; if (g) html += `<li class="gruppe">${esc(g)}</li>`; }
-    const [m, n] = zutatTeile(z, f);
-    html += `<li class="${z.gruppe ? 'in-gruppe' : ''}">${z.vor ? `<span class="vor">${esc(z.vor)}</span>` : ''}<span class="m">${m}</span><span class="n">${n}</span></li>`;   // «vor» steht wie in der Vorlage vor der Menge
+    const [m, n] = zutatTeile(z, f), iv = vorratMarke(z, f, v);
+    html += `<li class="${z.gruppe ? 'in-gruppe' : ''}${iv ? ' im-vorrat' : ''}">${z.vor ? `<span class="vor">${esc(z.vor)}</span>` : ''}<span class="m">${m}</span><span class="n">${n}${iv}</span></li>`;   // «vor» steht wie in der Vorlage vor der Menge
   }
   return `<ul class="zut">${html}</ul>`;
 }
@@ -893,7 +914,9 @@ function render(keepScroll) {
   if (fokus && ['suche', 'wsuche', 'addTxt', 'codeTxt'].includes(fokus) && $('#' + fokus)) { const i = $('#' + fokus); i.focus(); try { i.setSelectionRange(sel, sel); } catch (e) {} }
   if (keepScroll && prev.v === route.v && prev.id === route.id && prev.nr === route.nr) window.scrollTo(0, y); else window.scrollTo(0, 0);
 }
-window.addEventListener('hashchange', () => { if (linkPruefen()) { render(); return; } closeSheet(); $('#toast').hidden = true; render(); });
+let nachKochenOffen = null;   // v9.1: nach «Gekocht» im Kochmodus das Sheet «Vorrat nachführen» zeigen (nur wenn Zutaten im Vorrat)
+window.addEventListener('hashchange', () => { if (linkPruefen()) { render(); return; } closeSheet(); $('#toast').hidden = true; render();
+  if (nachKochenOffen) { const n = nachKochenOffen; nachKochenOffen = null; if (route.v === 'rezept' && typeof vrNachKochenSheet === 'function') vrNachKochenSheet(n.r, n.f); } });
 $('#nav').addEventListener('click', e => { const b = e.target.closest('button'); if (b) location.hash = b.dataset.v === 'rezepte' ? '#/' : '#/' + b.dataset.v; });
 ['plan', 'tagesplan', 'gewohnheiten', 'bewertungen', 'vorrat', 'einkauf_eigen', 'einkauf_haken', 'einkauf_weg', 'notizen', 'favoriten', 'zuletzt', 'timer', 'einstellungen'].forEach(k => Store.subscribe(k, () => {
   if (k === 'plan' || k === 'favoriten' || k === 'notizen') wartung();   // v6-Gerät hat etwas geändert -> übernehmen   // ein v6-Gerät hat etwas eingeplant -> übernehmen
@@ -929,7 +952,7 @@ document.addEventListener('click', e => {
   if (d.scale) { const r = R[route.id]; scaleState[r.id] = stepScale(r, getScale(r), +d.scale); return render(true); }
   if (d.woche) return dieseWoche(d.woche);
   if (d.gekocht) return gekochtMarkieren(d.gekocht);
-  if (d.fertig) { gekochtMarkieren(d.fertig); location.hash = '#/rezept/' + d.fertig; return; }
+  if (d.fertig) { gekochtMarkieren(d.fertig); const r = R[d.fertig]; nachKochenOffen = r ? { r, f: factorOf(r, getScale(r)) } : null; location.hash = '#/rezept/' + d.fertig; return; }   // v9.1: danach Vorrat nachführen
   if (d.tagwahl) return setzeTag(d.rid || null, d.von || null, d.tagwahl);
   if (d.verschieben) { const en = tagesplan()[d.verschieben]; return en && tagWahl(en.rid || null, d.verschieben, 'Auf welchen Tag verschieben?'); }
   if (d.wahl) return wahlSheet({ datum: d.wahl });

@@ -100,6 +100,22 @@ ul.zut li{display:grid;grid-template-columns:minmax(78px,auto) 1fr;gap:14px;padd
 ul.zut li:last-child{border-bottom:0}
 ul.zut .m{font-weight:700;white-space:nowrap}
 ul.zut li.gruppe{display:block;border-bottom:0;padding:14px 0 2px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+/* v9.1 Nach dem Kochen */
+ul.vr-nach{list-style:none;padding:0;margin:8px 0 14px}
+ul.vr-nach li{padding:10px 0;border-bottom:1px solid var(--line)}
+ul.vr-nach li:last-child{border-bottom:0}
+.vr-nachkopf strong{display:block;font-size:17px}
+.vr-nachkopf small{color:var(--muted)}
+ul.vr-nach .chips{margin:8px 0 0;gap:6px}
+ul.vr-nach .chip{min-height:44px}
+ul.vr-nach .vr-rest{display:block;margin-top:8px;font-size:14px;font-weight:650;color:var(--muted)}
+ul.vr-nach .vr-rest[hidden]{display:none}
+ul.vr-nach .vr-rest .vr-mengefeld{display:flex;align-items:center;gap:8px;margin-top:4px}
+ul.vr-nach .vr-rest input{max-width:140px;font-size:17px}
+/* v9.1 Zutat im Vorrat */
+ul.zut .imv{display:inline-flex;align-items:center;gap:3px;margin-left:8px;padding:1px 8px 1px 5px;border-radius:999px;background:var(--tint);color:var(--ink);font-size:12.5px;font-weight:700;white-space:nowrap;vertical-align:2px}
+ul.zut .imv .ico{width:14px;height:14px;stroke-width:2.2;color:var(--acc-d)}
+ul.zut .imv.wenig{background:var(--acc-l);color:var(--acc-d)}
 ul.zut .vor{grid-column:1/-1;margin-bottom:-10px;color:var(--muted);font-style:italic;font-size:15px}
 .hinweis{color:var(--muted);font-size:15px;font-style:italic;margin:10px 0}
 ol.steps{list-style:none;padding:0;margin:0}
@@ -385,6 +401,8 @@ ul.bewliste li{display:flex;align-items:center;gap:14px;padding:6px 0;border-bot
 .vr-ort.auf .vr-pfeil .ico{transform:rotate(90deg)}
 .vr-ort h2{margin-top:14px}
 .vr-wenig h2{color:var(--acc-d)}
+.vr-wenig.auf .vr-pfeil .ico{transform:rotate(90deg)}
+.vr-wenig h2{margin-top:14px}
 .vr-leer{color:var(--muted);margin:8px 0}
 .ek li.vr{flex-wrap:wrap;gap:8px 12px}
 .vr-txt{flex:1;min-width:0;display:flex;align-items:center;gap:12px;border:0;background:none;padding:0;text-align:left;font:inherit;color:inherit;min-height:var(--hit)}

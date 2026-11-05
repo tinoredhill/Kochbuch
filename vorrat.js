@@ -4,7 +4,7 @@
    Wird VOR app.js geladen; verwendet Hilfen aus app.js (esc, ico, openSheet, toast, ich, render …) erst beim Aufruf.
    Keine KI, keine Rezeptvorschläge, keine automatische Abbuchung. Scannen nur mit Internet. */
 const VK = window.VorratKern;
-const vrUi = { suche: '', offen: {}, offenAbt: {}, frischOrt: 'auto' };   // nur Anzeige; offenAbt keyed «ort|abt»
+const vrUi = { suche: '', offen: {}, offenAbt: {}, offenWenig: false, frischOrt: 'auto' };   // nur Anzeige; offenAbt keyed «ort|abt»; offenWenig (v9.1): «Wenig Bestand» zu bis angetippt
 const VR_OFF = 'https://world.openfoodfacts.org/api/v2/product/';
 const VR_FELDER = 'code,product_name,product_name_de,generic_name,generic_name_de,brands,image_front_small_url,image_small_url,quantity,product_quantity,product_quantity_unit,categories_tags';
 const VR_FORMATE = ['ean_13', 'ean_8', 'upc_a', 'upc_e'];
@@ -40,7 +40,7 @@ function vrZeile(id, e, mitOrt) {
   const w = VK.wenig(e), st = e.stueck || 0;
   const ek = w ? (vrAufListe(e) ? `<span class="vr-ek auf">${ico('check')}Auf der Einkaufsliste</span>` : `<button class="btn small sec vr-ek" data-vr-ek="${esc(id)}">${ico('cart')}Zum Einkauf</button>`) : '';
   const del = st <= 0 ? `<button class="icon vr-delliste" data-vr-del="${esc(id)}" aria-label="${esc(e.name)} löschen">${ico('trash')}</button>` : '';
-  const info = [e.marke && esc(e.marke), vrMengeText(e), mitOrt && esc(VK.ORTNAME[e.ort] || ''), vrMhd(e), e.wer && PNAME[e.wer] && `${esc(PNAME[e.wer])}, ${vrDatum(e.zeit)}`].filter(Boolean).join(' · ');
+  const info = [e.marke && esc(VK.markeSchoen(e.marke)), vrMengeText(e), mitOrt && esc(VK.ORTNAME[e.ort] || ''), vrMhd(e), e.wer && PNAME[e.wer] && `${esc(PNAME[e.wer])}, ${vrDatum(e.zeit)}`].filter(Boolean).join(' · ');
   return `<li class="vr${w ? ' wenig' : ''}" data-id="${esc(id)}"><button class="vr-txt" data-vr-edit="${esc(id)}" aria-label="${esc(e.name)} bearbeiten">${vrBild(e)}<span class="txt"><span class="vr-name">${esc(e.name)}</span>${info ? `<small>${info}</small>` : ''}</span></button>
     <div class="vr-step">${del}<button class="icon" data-vr-pm="${esc(id)}|-1" aria-label="Weniger"${st <= 0 ? ' disabled' : ''}>${ico('minus')}</button><b aria-label="Stück">${st}</b><button class="icon" data-vr-pm="${esc(id)}|1" aria-label="Mehr">${ico('plus')}</button></div>
     ${ek ? `<div class="vr-ekzeile">${ek}</div>` : ''}</li>`;
@@ -50,7 +50,9 @@ function vrListeHTML() {
   if (!Object.keys(v).length) return `<p class="leer">Noch nichts im Vorrat.<br>Strichcode scannen oder Obst und Gemüse antippen. Bei wenig Bestand (pro Produkt einstellbar) erscheint «Zum Einkauf».</p>`;
   const gr = VK.gruppiert(v, q), wl = q ? [] : VK.wenigListe(v, '');
   if (q && !gr.some(g => g.eintraege.length)) return '<p class="leer">Nichts gefunden.</p>';
-  const wenigHTML = wl.length ? `<section class="abt vr-wenig"><h2>${ico('cart')}Wenig Bestand <span class="vr-zahl">${wl.length}</span></h2><ul class="ek">${wl.map(([id, e]) => vrZeile(id, e, true)).join('')}</ul></section>` : '';
+  const aufW = !!vrUi.offenWenig;   // v9.1: standardmässig zugeklappt (bei Suche ausgeblendet, Treffer stehen unter den Orten)
+  const wenigHTML = wl.length ? `<section class="abt vr-wenig${aufW ? ' auf' : ''}"><h2><button class="vr-kopf" data-vr-aufwenig aria-expanded="${aufW}">${ico('cart')}<span>Wenig Bestand</span><span class="vr-zahl warn">${wl.length}</span><span class="vr-pfeil">${ico('back')}</span></button></h2>
+    ${aufW ? `<ul class="ek">${wl.map(([id, e]) => vrZeile(id, e, true)).join('')}</ul>` : ''}</section>` : '';
   const abtBlock = (ort, g) => {
     if (!g.gruppen.length) return '<p class="klein vr-leer">Hier ist noch nichts.</p>';
     return g.gruppen.map(ag => {
@@ -199,7 +201,7 @@ function vrNameSheet(code, fehler) {
 function vrErgebnis(id, neu) {
   const e = vrDaten()[id]; if (!e) return closeSheet();
   openSheet(`<div class="vr-ergebnis">${vrBild(e, true)}<div><div class="eyebrow">${neu ? 'Neu im Vorrat' : 'Schon im Vorrat · +1'}</div><h3>${esc(e.name)}</h3>
-    <p>${[e.marke && esc(e.marke), `<strong>${e.stueck} Stück</strong>`, vrMengeText(e), esc(VK.ORTNAME[e.ort] || '')].filter(Boolean).join(' · ')}</p></div></div>
+    <p>${[e.marke && esc(VK.markeSchoen(e.marke)), `<strong>${e.stueck} Stück</strong>`, vrMengeText(e), esc(VK.ORTNAME[e.ort] || '')].filter(Boolean).join(' · ')}</p></div></div>
     <div class="sheet-h">${ico('box')}Ort</div>${vrOrtChips(e.ort, 'data-vr-eort-live')}
     <input type="hidden" id="vrErgId" value="${esc(id)}">
     <div class="sheetknoepfe"><button class="btn" data-vr-scan>${ico('barcode')}Weiter scannen</button><button class="btn sec" data-vr-edit="${esc(id)}">${ico('pencil')}Bearbeiten</button></div>`);
@@ -231,7 +233,7 @@ function vrBearbeiten(id) {
     <form id="vrForm" class="vr-form" data-id="${esc(id || '')}">
       ${e ? `<div class="vr-ergebnis klein">${vrBild(e, true)}<div>${e.code ? `<p class="vr-code">${ico('barcode')}${esc(e.code)}</p>` : ''}${e.wer && PNAME[e.wer] ? `<p class="klein">Zuletzt geändert: ${esc(PNAME[e.wer])}, ${vrDatum(e.zeit)} ${pad2(new Date(e.zeit).getHours())}:${pad2(new Date(e.zeit).getMinutes())}</p>` : ''}</div></div>` : ''}
       <label>Name<input type="text" id="vrName" required value="${esc(x.name)}" autocomplete="off"></label>
-      ${x.frisch ? '' : `<label>Marke<input type="text" id="vrMarke" value="${esc(x.marke || '')}" autocomplete="off"></label>`}
+      ${x.frisch ? '' : `<label>Marke<input type="text" id="vrMarke" value="${esc(VK.markeSchoen(x.marke || ''))}" autocomplete="off"></label>`}
       ${!e ? `<label>Strichcode (falls vorhanden)<input type="text" id="vrCode" inputmode="numeric" pattern="[0-9]*" autocomplete="off"></label>` : ''}
       <div class="sheet-h">${ico('box')}Ort</div>${vrOrtChips(x.ort, 'data-vr-eort')}<input type="hidden" id="vrOrt" value="${esc(x.ort)}">
       <div class="sheet-h">${ico('bag')}Abteilung</div>${vrAbtChips(abt)}<input type="hidden" id="vrAbt" value="${esc(abt)}">
@@ -278,7 +280,8 @@ function vrFormSpeichern(f) {
   const abtWahl = val('vrAbt');
   const abt = VK.ABT.includes(abtWahl) ? abtWahl : VK.abtVon({ name, frisch: alt && alt.frisch });
   const felder = { name, ort: VK.ORTNAME[val('vrOrt')] ? val('vrOrt') : 'regal', stueck, menge, einheit, mhd: /^\d{4}-\d{2}-\d{2}$/.test(val('vrMhd')) ? val('vrMhd') : null, wenigAb, abt };
-  if (document.getElementById('vrMarke')) felder.marke = val('vrMarke');
+  if (document.getElementById('vrMarke')) felder.marke = VK.markeSchoen(val('vrMarke'));
+  if (VK.ABT.includes(abtWahl) && document.getElementById('vrAbt') && document.getElementById('vrAbt').dataset.hand === '1') felder.abtHand = true;   // v9.1: von Hand gewählt -> nie automatisch ändern
   if (id0) {
     vrAendern(id0, e => { const r = Object.assign({}, e, felder); if (r.menge == null) { delete r.menge; delete r.einheit; } if (r.einheit && e.einheit && r.einheit !== e.einheit) delete r.packung; return VK.sauber(r); });
     closeSheet(); return toast('Gespeichert.');
@@ -292,6 +295,30 @@ function vrFormSpeichern(f) {
   closeSheet(); toast(`«${name}» ist im Vorrat.`);
 }
 
+/* ---------- v9.1 Nach dem Kochen: Vorrat nachführen (Kochmodus, letzter Schritt «Gekocht») ---------- */
+function vrNachKochenSheet(r, f) {
+  const tr = VK.kochTreffer(r && r.zutaten, vrDaten(), f);
+  if (!tr.length) return false;
+  const eh = b => b === 'stueck' ? 'Stück' : b;
+  openSheet(`<h3>Vorrat nachführen?</h3><p class="klein">Was ist nach «${esc(r.titel)}» aufgebraucht, was ist noch übrig? Unverändertes einfach lassen.</p>
+    <ul class="vr-nach">${tr.map(t => { const hat = t.basis === 'stueck' ? (t.e.stueck || 0) : (t.e.menge || 0);
+      return `<li data-id="${esc(t.id)}" data-wahl="bleibt"><div class="vr-nachkopf"><strong>${esc(t.e.name)}</strong><small>jetzt ${esc(String(hat))} ${eh(t.basis)} · ${esc(VK.ORTNAME[t.e.ort] || '')}</small></div>
+      <div class="chips">${[['bleibt', 'Bleibt'], ['aus', 'Aufgebraucht'], ['rest', 'Rest']].map(([w, l]) => `<button type="button" class="chip ${w === 'bleibt' ? 'on' : ''}" data-vr-nw="${esc(t.id)}|${w}" aria-pressed="${w === 'bleibt'}">${l}</button>`).join('')}</div>
+      <label class="vr-rest" hidden>Noch übrig<span class="vr-mengefeld"><input type="number" min="0" step="1" inputmode="numeric" value="${VK.restVorschlag(t)}" aria-label="Rest ${esc(t.e.name)} in ${eh(t.basis)}"><span>${eh(t.basis)}</span></span></label></li>`; }).join('')}</ul>
+    <div class="sheetknoepfe"><button class="btn" data-vr-nach-ok>${ico('check')}Vorrat speichern</button><button class="btn ghost" data-close>Nichts ändern</button></div>`);
+  return true;
+}
+function vrNachKochenSpeichern() {
+  const wahl = {};
+  document.querySelectorAll('.vr-nach li[data-id]').forEach(li => {
+    const w = li.dataset.wahl, id = li.dataset.id;
+    if (w === 'aus') wahl[id] = 'aus';
+    else if (w === 'rest') { const n = Math.round(+li.querySelector('.vr-rest input').value); if (Number.isFinite(n) && n >= 0) wahl[id] = { rest: n }; }
+  });
+  const n = Object.keys(wahl).length;
+  if (n) Store.update('vorrat', {}, v => VK.nachKochen(v, wahl, vrWer()));
+  closeSheet(); toast(n ? `Vorrat nachgeführt (${n}).` : 'Vorrat unverändert.');
+}
 /* ---------- Eingaben (eigene data-vr-*-Attribute, kollidieren nicht mit app.js) ---------- */
 function vrLoeschen(id) {
   const e = vrDaten()[id]; if (!e || !confirm(`«${e.name}» aus dem Vorrat löschen?`)) return false;
@@ -300,7 +327,7 @@ function vrLoeschen(id) {
   toast('Gelöscht.'); return true;
 }
 document.addEventListener('click', ev => {
-  const t = ev.target.closest('[data-vr-scan],[data-vr-frisch],[data-vr-hand],[data-vr-edit],[data-vr-pm],[data-vr-ek],[data-vr-auf],[data-vr-aufabt],[data-vr-ort],[data-vr-fort],[data-vr-eort],[data-vr-eort-live],[data-vr-eabt],[data-vr-f],[data-vr-fs],[data-vr-del]');
+  const t = ev.target.closest('[data-vr-scan],[data-vr-frisch],[data-vr-hand],[data-vr-edit],[data-vr-pm],[data-vr-ek],[data-vr-auf],[data-vr-aufabt],[data-vr-aufwenig],[data-vr-nw],[data-vr-nach-ok],[data-vr-ort],[data-vr-fort],[data-vr-eort],[data-vr-eort-live],[data-vr-eabt],[data-vr-f],[data-vr-fs],[data-vr-del]');
   if (!t) return;
   const d = t.dataset;
   if ('vrScan' in d) return vrScanStarten();
@@ -315,6 +342,14 @@ document.addEventListener('click', ev => {
   }
   if (d.vrEk) return vrZumEinkauf(d.vrEk);
   if (d.vrAuf) { vrUi.offen[d.vrAuf] = !vrUi.offen[d.vrAuf]; const l = document.getElementById('vrListe'); if (l) l.innerHTML = vrListeHTML(); return; }
+  if (d.vrNw) {
+    const i = d.vrNw.lastIndexOf('|'), w = d.vrNw.slice(i + 1), li = t.closest('li[data-id]'); if (!li) return;
+    li.dataset.wahl = w; li.querySelectorAll('[data-vr-nw]').forEach(b => { const on = b === t; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+    const rest = li.querySelector('.vr-rest'); if (rest) { rest.hidden = w !== 'rest'; if (w === 'rest') { const inp = rest.querySelector('input'); if (inp) inp.focus(); } }
+    return;
+  }
+  if ('vrNachOk' in d) return vrNachKochenSpeichern();
+  if ('vrAufwenig' in d) { vrUi.offenWenig = !vrUi.offenWenig; const l = document.getElementById('vrListe'); if (l) l.innerHTML = vrListeHTML(); return; }
   if (d.vrAufabt) { vrUi.offenAbt[d.vrAufabt] = !vrUi.offenAbt[d.vrAufabt]; const l = document.getElementById('vrListe'); if (l) l.innerHTML = vrListeHTML(); return; }
   const chips = (attr, wert) => t.parentNode.querySelectorAll(`[${attr}]`).forEach(b => { const on = b.getAttribute(attr) === wert; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
   if (d.vrOrt) { chips('data-vr-ort', d.vrOrt); einstSetzen({ vorrat_ort: d.vrOrt }); return; }
@@ -326,7 +361,7 @@ document.addEventListener('click', ev => {
     if (id && VK.ORTNAME[d.vrEortLive]) vrAendern(id, e => { e.ort = d.vrEortLive; return e; });
     return;
   }
-  if (d.vrEabt) { chips('data-vr-eabt', d.vrEabt); const h = document.getElementById('vrAbt'); if (h) h.value = d.vrEabt; return; }
+  if (d.vrEabt) { chips('data-vr-eabt', d.vrEabt); const h = document.getElementById('vrAbt'); if (h) { h.value = d.vrEabt; h.dataset.hand = '1'; } return; }
   if (d.vrF) { const r = VK.frischDazu(vrDaten(), d.vrF, vrUi.frischOrt === 'auto' ? null : vrUi.frischOrt, vrWer()); if (r.id) Store.set('vorrat', r.v); vrFrischZahlen(); return; }
   if (d.vrFs) { const i = document.getElementById('vrStueck'); if (i) i.value = Math.max(0, (Math.round(+i.value) || 0) + +d.vrFs); return; }
   if (d.vrDel) return vrLoeschen(d.vrDel);
@@ -335,7 +370,7 @@ document.addEventListener('submit', ev => {
   const f = ev.target;
   if (f.id === 'vrCodeForm') { ev.preventDefault(); const c = document.getElementById('vrCodeTxt').value.replace(/\D/g, ''); if (!VK.codeOk(c)) return toast('Der Code stimmt nicht (8, 12 oder 13 Ziffern mit Prüfziffer).'); return vrCode(c); }
   if (f.id === 'vrNameForm') {
-    ev.preventDefault(); const name = VK.nameSchoen(document.getElementById('vrNName').value.trim()), marke = document.getElementById('vrNMarke').value.trim(), code = f.dataset.code;
+    ev.preventDefault(); const name = VK.nameSchoen(document.getElementById('vrNName').value.trim()), marke = VK.markeSchoen(document.getElementById('vrNMarke').value), code = f.dataset.code;
     if (!name) return toast('Bitte einen Namen eingeben.');
     Store.update('vorrat', {}, v => VK.scanDazu(v, code, { name, marke }, vrOrtWahl(), vrWer()).v);
     return vrErgebnis('c:' + VK.codeNorm(code), true);
