@@ -1,5 +1,5 @@
 'use strict';
-/* Kochbuch v8 – App-Logik (v8: Tab «Vorrat» in vorrat.js / vorrat-kern.js). Daten nur über Store (store.js). Rezepte aus rezepte/rezepte.json. Icons aus icons.js. */
+/* Kochbuch v9 – App-Logik (v9: Vorrat-Abteilungen, Menü-Fix; Vorrat in vorrat.js / vorrat-kern.js). Daten nur über Store (store.js). Rezepte aus rezepte/rezepte.json. Icons aus icons.js. */
 const $ = s => document.querySelector(s), app = $('#app');
 const TAGE = [['mo', 'Montag', 'Mo'], ['di', 'Dienstag', 'Di'], ['mi', 'Mittwoch', 'Mi'], ['do', 'Donnerstag', 'Do'], ['fr', 'Freitag', 'Fr'], ['sa', 'Samstag', 'Sa'], ['so', 'Sonntag', 'So']];
 const TAGNAME = Object.fromEntries(TAGE.map(t => [t[0], t[1]]));
@@ -118,7 +118,12 @@ function glossarHTML(g) {
 function openSheet(html) { $('#sheetBody').innerHTML = html; $('#sheet').hidden = false; }
 function closeSheet() { $('#sheet').hidden = true; }
 function sheetNeu(k) {   // true = Anzeige im offenen Fenster schon aufgefrischt, Seite dahinter später
-  if ($('#wahlErgebnis')) { $('#wahlErgebnis').innerHTML = wahlErgebnis(); render(true); return true; }
+  // Auswahl-Sheet: Kacheln NICHT bei jedem Sync neu bauen – sonst verschwindet der Tip auf dem iPhone
+  // (Firestore-Snapshots mit includeMetadataChanges ersetzen den DOM mitten im Antippen).
+  if ($('#wahlErgebnis')) {
+    if (k === 'bewertungen' || k === 'favoriten' || k === 'zuletzt') $('#wahlErgebnis').innerHTML = wahlErgebnis();
+    render(true); return true;
+  }
   if ($('.gwliste') && k === 'gewohnheiten') { gewohnheitenSheet(); render(true); return true; }
   if ($('.vr-frisch') && k === 'vorrat') { vrFrischZahlen(); render(true); return true; }
   return false;
@@ -929,9 +934,15 @@ document.addEventListener('click', e => {
   if (d.verschieben) { const en = tagesplan()[d.verschieben]; return en && tagWahl(en.rid || null, d.verschieben, 'Auf welchen Tag verschieben?'); }
   if (d.wahl) return wahlSheet({ datum: d.wahl });
   if (d.setze) {
-    const w = ui.wahl || {}, rid = d.setze;
-    if (w.datum) { planAendern(p => { p[w.datum] = { rid, portionen: defaultScale(R[rid]) }; }); closeSheet(); return toast(`${R[rid].titel} am ${tagLang(w.datum)}.`); }
-    if (w.tag) { Store.update('gewohnheiten', {}, g => { g[w.tag] = { rid }; return g; }); return gewohnheitenSheet(); }
+    const w = ui.wahl || {}, rid = d.setze, datum = w.datum, tag = w.tag;
+    if (!rid || !R[rid]) return;
+    // Sheet zuerst schliessen, dann speichern – sonst baut sheetNeu/Sync die Kacheln neu und der Tip geht verloren
+    if (datum) {
+      closeSheet();
+      planAendern(p => { p[datum] = { rid, portionen: defaultScale(R[rid]) }; });
+      return toast(`${R[rid].titel} am ${tagLang(datum)}.`);
+    }
+    if (tag) { Store.update('gewohnheiten', {}, g => { g[tag] = { rid }; return g; }); return gewohnheitenSheet(); }
     return;
   }
   if (d.pm) { const [k, dir] = d.pm.split('|'); planAendern(p => { const r = R[p[k].rid]; p[k].portionen = stepScale(r, p[k].portionen || defaultScale(r), +dir); }); if (!$('#sheet').hidden && $('.sheetknoepfe')) eintragSheet(k); return; }
@@ -957,9 +968,9 @@ document.addEventListener('click', e => {
 document.addEventListener('submit', e => {
   if (e.target.id === 'codeForm') { e.preventDefault(); const c = codeNorm($('#codeTxt').value); if (!c) return toast('Der Code ist nicht vollständig oder enthält Tippfehler.'); codeSetzen(c); return toast('Mit dem Haushalt verbunden.'); }
   if (e.target.id === 'freiForm') {
-    e.preventDefault(); const t = $('#freiTxt').value.trim(), w = ui.wahl || {}; if (!t) return;
-    if (w.datum) { planAendern(p => { p[w.datum] = { text: t }; }); closeSheet(); return toast(`«${t}» am ${tagLang(w.datum)}.`); }
-    if (w.tag) { Store.update('gewohnheiten', {}, g => { g[w.tag] = { text: t }; return g; }); return gewohnheitenSheet(); }
+    e.preventDefault(); const txt = $('#freiTxt').value.trim(), w = ui.wahl || {}, datum = w.datum, tag = w.tag; if (!txt) return;
+    if (datum) { closeSheet(); planAendern(p => { p[datum] = { text: txt }; }); return toast(`«${txt}» am ${tagLang(datum)}.`); }
+    if (tag) { Store.update('gewohnheiten', {}, g => { g[tag] = { text: txt }; return g; }); return gewohnheitenSheet(); }
     return;
   }
   if (e.target.id !== 'addForm') return; e.preventDefault();

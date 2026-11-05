@@ -433,3 +433,14 @@ li.vr.wenig .vr-step b{color:var(--acc-d)}
 @media (max-width:420px){.vr-felder{grid-template-columns:1fr}}
 .vr-orte{gap:6px}
 .vr-orte .chip{min-height:48px;padding:0 14px;font-size:15px}
+
+/* v9: Abteilungen unter Orten im Vorrat */
+.vr-abt{margin:4px 0 8px 8px;padding:0 0 0 10px;border-left:2px solid var(--line)}
+.vr-abt h3{margin:0;font-size:inherit}
+.vr-abtkopf{min-height:44px;font-size:15.5px}
+.vr-abtkopf .ico{width:20px;height:20px}
+.vr-abt .vr-zahl{font-size:12px;padding:1px 7px}
+.vr-abt.auf .vr-pfeil .ico{transform:rotate(90deg)}
+.vr-abt .ek{margin:0}
+.vr-delliste{color:var(--warn)}
+.vr-abten{margin:0 0 8px}

@@ -1,12 +1,13 @@
 'use strict';
-/* Kochbuch v8 – Vorrat: reine Logik ohne Anzeige (auch in Node testbar: tests/vorrat.test.mjs).
+/* Kochbuch v9 – Vorrat: reine Logik ohne Anzeige (auch in Node testbar: tests/vorrat.test.mjs).
    Daten unter dem NEUEN Schlüssel «vorrat» (synchronisiert): { <id>: Eintrag }
      id:  'c:<Strichcode>'  Produkt mit Code (gleicher Code = gleicher Eintrag, auf allen Geräten)
           'f:<frisch-id>'   Frischware aus der Auswahlliste (z.B. f:aepfel)
           'h:<zufall>'      von Hand ohne Code
    Eintrag: { name, marke?, bild? (URL, kein Bild-Inhalt), code?, ort, stueck, menge? (Gesamtmenge), einheit? ('g'|'ml'),
               packung? (g/ml pro Stück laut Open Food Facts), mhd? ('JJJJ-MM-TT'), wer? ('tino'|'lili'), zeit (ms),
-              wenigAb? ({ n: number, einheit: 'stueck'|'g'|'ml' }) – Schwelle «wenig Bestand» pro Produkt }
+              wenigAb? ({ n: number, einheit: 'stueck'|'g'|'ml' }) – Schwelle «wenig Bestand» pro Produkt,
+              abt? (Ladenabteilung, gleiche Namen wie Einkaufsliste ABT; fehlt bei alten Sync-Daten → Fallback) }
    Bilder werden nur als Adresse gespeichert (Firestore-Grenze: höchstens 3000 Einträge, Dokument max. 1 MB).
 
    «Wenig Bestand» (Tino 05.11.2026): kein globaler Schwellenwert mehr, sondern wenigAb pro Eintrag.
@@ -23,6 +24,74 @@
     kartoffeln: 'keller', zwiebeln: 'keller', knoblauch: 'regal', paprika: 'kuehlschrank', salat: 'kuehlschrank', broccoli: 'kuehlschrank', spinat: 'kuehlschrank' };
   const WENIG_STUECK = 2, WENIG_MENGE = 200;   // nur noch Defaults / Fallback für Einträge ohne wenigAb
 
+  /* Ladenabteilungen – dieselben Namen wie ABT in app.js (Einkaufsliste). */
+  const ABT = ['Gemüse & Früchte', 'Fleisch & Fisch', 'Milchprodukte & Eier', 'Brot & Backwaren', 'Vorrat & Gewürze', 'Öl & Saucen', 'Tiefkühl', 'Getränke', 'Diverses'];
+  /* Open-Food-Facts categories_tags → Abteilung (erste passende gewinnt, Reihenfolge = Spezifität). */
+  const OFF_ABT = [
+    ['en:frozen-foods', 'Tiefkühl'], ['en:frozen-vegetables', 'Tiefkühl'], ['en:frozen-meats', 'Tiefkühl'], ['en:ice-creams', 'Tiefkühl'],
+    ['en:beverages', 'Getränke'], ['en:waters', 'Getränke'], ['en:sodas', 'Getränke'], ['en:fruit-juices', 'Getränke'], ['en:beers', 'Getränke'], ['en:wines', 'Getränke'], ['en:hot-beverages', 'Getränke'],
+    ['en:oils', 'Öl & Saucen'], ['en:sauces', 'Öl & Saucen'], ['en:vinegars', 'Öl & Saucen'], ['en:mustards', 'Öl & Saucen'], ['en:dressings', 'Öl & Saucen'],
+    ['en:meats', 'Fleisch & Fisch'], ['en:meats-and-their-products', 'Fleisch & Fisch'], ['en:fish', 'Fleisch & Fisch'], ['en:fishes', 'Fleisch & Fisch'], ['en:seafood', 'Fleisch & Fisch'], ['en:poultry', 'Fleisch & Fisch'],
+    ['en:dairies', 'Milchprodukte & Eier'], ['en:milks', 'Milchprodukte & Eier'], ['en:cheeses', 'Milchprodukte & Eier'], ['en:yogurts', 'Milchprodukte & Eier'], ['en:eggs', 'Milchprodukte & Eier'], ['en:butters', 'Milchprodukte & Eier'], ['en:creams', 'Milchprodukte & Eier'],
+    ['en:breads', 'Brot & Backwaren'], ['en:breads-and-pastries', 'Brot & Backwaren'], ['en:pastries', 'Brot & Backwaren'], ['en:biscuits-and-cakes', 'Brot & Backwaren'],
+    ['en:vegetables', 'Gemüse & Früchte'], ['en:fruits', 'Gemüse & Früchte'], ['en:fresh-vegetables', 'Gemüse & Früchte'], ['en:fresh-fruits', 'Gemüse & Früchte'], ['en:legumes', 'Gemüse & Früchte'], ['en:herbs', 'Vorrat & Gewürze'],
+    ['en:spices', 'Vorrat & Gewürze'], ['en:condiments', 'Vorrat & Gewürze'], ['en:groceries', 'Vorrat & Gewürze'], ['en:cereals', 'Vorrat & Gewürze'], ['en:pastas', 'Vorrat & Gewürze'], ['en:rices', 'Vorrat & Gewürze'], ['en:flours', 'Vorrat & Gewürze'], ['en:sugars', 'Vorrat & Gewürze'], ['en:salts', 'Vorrat & Gewürze'], ['en:nuts', 'Vorrat & Gewürze'], ['en:canned-foods', 'Vorrat & Gewürze']
+  ];
+  /* Namens-Wörter (gleicher Inhalt wie WOERTER in app.js) – Fallback ohne Browser. */
+  const WOERTER = {
+    'Gemüse & Früchte': 'gemüse frucht früchte wurzel schwarzwurzel pastinake karotte rüebli kartoffel zwiebel knoblauch lauch ingwer kürbis pilz pilze austernpilze champignon tomate tomaten salat spinat gurke zucchetti peperoni broccoli blumenkohl kohl sellerie fenchel randen limette zitrone orange apfel äpfel birne banane bananen beeren trauben passionsfrucht avocado kräuter minze pfefferminze koriander petersilie basilikum schnittlauch thymian rosmarin dill',
+    'Fleisch & Fisch': 'fleisch rind rindfleisch rindsplätzli plätzli steak hackfleisch hack poulet huhn hähnchen schwein speck schinken wurst salami lamm kalb lachs fisch forelle crevetten thon',
+    'Milchprodukte & Eier': 'milch vollmilch butter käse rahm sauerrahm joghurt quark ei eier mozzarella parmesan feta mascarpone hüttenkäse tofu',
+    'Brot & Backwaren': 'brot zopf gipfeli toast fladenbrot brötchen tortilla',
+    'Vorrat & Gewürze': 'salz pfeffer zucker mehl reis nudeln pasta spaghetti ramen ramen-nudeln linsen kichererbsen bohnen dose bouillon gewürz gewürze zimt kurkuma kreuzkümmel chili paprika sesam nüsse mandeln honig kaffee tee kokosmilch tomatenpüree gehackte haferflocken',
+    'Öl & Saucen': 'öl olivenöl sesamöl erdnussöl rapsöl sauce teriyaki-sauce sojasauce austernsauce essig senf ketchup mayonnaise miso miso-paste chili crunch',
+    'Tiefkühl': 'tiefkühl tiefgekühlt glace tk',
+    'Getränke': 'wasser mineralwasser saft wein bier sirup',
+    'Diverses': 'zahnpasta zahnbürste shampoo seife duschmittel waschmittel wc-papier toilettenpapier haushaltpapier küchenpapier abwaschmittel schwamm alufolie backpapier'
+  };
+  function besterWort(name, tabelle) {
+    const n = String(name || '').toLowerCase(), worte = n.split(/[^a-zäöüéèàß-]+/);
+    let best = null, len = 0;
+    for (const [ziel, liste] of Object.entries(tabelle)) for (const w of liste.split(' ')) {
+      const treffer = w.length <= 3 ? worte.includes(w) : n.includes(w);
+      if (treffer && w.length > len) { best = ziel; len = w.length; }
+    }
+    return best;
+  }
+  function abtAusTags(tags) {
+    if (!tags || !tags.length) return null;
+    const set = new Set(tags.map(t => String(t).toLowerCase()));
+    for (const [tag, abt] of OFF_ABT) if (set.has(tag)) return abt;
+    return null;
+  }
+  /* Abteilung für einen Eintrag: gespeichertes abt > Frischware > OFF-Tags > Namenswörter > Diverses.
+     fest=true: manuell gesetzt, nicht überschreiben (Aufrufer entscheidet). */
+  function abtVon(e, tags) {
+    if (!e) return 'Diverses';
+    if (e.abt && ABT.includes(e.abt)) return e.abt;
+    if (e.frisch) return 'Gemüse & Früchte';
+    const ausTags = abtAusTags(tags || e.categories_tags);
+    if (ausTags) return ausTags;
+    // Browser: app.js abteilungVon bevorzugen (gleiche Liste wie Einkauf)
+    if (typeof global.abteilungVon === 'function') {
+      const a = global.abteilungVon(e.name || '');
+      if (a && ABT.includes(a)) return a;
+    }
+    return besterWort(e.name, WOERTER) || 'Diverses';
+  }
+  /* Namen schön schreiben: bei komplett kleinem Text jedes Wort gross; sonst nur ersten Buchstaben.
+     Umlaute bleiben; Marken mit Grossbuchstaben werden nicht umgeschrieben. Frischware-Namen nicht hier durchjagen. */
+  function nameSchoen(s) {
+    s = String(s || '').trim();
+    if (!s) return s;
+    const komplettKlein = s === s.toLocaleLowerCase('de-CH');
+    if (!komplettKlein) return s.charAt(0).toLocaleUpperCase('de-CH') + s.slice(1);
+    return s.split(/(\s+|-)/).map(w => {
+      if (!w || /^\s+$/.test(w) || w === '-') return w;
+      return w.charAt(0).toLocaleUpperCase('de-CH') + w.slice(1);
+    }).join('');
+  }
+
   /* Strichcode prüfen: EAN-13, EAN-8, UPC-A (12), UPC-E (8) mit Prüfziffer */
   function codeOk(c) {
     c = String(c || '').trim();
@@ -38,7 +107,7 @@
   function offAuswerten(j) {
     if (!j || j.status !== 1 || !j.product) return null;
     const p = j.product;
-    const name = String(p.product_name_de || p.product_name || p.generic_name_de || p.generic_name || '').trim();
+    const nameRoh = String(p.product_name_de || p.product_name || p.generic_name_de || p.generic_name || '').trim();
     const marke = String(p.brands || '').split(',')[0].trim();
     const bild = /^https:\/\//.test(p.image_front_small_url || '') ? p.image_front_small_url : (/^https:\/\//.test(p.image_small_url || '') ? p.image_small_url : '');
     let packung = null, einheit = null;
@@ -48,8 +117,11 @@
       const m = String(p.quantity || '').toLowerCase().replace(',', '.').match(/(\d+(?:\.\d+)?)\s*(kg|g|ml|cl|dl|l)\b/);
       if (m) { const f = { kg: [1000, 'g'], g: [1, 'g'], ml: [1, 'ml'], cl: [10, 'ml'], dl: [100, 'ml'], l: [1000, 'ml'] }[m[2]]; packung = Math.round(parseFloat(m[1]) * f[0]); einheit = f[1]; }
     }
-    if (!name && !marke) return null;   // leerer Eintrag -> wie «nicht gefunden»
-    return sauber({ name: name || marke, marke: name ? marke : '', bild, packung, einheit });
+    if (!nameRoh && !marke) return null;   // leerer Eintrag -> wie «nicht gefunden»
+    const tags = Array.isArray(p.categories_tags) ? p.categories_tags.map(String) : [];
+    const name = nameSchoen(nameRoh || marke);
+    const abt = abtVon({ name, categories_tags: tags }, tags);
+    return sauber({ name, marke: nameRoh ? marke : '', bild, packung, einheit, abt, categories_tags: tags.length ? tags : undefined });
   }
   function sauber(o) { const r = {}; for (const [k, v] of Object.entries(o)) if (v !== undefined && v !== null && v !== '') r[k] = v; return r; }
 
@@ -120,8 +192,10 @@
     if (v[id]) { v[id] = stempel(plus(Object.assign({}, v[id]), 1), wer, jetzt); return { v, id, neu: false }; }
     const p = produkt || {};
     const hatPack = !!p.packung;
-    const e = sauber({ code, name: p.name || 'Unbekanntes Produkt', marke: p.marke, bild: p.bild, ort: ORTNAME[ort] ? ort : 'kuehlschrank', stueck: 1,
-      packung: p.packung, einheit: hatPack ? p.einheit : null, menge: hatPack ? p.packung : null,
+    const name = nameSchoen(p.name || 'Unbekanntes Produkt');
+    const abt = p.abt && ABT.includes(p.abt) ? p.abt : abtVon({ name, categories_tags: p.categories_tags }, p.categories_tags);
+    const e = sauber({ code, name, marke: p.marke, bild: p.bild, ort: ORTNAME[ort] ? ort : 'kuehlschrank', stueck: 1,
+      packung: p.packung, einheit: hatPack ? p.einheit : null, menge: hatPack ? p.packung : null, abt,
       wenigAb: wenigAbDefault(hatPack && (p.einheit === 'g' || p.einheit === 'ml') ? p.einheit : 'stueck') });
     v[id] = stempel(e, wer, jetzt); return { v, id, neu: true };
   }
@@ -129,17 +203,22 @@
     const f = FRISCH.find(x => x[0] === fid); if (!f) return { v, id: null, neu: false };
     v = Object.assign({}, v || {}); const id = 'f:' + fid;
     if (v[id]) { v[id] = stempel(plus(Object.assign({}, v[id]), 1), wer, jetzt); return { v, id, neu: false }; }
-    v[id] = stempel({ name: f[1], frisch: fid, ort: ORTNAME[ort] ? ort : (FRISCH_ORT[fid] || 'regal'), stueck: 1, wenigAb: wenigAbDefault('stueck') }, wer, jetzt); return { v, id, neu: true };
+    v[id] = stempel({ name: f[1], frisch: fid, ort: ORTNAME[ort] ? ort : (FRISCH_ORT[fid] || 'regal'), stueck: 1, abt: 'Gemüse & Früchte', wenigAb: wenigAbDefault('stueck') }, wer, jetzt); return { v, id, neu: true };
   }
   const vergleich = (a, b) => (wenig(b[1]) - wenig(a[1])) || String(a[1].name || '').localeCompare(String(b[1].name || ''), 'de');
   const normT = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  function trifft(e, q) { q = normT(q).trim(); if (!q) return true; return normT([e.name, e.marke, e.code, ORTNAME[e.ort]].join(' ')).includes(q); }
-  /* Übersicht: pro Ort, wenig Bestand zuerst, dann nach Name */
+  function trifft(e, q) { q = normT(q).trim(); if (!q) return true; return normT([e.name, e.marke, e.code, ORTNAME[e.ort], e.abt].join(' ')).includes(q); }
+  /* Übersicht: pro Ort, darunter Abteilungen (nur nicht-leere), wenig Bestand zuerst, dann nach Name */
   function gruppiert(v, q) {
     const liste = Object.entries(v || {}).filter(([, e]) => e && trifft(e, q));
-    return ORTE.map(([o, name, icon]) => ({ ort: o, name, icon, eintraege: liste.filter(([, e]) => (ORTNAME[e.ort] ? e.ort : 'regal') === o).sort(vergleich) }));
+    return ORTE.map(([o, name, icon]) => {
+      const eintraege = liste.filter(([, e]) => (ORTNAME[e.ort] ? e.ort : 'regal') === o).sort(vergleich);
+      const gruppen = ABT.map(a => ({ abt: a, eintraege: eintraege.filter(([, e]) => abtVon(e) === a) })).filter(g => g.eintraege.length);
+      return { ort: o, name, icon, eintraege, gruppen };
+    });
   }
   function wenigListe(v, q) { return Object.entries(v || {}).filter(([, e]) => e && wenig(e) && trifft(e, q)).sort(vergleich); }
-  const api = { ORTE, ORTNAME, FRISCH, FRISCH_ORT, WENIG_STUECK, WENIG_MENGE, codeOk, codeNorm, offAuswerten, wenigBasis, wenigAbDefault, wenigAbVon, wenig, wenigAbText, wenigAbRange, wenigAbNorm, plus, stempel, scanDazu, frischDazu, gruppiert, wenigListe, trifft, sauber };
+  const api = { ORTE, ORTNAME, FRISCH, FRISCH_ORT, ABT, WENIG_STUECK, WENIG_MENGE, codeOk, codeNorm, offAuswerten, nameSchoen, abtVon, abtAusTags,
+    wenigBasis, wenigAbDefault, wenigAbVon, wenig, wenigAbText, wenigAbRange, wenigAbNorm, plus, stempel, scanDazu, frischDazu, gruppiert, wenigListe, trifft, sauber };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else global.VorratKern = api;
 })(typeof window !== 'undefined' ? window : globalThis);

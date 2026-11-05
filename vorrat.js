@@ -1,12 +1,12 @@
 'use strict';
-/* Kochbuch v8 – Tab «Vorrat»: Strichcode scannen (Kamera), Frischware, Mengen, «Zum Einkauf».
+/* Kochbuch v9 – Tab «Vorrat»: Strichcode scannen (Kamera), Frischware, Mengen, «Zum Einkauf».
    Logik in vorrat-kern.js, Daten nur über Store unter dem Schlüssel «vorrat» (synchronisiert wie der Wochenplan).
    Wird VOR app.js geladen; verwendet Hilfen aus app.js (esc, ico, openSheet, toast, ich, render …) erst beim Aufruf.
    Keine KI, keine Rezeptvorschläge, keine automatische Abbuchung. Scannen nur mit Internet. */
 const VK = window.VorratKern;
-const vrUi = { suche: '', offen: {}, frischOrt: 'auto' };   // nur Anzeige
+const vrUi = { suche: '', offen: {}, offenAbt: {}, frischOrt: 'auto' };   // nur Anzeige; offenAbt keyed «ort|abt»
 const VR_OFF = 'https://world.openfoodfacts.org/api/v2/product/';
-const VR_FELDER = 'code,product_name,product_name_de,generic_name,generic_name_de,brands,image_front_small_url,image_small_url,quantity,product_quantity,product_quantity_unit';
+const VR_FELDER = 'code,product_name,product_name_de,generic_name,generic_name_de,brands,image_front_small_url,image_small_url,quantity,product_quantity,product_quantity_unit,categories_tags';
 const VR_FORMATE = ['ean_13', 'ean_8', 'upc_a', 'upc_e'];
 const vrKam = { stream: null, timer: null, detector: null, laeuft: false, kandidat: null, treffer: 0 };
 
@@ -37,10 +37,12 @@ const vrStand = () => (typeof keyStand === 'function' ? keyStand('vorrat') : und
 
 /* ---------- Übersicht ---------- */
 function vrZeile(id, e, mitOrt) {
-  const w = VK.wenig(e), ek = w ? (vrAufListe(e) ? `<span class="vr-ek auf">${ico('check')}Auf der Einkaufsliste</span>` : `<button class="btn small sec vr-ek" data-vr-ek="${esc(id)}">${ico('cart')}Zum Einkauf</button>`) : '';
+  const w = VK.wenig(e), st = e.stueck || 0;
+  const ek = w ? (vrAufListe(e) ? `<span class="vr-ek auf">${ico('check')}Auf der Einkaufsliste</span>` : `<button class="btn small sec vr-ek" data-vr-ek="${esc(id)}">${ico('cart')}Zum Einkauf</button>`) : '';
+  const del = st <= 0 ? `<button class="icon vr-delliste" data-vr-del="${esc(id)}" aria-label="${esc(e.name)} löschen">${ico('trash')}</button>` : '';
   const info = [e.marke && esc(e.marke), vrMengeText(e), mitOrt && esc(VK.ORTNAME[e.ort] || ''), vrMhd(e), e.wer && PNAME[e.wer] && `${esc(PNAME[e.wer])}, ${vrDatum(e.zeit)}`].filter(Boolean).join(' · ');
   return `<li class="vr${w ? ' wenig' : ''}" data-id="${esc(id)}"><button class="vr-txt" data-vr-edit="${esc(id)}" aria-label="${esc(e.name)} bearbeiten">${vrBild(e)}<span class="txt"><span class="vr-name">${esc(e.name)}</span>${info ? `<small>${info}</small>` : ''}</span></button>
-    <div class="vr-step"><button class="icon" data-vr-pm="${esc(id)}|-1" aria-label="Weniger"${(e.stueck || 0) <= 0 ? ' disabled' : ''}>${ico('minus')}</button><b aria-label="Stück">${e.stueck || 0}</b><button class="icon" data-vr-pm="${esc(id)}|1" aria-label="Mehr">${ico('plus')}</button></div>
+    <div class="vr-step">${del}<button class="icon" data-vr-pm="${esc(id)}|-1" aria-label="Weniger"${st <= 0 ? ' disabled' : ''}>${ico('minus')}</button><b aria-label="Stück">${st}</b><button class="icon" data-vr-pm="${esc(id)}|1" aria-label="Mehr">${ico('plus')}</button></div>
     ${ek ? `<div class="vr-ekzeile">${ek}</div>` : ''}</li>`;
 }
 function vrListeHTML() {
@@ -49,10 +51,19 @@ function vrListeHTML() {
   const gr = VK.gruppiert(v, q), wl = q ? [] : VK.wenigListe(v, '');
   if (q && !gr.some(g => g.eintraege.length)) return '<p class="leer">Nichts gefunden.</p>';
   const wenigHTML = wl.length ? `<section class="abt vr-wenig"><h2>${ico('cart')}Wenig Bestand <span class="vr-zahl">${wl.length}</span></h2><ul class="ek">${wl.map(([id, e]) => vrZeile(id, e, true)).join('')}</ul></section>` : '';
+  const abtBlock = (ort, g) => {
+    if (!g.gruppen.length) return '<p class="klein vr-leer">Hier ist noch nichts.</p>';
+    return g.gruppen.map(ag => {
+      const key = ort + '|' + ag.abt, aufA = q ? true : !!vrUi.offenAbt[key];
+      const icon = (typeof ABT_ICON !== 'undefined' && ABT_ICON[ag.abt]) || 'bag';
+      return `<section class="vr-abt${aufA ? ' auf' : ''}"><h3><button class="vr-kopf vr-abtkopf" data-vr-aufabt="${esc(key)}" aria-expanded="${aufA}">${ico(icon)}<span>${esc(ag.abt)}</span><span class="vr-zahl">${ag.eintraege.length}</span><span class="vr-pfeil">${ico('back')}</span></button></h3>
+        ${aufA ? `<ul class="ek">${ag.eintraege.map(([id, e]) => vrZeile(id, e, false)).join('')}</ul>` : ''}</section>`;
+    }).join('');
+  };
   return wenigHTML + gr.filter(g => !q || g.eintraege.length).map(g => {
     const auf = q ? true : !!vrUi.offen[g.ort], nw = g.eintraege.filter(([, e]) => VK.wenig(e)).length;
     return `<section class="abt vr-ort${auf ? ' auf' : ''}"><h2><button class="vr-kopf" data-vr-auf="${g.ort}" aria-expanded="${auf}">${ico(g.icon)}<span>${esc(g.name)}</span><span class="vr-zahl">${g.eintraege.length}</span>${nw ? `<span class="vr-zahl warn">${nw} wenig</span>` : ''}<span class="vr-pfeil">${ico('back')}</span></button></h2>
-      ${auf ? (g.eintraege.length ? `<ul class="ek">${g.eintraege.map(([id, e]) => vrZeile(id, e, false)).join('')}</ul>` : '<p class="klein vr-leer">Hier ist noch nichts.</p>') : ''}</section>`;
+      ${auf ? abtBlock(g.ort, g) : ''}</section>`;
   }).join('');
 }
 function viewVorrat() {
@@ -189,6 +200,8 @@ function vrErgebnis(id, neu) {
   const e = vrDaten()[id]; if (!e) return closeSheet();
   openSheet(`<div class="vr-ergebnis">${vrBild(e, true)}<div><div class="eyebrow">${neu ? 'Neu im Vorrat' : 'Schon im Vorrat · +1'}</div><h3>${esc(e.name)}</h3>
     <p>${[e.marke && esc(e.marke), `<strong>${e.stueck} Stück</strong>`, vrMengeText(e), esc(VK.ORTNAME[e.ort] || '')].filter(Boolean).join(' · ')}</p></div></div>
+    <div class="sheet-h">${ico('box')}Ort</div>${vrOrtChips(e.ort, 'data-vr-eort-live')}
+    <input type="hidden" id="vrErgId" value="${esc(id)}">
     <div class="sheetknoepfe"><button class="btn" data-vr-scan>${ico('barcode')}Weiter scannen</button><button class="btn sec" data-vr-edit="${esc(id)}">${ico('pencil')}Bearbeiten</button></div>`);
 }
 
@@ -206,10 +219,14 @@ function vrFrischSheet() {
 }
 
 /* ---------- Bearbeiten / von Hand ---------- */
+function vrAbtChips(aktiv) {
+  return `<div class="chips scroll vr-abten">${VK.ABT.map(a => `<button type="button" class="chip ${aktiv === a ? 'on' : ''}" data-vr-eabt="${esc(a)}" aria-pressed="${aktiv === a}">${a}</button>`).join('')}</div>`;
+}
 function vrBearbeiten(id) {
   const e = id ? vrDaten()[id] : null; if (id && !e) return closeSheet();
   const x = e || { name: '', ort: vrOrtWahl(), stueck: 1 };
   const ab = VK.wenigAbVon(x), rng = VK.wenigAbRange(ab.einheit);
+  const abt = VK.abtVon(x);
   openSheet(`<h3>${e ? 'Bearbeiten' : 'Von Hand eintragen'}</h3>
     <form id="vrForm" class="vr-form" data-id="${esc(id || '')}">
       ${e ? `<div class="vr-ergebnis klein">${vrBild(e, true)}<div>${e.code ? `<p class="vr-code">${ico('barcode')}${esc(e.code)}</p>` : ''}${e.wer && PNAME[e.wer] ? `<p class="klein">Zuletzt geändert: ${esc(PNAME[e.wer])}, ${vrDatum(e.zeit)} ${pad2(new Date(e.zeit).getHours())}:${pad2(new Date(e.zeit).getMinutes())}</p>` : ''}</div></div>` : ''}
@@ -217,6 +234,7 @@ function vrBearbeiten(id) {
       ${x.frisch ? '' : `<label>Marke<input type="text" id="vrMarke" value="${esc(x.marke || '')}" autocomplete="off"></label>`}
       ${!e ? `<label>Strichcode (falls vorhanden)<input type="text" id="vrCode" inputmode="numeric" pattern="[0-9]*" autocomplete="off"></label>` : ''}
       <div class="sheet-h">${ico('box')}Ort</div>${vrOrtChips(x.ort, 'data-vr-eort')}<input type="hidden" id="vrOrt" value="${esc(x.ort)}">
+      <div class="sheet-h">${ico('bag')}Abteilung</div>${vrAbtChips(abt)}<input type="hidden" id="vrAbt" value="${esc(abt)}">
       <div class="vr-felder"><label>Stück<span class="vr-step"><button type="button" class="icon" data-vr-fs="-1" aria-label="Weniger">${ico('minus')}</button><input type="number" id="vrStueck" min="0" step="1" inputmode="numeric" value="${x.stueck || 0}"><button type="button" class="icon" data-vr-fs="1" aria-label="Mehr">${ico('plus')}</button></span></label>
       <label>Menge insgesamt<span class="vr-mengefeld"><input type="number" id="vrMenge" min="0" step="1" inputmode="numeric" value="${x.menge != null ? x.menge : ''}" placeholder="–"><select id="vrEinheit">${['g', 'ml'].map(u => `<option ${(x.einheit || 'g') === u ? 'selected' : ''}>${u}</option>`).join('')}</select></span></label>
       <label>MHD (optional)<input type="date" id="vrMhd" value="${esc(x.mhd || '')}"></label></div>
@@ -249,12 +267,17 @@ function vrWenigAbSync(keepWert) {
 }
 function vrFormSpeichern(f) {
   const id0 = f.dataset.id, val = s => { const el = document.getElementById(s); return el ? el.value.trim() : ''; };
-  const name = val('vrName'); if (!name) return toast('Bitte einen Namen eingeben.');
+  const nameRoh = val('vrName'); if (!nameRoh) return toast('Bitte einen Namen eingeben.');
+  const alt = id0 ? vrDaten()[id0] : null;
+  // Frischware-Namen nicht «schön schreiben» (sind schon korrekt); sonst Title-Case für DE/CH
+  const name = (alt && alt.frisch) ? nameRoh : VK.nameSchoen(nameRoh);
   const stueck = Math.max(0, Math.round(+val('vrStueck') || 0)), mengeT = val('vrMenge'), menge = mengeT === '' ? null : Math.max(0, Math.round(+mengeT || 0));
   const einheit = menge == null ? null : (val('vrEinheit') || 'g');
   const basis = (einheit === 'g' || einheit === 'ml') ? einheit : 'stueck';
   const wenigAb = VK.wenigAbNorm(document.getElementById('vrWenigAb') ? document.getElementById('vrWenigAb').value : VK.wenigAbDefault(basis).n, basis);
-  const felder = { name, ort: VK.ORTNAME[val('vrOrt')] ? val('vrOrt') : 'regal', stueck, menge, einheit, mhd: /^\d{4}-\d{2}-\d{2}$/.test(val('vrMhd')) ? val('vrMhd') : null, wenigAb };
+  const abtWahl = val('vrAbt');
+  const abt = VK.ABT.includes(abtWahl) ? abtWahl : VK.abtVon({ name, frisch: alt && alt.frisch });
+  const felder = { name, ort: VK.ORTNAME[val('vrOrt')] ? val('vrOrt') : 'regal', stueck, menge, einheit, mhd: /^\d{4}-\d{2}-\d{2}$/.test(val('vrMhd')) ? val('vrMhd') : null, wenigAb, abt };
   if (document.getElementById('vrMarke')) felder.marke = val('vrMarke');
   if (id0) {
     vrAendern(id0, e => { const r = Object.assign({}, e, felder); if (r.menge == null) { delete r.menge; delete r.einheit; } if (r.einheit && e.einheit && r.einheit !== e.einheit) delete r.packung; return VK.sauber(r); });
@@ -270,30 +293,49 @@ function vrFormSpeichern(f) {
 }
 
 /* ---------- Eingaben (eigene data-vr-*-Attribute, kollidieren nicht mit app.js) ---------- */
+function vrLoeschen(id) {
+  const e = vrDaten()[id]; if (!e || !confirm(`«${e.name}» aus dem Vorrat löschen?`)) return false;
+  Store.update('vorrat', {}, v => { delete v[id]; return v; });
+  try { closeSheet(); } catch (err) {}
+  toast('Gelöscht.'); return true;
+}
 document.addEventListener('click', ev => {
-  const t = ev.target.closest('[data-vr-scan],[data-vr-frisch],[data-vr-hand],[data-vr-edit],[data-vr-pm],[data-vr-ek],[data-vr-auf],[data-vr-ort],[data-vr-fort],[data-vr-eort],[data-vr-f],[data-vr-fs],[data-vr-del]');
+  const t = ev.target.closest('[data-vr-scan],[data-vr-frisch],[data-vr-hand],[data-vr-edit],[data-vr-pm],[data-vr-ek],[data-vr-auf],[data-vr-aufabt],[data-vr-ort],[data-vr-fort],[data-vr-eort],[data-vr-eort-live],[data-vr-eabt],[data-vr-f],[data-vr-fs],[data-vr-del]');
   if (!t) return;
   const d = t.dataset;
   if ('vrScan' in d) return vrScanStarten();
   if ('vrFrisch' in d) return vrFrischSheet();
   if ('vrHand' in d) return vrBearbeiten(null);
   if (d.vrEdit) return vrBearbeiten(d.vrEdit);
-  if (d.vrPm) { const i = d.vrPm.lastIndexOf('|'), id = d.vrPm.slice(0, i), n = +d.vrPm.slice(i + 1); return vrAendern(id, e => VK.plus(e, n)); }
+  if (d.vrPm) {
+    const i = d.vrPm.lastIndexOf('|'), id = d.vrPm.slice(0, i), n = +d.vrPm.slice(i + 1);
+    const e = vrDaten()[id]; if (!e) return;
+    if (n < 0 && (e.stueck || 0) <= 0) return vrLoeschen(id);
+    return vrAendern(id, x => VK.plus(x, n));
+  }
   if (d.vrEk) return vrZumEinkauf(d.vrEk);
   if (d.vrAuf) { vrUi.offen[d.vrAuf] = !vrUi.offen[d.vrAuf]; const l = document.getElementById('vrListe'); if (l) l.innerHTML = vrListeHTML(); return; }
+  if (d.vrAufabt) { vrUi.offenAbt[d.vrAufabt] = !vrUi.offenAbt[d.vrAufabt]; const l = document.getElementById('vrListe'); if (l) l.innerHTML = vrListeHTML(); return; }
   const chips = (attr, wert) => t.parentNode.querySelectorAll(`[${attr}]`).forEach(b => { const on = b.getAttribute(attr) === wert; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
   if (d.vrOrt) { chips('data-vr-ort', d.vrOrt); einstSetzen({ vorrat_ort: d.vrOrt }); return; }
   if (d.vrFort) { chips('data-vr-fort', d.vrFort); vrUi.frischOrt = d.vrFort; return; }
   if (d.vrEort) { chips('data-vr-eort', d.vrEort); const h = document.getElementById('vrOrt'); if (h) h.value = d.vrEort; return; }
+  if (d.vrEortLive) {
+    chips('data-vr-eort-live', d.vrEortLive);
+    const id = (document.getElementById('vrErgId') || {}).value;
+    if (id && VK.ORTNAME[d.vrEortLive]) vrAendern(id, e => { e.ort = d.vrEortLive; return e; });
+    return;
+  }
+  if (d.vrEabt) { chips('data-vr-eabt', d.vrEabt); const h = document.getElementById('vrAbt'); if (h) h.value = d.vrEabt; return; }
   if (d.vrF) { const r = VK.frischDazu(vrDaten(), d.vrF, vrUi.frischOrt === 'auto' ? null : vrUi.frischOrt, vrWer()); if (r.id) Store.set('vorrat', r.v); vrFrischZahlen(); return; }
   if (d.vrFs) { const i = document.getElementById('vrStueck'); if (i) i.value = Math.max(0, (Math.round(+i.value) || 0) + +d.vrFs); return; }
-  if (d.vrDel) { const e = vrDaten()[d.vrDel]; if (!e || !confirm(`«${e.name}» aus dem Vorrat löschen?`)) return; Store.update('vorrat', {}, v => { delete v[d.vrDel]; return v; }); closeSheet(); return toast('Gelöscht.'); }
+  if (d.vrDel) return vrLoeschen(d.vrDel);
 });
 document.addEventListener('submit', ev => {
   const f = ev.target;
   if (f.id === 'vrCodeForm') { ev.preventDefault(); const c = document.getElementById('vrCodeTxt').value.replace(/\D/g, ''); if (!VK.codeOk(c)) return toast('Der Code stimmt nicht (8, 12 oder 13 Ziffern mit Prüfziffer).'); return vrCode(c); }
   if (f.id === 'vrNameForm') {
-    ev.preventDefault(); const name = document.getElementById('vrNName').value.trim(), marke = document.getElementById('vrNMarke').value.trim(), code = f.dataset.code;
+    ev.preventDefault(); const name = VK.nameSchoen(document.getElementById('vrNName').value.trim()), marke = document.getElementById('vrNMarke').value.trim(), code = f.dataset.code;
     if (!name) return toast('Bitte einen Namen eingeben.');
     Store.update('vorrat', {}, v => VK.scanDazu(v, code, { name, marke }, vrOrtWahl(), vrWer()).v);
     return vrErgebnis('c:' + VK.codeNorm(code), true);
