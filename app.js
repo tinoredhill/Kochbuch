@@ -1,5 +1,5 @@
 'use strict';
-/* Kochbuch v7 – App-Logik. Daten nur über Store (store.js). Rezepte aus rezepte/rezepte.json. Icons aus icons.js. */
+/* Kochbuch v8 – App-Logik (v8: Tab «Vorrat» in vorrat.js / vorrat-kern.js). Daten nur über Store (store.js). Rezepte aus rezepte/rezepte.json. Icons aus icons.js. */
 const $ = s => document.querySelector(s), app = $('#app');
 const TAGE = [['mo', 'Montag', 'Mo'], ['di', 'Dienstag', 'Di'], ['mi', 'Mittwoch', 'Mi'], ['do', 'Donnerstag', 'Do'], ['fr', 'Freitag', 'Fr'], ['sa', 'Samstag', 'Sa'], ['so', 'Sonntag', 'So']];
 const TAGNAME = Object.fromEntries(TAGE.map(t => [t[0], t[1]]));
@@ -120,6 +120,7 @@ function closeSheet() { $('#sheet').hidden = true; }
 function sheetNeu(k) {   // true = Anzeige im offenen Fenster schon aufgefrischt, Seite dahinter später
   if ($('#wahlErgebnis')) { $('#wahlErgebnis').innerHTML = wahlErgebnis(); render(true); return true; }
   if ($('.gwliste') && k === 'gewohnheiten') { gewohnheitenSheet(); render(true); return true; }
+  if ($('.vr-frisch') && k === 'vorrat') { vrFrischZahlen(); render(true); return true; }
   return false;
 }
 $('#sheet').addEventListener('click', e => { if (e.target.closest('[data-close]')) closeSheet(); });
@@ -582,7 +583,7 @@ async function syncStarten() {
   if (!syncCfg() || !s.code || SYNC.laeuft) return;
   SYNC.laeuft = true;
   try {
-    if (!SYNC.mod) { SYNC.mod = await import('./sync.js'); SYNC.mod.aufStatus(st => { SYNC.status = st; if (route.v === 'einstellungen') render(true); }); SYNC.mod.aufKeyZustand(() => wartung()); }
+    if (!SYNC.mod) { SYNC.mod = await import('./sync.js'); SYNC.mod.aufStatus(st => { SYNC.status = st; if (route.v === 'einstellungen') render(true); }); SYNC.mod.aufKeyZustand(k => { wartung(); if (k === 'vorrat' && route.v === 'vorrat') render(true); }); }
     SYNC.handle = await SYNC.mod.starten(syncCfg(), s.code, s.geraet);
   } catch (e) {
     console.warn('Synchronisation', e); SYNC.laeuft = false;
@@ -850,7 +851,7 @@ function viewEinstellungen() {
    <div class="chips">${[['auto', 'Automatisch'], ...SAISONS.map(x => [x[0], x[1] + ' · ' + x[2]])].map(([k, l]) => `<button class="chip ${(e.farbe || 'auto') === k ? 'on' : ''}" data-farbe="${k}" aria-pressed="${(e.farbe || 'auto') === k}">${k === 'auto' ? '' : `<i class="farbpunkt" data-s="${k}"></i>`}${l}</button>`).join('')}</div>
    <h2>Synchronisieren</h2>
    <p class="status ${st.zustand}"><span class="punkt"></span>${esc(st.text)}</p>
-   <p class="erkl">Mit einem gemeinsamen Haushalts-Code sehen alle Geräte im Haushalt denselben Wochenplan, dieselbe Einkaufsliste, Notizen, Sterne, Likes, Gewohnheiten und «Zuletzt gekocht» – live. Stoppuhren und diese Einstellungen bleiben auf jedem Gerät für sich.</p>
+   <p class="erkl">Mit einem gemeinsamen Haushalts-Code sehen alle Geräte im Haushalt denselben Wochenplan, dieselbe Einkaufsliste, den Vorrat, Notizen, Sterne, Likes, Gewohnheiten und «Zuletzt gekocht» – live. Stoppuhren und diese Einstellungen bleiben auf jedem Gerät für sich.</p>
    ${!cfg ? `<p class="hinweis-box">${ico('key')}<span>Die Synchronisation ist noch nicht eingeschaltet (Firebase-Konfiguration fehlt). Einen Code kann man trotzdem schon erstellen oder eingeben; verbunden wird, sobald die Konfiguration eingetragen ist.</span></p>` : ''}
    <h3 class="h3klein">Haushalts-Code</h3>
    ${s.code ? `<p class="code gross">${codeAnzeige(s.code)}</p>
@@ -864,13 +865,13 @@ function viewEinstellungen() {
 function viewFehlt() { app.innerHTML = `<p class="leer">Dieses Rezept gibt es nicht (mehr).<br><br><button class="btn" data-go="#/">Zur Rezeptliste</button></p>`; }
 
 /* ---------- Navigation / Router ---------- */
-const NAV = [['rezepte', 'Rezepte', 'book'], ['plan', 'Wochenplan', 'calendar'], ['einkauf', 'Einkauf', 'cart'], ['wissen', 'Küchenwissen', 'bulb']];
-$('#nav').innerHTML = NAV.map(([v, l, i]) => `<button data-v="${v}">${ico(i)}<span>${l}</span>${v === 'einkauf' ? '<b id="badge" hidden></b>' : ''}</button>`).join('');
+const NAV = [['rezepte', 'Rezepte', 'book'], ['plan', 'Wochenplan', 'calendar'], ['einkauf', 'Einkauf', 'cart'], ['vorrat', 'Vorrat', 'fridge'], ['wissen', 'Küchenwissen', 'bulb']];
+$('#nav').innerHTML = NAV.map(([v, l, i]) => `<button data-v="${v}" aria-label="${l}">${ico(i)}<span>${v === 'wissen' ? '<i class="lang">Küchenwissen</i><i class="kurz">Wissen</i>' : l}</span>${v === 'einkauf' ? '<b id="badge" hidden></b>' : ''}</button>`).join('');
 function parse() {
   const p = location.hash.replace(/^#\/?/, '').split('/');
   if (p[0] === 'rezept') return { v: 'rezept', id: p[1] };
   if (p[0] === 'kochen') return { v: 'kochen', id: p[1], nr: +p[2] || 1 };
-  if (['einkauf', 'plan', 'wissen', 'einstellungen'].includes(p[0])) return { v: p[0] };
+  if (['einkauf', 'plan', 'vorrat', 'wissen', 'einstellungen'].includes(p[0])) return { v: p[0] };
   return { v: 'rezepte' };
 }
 function render(keepScroll) {
@@ -881,7 +882,7 @@ function render(keepScroll) {
   document.body.classList.toggle('koch', route.v === 'kochen');
   document.body.classList.toggle('mit-hero', route.v === 'rezept');
   if (route.v === 'kochen') { if (!wakeWanted) { wakeWanted = true; requestWake(); } } else releaseWake();
-  ({ rezepte: viewListe, rezept: () => viewRezept(route.id), kochen: () => viewKochen(route.id, route.nr), einkauf: viewEinkauf, plan: viewPlan, wissen: viewWissen, einstellungen: viewEinstellungen })[route.v]();
+  ({ rezepte: viewListe, rezept: () => viewRezept(route.id), kochen: () => viewKochen(route.id, route.nr), einkauf: viewEinkauf, plan: viewPlan, vorrat: viewVorrat, wissen: viewWissen, einstellungen: viewEinstellungen })[route.v]();
   document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.v === (route.v === 'rezept' ? 'rezepte' : route.v)));
   renderTimerbar(); badge();
   if (fokus && ['suche', 'wsuche', 'addTxt', 'codeTxt'].includes(fokus) && $('#' + fokus)) { const i = $('#' + fokus); i.focus(); try { i.setSelectionRange(sel, sel); } catch (e) {} }
@@ -889,7 +890,7 @@ function render(keepScroll) {
 }
 window.addEventListener('hashchange', () => { if (linkPruefen()) { render(); return; } closeSheet(); $('#toast').hidden = true; render(); });
 $('#nav').addEventListener('click', e => { const b = e.target.closest('button'); if (b) location.hash = b.dataset.v === 'rezepte' ? '#/' : '#/' + b.dataset.v; });
-['plan', 'tagesplan', 'gewohnheiten', 'bewertungen', 'einkauf_eigen', 'einkauf_haken', 'einkauf_weg', 'notizen', 'favoriten', 'zuletzt', 'timer', 'einstellungen'].forEach(k => Store.subscribe(k, () => {
+['plan', 'tagesplan', 'gewohnheiten', 'bewertungen', 'vorrat', 'einkauf_eigen', 'einkauf_haken', 'einkauf_weg', 'notizen', 'favoriten', 'zuletzt', 'timer', 'einstellungen'].forEach(k => Store.subscribe(k, () => {
   if (k === 'plan' || k === 'favoriten' || k === 'notizen') wartung();   // v6-Gerät hat etwas geändert -> übernehmen   // ein v6-Gerät hat etwas eingeplant -> übernehmen
   if (k === 'einstellungen') farbeAnwenden();
   if (k === 'notizen' && document.activeElement && document.activeElement.id === 'notiz') return;

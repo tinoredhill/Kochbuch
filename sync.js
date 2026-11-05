@@ -1,4 +1,4 @@
-/* Kochbuch v7 – Live-Synchronisation über Firebase Firestore (wird nur geladen, wenn firebase-config.js gefüllt ist).
+/* Kochbuch v8 – Live-Synchronisation über Firebase Firestore (wird nur geladen, wenn firebase-config.js gefüllt ist).
    Datenmodell:  haushalte/{code}/daten/{schluessel}  =  { e: { <eintrag>: { <geraet>: { v: Wert, t: Zeit, x: gelöscht } } } }
    - Jeder Eintrag (z.B. ein Haken, ein Wochentag, eine Notiz) wird einzeln gespeichert.
    - Jedes Gerät schreibt nur in sein eigenes Unterfeld; gelesen wird pro Eintrag der Wert mit der jüngsten Zeit
@@ -10,7 +10,9 @@ import { initializeFirestore, getFirestore, persistentLocalCache, persistentMult
 
 const KEYS_V6 = ['plan', 'einkauf_eigen', 'einkauf_haken', 'einkauf_weg', 'notizen', 'favoriten', 'zuletzt'];
 const KEYS_V7 = ['tagesplan', 'gewohnheiten', 'bewertungen'];   // neu in v7 – brauchen die Regeln v7 in der Firebase-Konsole
-const KEYS = [...KEYS_V6, ...KEYS_V7];
+const KEYS_V8 = ['vorrat'];   // neu in v8 – braucht die Regeln v8 in der Firebase-Konsole
+const NEU = [...KEYS_V7, ...KEYS_V8];   // ohne passende Regeln: Hinweis, Daten bleiben lokal
+const KEYS = [...KEYS_V6, ...KEYS_V7, ...KEYS_V8];
 const local = Store.localAdapter;
 
 /* ---- Werte <-> Einträge ---- */
@@ -44,10 +46,16 @@ export const _test = { zuEintraegen, ausEintraegen, enc, dec };
 
 /* ---- Verbindung ---- */
 let status = { zustand: 'aus', text: 'Nicht verbunden' }, statusCbs = [];
-let regelnAlt = false;   // true, wenn die Konsole noch die Regeln v6 hat (neue Schlüssel abgewiesen)
-const REGELN_ALT = 'Verbunden, aber die Firebase-Regeln sind noch alt: Wochenplan, Gewohnheiten und Likes bleiben vorerst nur auf diesem Gerät.';
+let regelnAlt = false;   // true, wenn die Konsole noch alte Regeln hat (neue Schlüssel abgewiesen)
+const abgewiesen = new Set();
+function REGELN_ALT_TEXT() {
+  const teile = [];
+  if (KEYS_V7.some(k => abgewiesen.has(k))) teile.push('Wochenplan, Gewohnheiten und Likes');
+  if (abgewiesen.has('vorrat')) teile.push('der Vorrat');
+  return 'Verbunden, aber die Firebase-Regeln sind noch alt: ' + (teile.join(' und ') || 'neue Daten') + (teile.length === 1 && teile[0] === 'der Vorrat' ? ' bleibt' : ' bleiben') + ' vorerst nur auf diesem Gerät.';
+}
 function setStatus(zustand, text) {
-  if (regelnAlt && (zustand === 'verbunden')) { zustand = 'fehler'; text = REGELN_ALT; }
+  if (regelnAlt && (zustand === 'verbunden')) { zustand = 'fehler'; text = REGELN_ALT_TEXT(); }
   status = { zustand, text }; statusCbs.forEach(cb => { try { cb(status); } catch (e) {} });
 }
 /* Stand pro Schlüssel: 'cache' (nur Zwischenspeicher), 'server' (Serverstand gesehen), 'fehler' (abgewiesen).
@@ -131,7 +139,7 @@ export async function starten(config, code, geraet, optionen = {}) {
   }, err => {
     console.warn('Sync-Lesefehler', key, err.code || err.message);
     if (!ersterSnapshot[key]) { ersterSnapshot[key] = true; offen--; }
-    if (err.code === 'permission-denied' && KEYS_V7.includes(key)) { regelnAlt = true; setKeyStand(key, 'fehler'); setStatus('fehler', REGELN_ALT); return; }
+    if (err.code === 'permission-denied' && NEU.includes(key)) { regelnAlt = true; abgewiesen.add(key); setKeyStand(key, 'fehler'); setStatus('fehler', REGELN_ALT_TEXT()); return; }
     setKeyStand(key, 'fehler');
     setStatus('fehler', 'Keine Berechtigung oder Fehler: ' + (err.code || err.message));
   }));
@@ -140,7 +148,7 @@ export async function starten(config, code, geraet, optionen = {}) {
   Store.useAdapter(adapter);
   window.addEventListener('online', () => status.zustand === 'offline' && setStatus('verbinde', 'Verbinde …'));
   window.addEventListener('offline', () => setStatus('offline', 'Offline – Änderungen werden später übertragen'));
-  return { stoppen: () => { abmelden.forEach(f => f()); Store.useAdapter(null); Object.keys(keyStand).forEach(k => delete keyStand[k]); regelnAlt = false; setStatus('aus', 'Nicht verbunden'); } };
+  return { stoppen: () => { abmelden.forEach(f => f()); Store.useAdapter(null); Object.keys(keyStand).forEach(k => delete keyStand[k]); regelnAlt = false; abgewiesen.clear(); setStatus('aus', 'Nicht verbunden'); } };
 }
 export function aufStatus(cb) { statusCbs.push(cb); cb(status); }
 export function aktuellerStatus() { return status; }
