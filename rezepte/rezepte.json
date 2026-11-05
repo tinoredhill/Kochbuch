@@ -809,6 +809,779 @@
         "geschaetzt": true,
         "protein_g": 16
       }
+    },
+    {
+      "id": "fisch-im-blaetterteig",
+      "titel": "Fisch im Blätterteig",
+      "untertitel": null,
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/12935"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 50,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fisch",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "fisch-im-blaetterteig.jpg",
+        "alt": "Zwei goldbraune Fischpäckchen im Blätterteig auf einer weissen Platte"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Öl"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Rüebli"
+        },
+        {
+          "menge": 1,
+          "einheit": "Stange",
+          "name": "kleiner Lauch"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Champignons"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Crème fraîche"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "Fischfilets ohne Haut",
+          "notiz": "z.B. Heilbutt, Forelle, Egli"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Zitronensaft"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "Bund",
+          "name": "Dill"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "eckig ausgewallter Blätterteig"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Ei"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "1 EL Öl in die Pfanne geben. Rüebli, kleinen Lauch und Champignons wenn nötig waschen, rüsten, fein schneiden und beigeben. Auf grosser Stufe erhitzen, bis es zischt, mit der Kelle unter Rühren [[duensten|dünsten]]."
+        },
+        {
+          "text": "Crème fraîche und 0.5 TL Salz beigeben, auf mittlere Stufe zurückschalten und ca. 5 Min. garen. Auskühlen lassen. Backofen auf 220 °C vorheizen.",
+          "timer": [
+            {
+              "label": "Füllung garen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Fischfilets wenn nötig in vier gleichmässige Portionen schneiden. Zitronensaft darüber verteilen, 0.5 TL Salz und wenig Pfeffer darüberstreuen. Dill fein schneiden und darüberstreuen."
+        },
+        {
+          "text": "Blätterteig entrollen, mit dem Messer längs und quer halbieren. Füllung auf die Teigmitten verteilen, Fisch darüberlegen."
+        },
+        {
+          "text": "Ei in einer Schüssel aufschlagen und mit der Gabel verrühren. Teigränder mit dem Pinsel bestreichen. Ränder über die Füllung legen, mit den Rändern nach unten auf ein mit Backpapier belegtes Blech legen. Mit Ei bestreichen, Teig mit dem Messer einschneiden. In der Ofenmitte bei 220 °C 20–25 Min. [[backen|backen]].",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 20
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "duensten": {
+          "begriff": "Dünsten",
+          "text": "Nahrungsmittel bei mittlerer Temperatur in Fett garen. Mit der Kelle unter Rühren, damit nichts ansetzt."
+        },
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Tipp: Dill durch Petersilie ersetzen; vor dem Backen mit Mohn bestreuen. Dazu passt Safransauce oder Tartardip."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 380,
+        "protein_g": 25,
+        "kohlenhydrate_g": 28,
+        "fett_g": 18,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "geschnetzeltes",
+      "titel": "Geschnetzeltes",
+      "untertitel": "Kalb, Poulet oder Schwein – gleichwertig",
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/304"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 35,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fleisch",
+        "Pfanne"
+      ],
+      "bild": {
+        "datei": "geschnetzeltes.jpg",
+        "alt": "Cremiges Geschnetzeltes in einer schwarzen Pfanne mit Holzlöffel"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel"
+        },
+        {
+          "menge": 4,
+          "einheit": "Zweige",
+          "name": "Petersilie"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Öl"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "Geschnetzeltes",
+          "notiz": "Kalb, Poulet oder Schwein – alle drei gleichwertig"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Mehl"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 2,
+          "einheit": "Msp.",
+          "name": "Paprika"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": 3,
+          "einheit": "dl",
+          "name": "Wasser",
+          "einkaufen": false
+        },
+        {
+          "menge": 4,
+          "einheit": "EL",
+          "name": "Rahm"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Zwiebel und Petersilie rüsten, fein schneiden und beiseitelegen."
+        },
+        {
+          "text": "2 EL Öl in die Bratpfanne geben und auf grösster Stufe erhitzen. Geschnetzeltes (Kalb, Poulet oder Schwein – gleichwertig) beigeben und rundum [[braten|anbraten]]. Mit der Bratschaufel erst umrühren, wenn sich eine Kruste gebildet hat; fertig braten."
+        },
+        {
+          "text": "Vorbereitete Zwiebel und Kräuter, Mehl, Salz, Paprika und wenig Pfeffer beigeben und mischen."
+        },
+        {
+          "text": "Wasser dazugiessen, verrühren und [[aufkochen|aufkochen]]. Auf kleine Stufe zurückschalten und zugedeckt garen. Fleischart wählen – alle drei gleichwertig. Zeit: Kalb insgesamt 5 Min., Poulet insgesamt 10 Min., Schwein insgesamt 30 Min. Wenn nötig Wasser nachgiessen.",
+          "timer": [
+            {
+              "label": "Kalb",
+              "min": 5
+            },
+            {
+              "label": "Poulet",
+              "min": 10
+            },
+            {
+              "label": "Schwein",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Rahm beigeben und verrühren. Tipp: 150 g Champignons in Scheiben schneiden und mit den Zwiebeln beigeben."
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 320,
+        "protein_g": 28,
+        "kohlenhydrate_g": 8,
+        "fett_g": 18,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "fischroellchen-spinat",
+      "titel": "Fischröllchen mit Spinat",
+      "untertitel": null,
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/384"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 50,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fisch",
+        "Ofen",
+        "Spinat"
+      ],
+      "bild": {
+        "datei": "fischroellchen-spinat.jpg",
+        "alt": "Überbackene Fischröllchen mit Spinat und Käse in einer Form"
+      },
+      "zutaten": [
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "tiefgekühlter Blattspinat",
+          "abteilung": "Tiefkühl"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "Fischfilets",
+          "notiz": "z.B. Egli, Rotzunge, Goldbutt"
+        },
+        {
+          "menge": 2,
+          "einheit": "TL",
+          "name": "Zitronensaft"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "grobkörniger Senf"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Muskat"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Wasser",
+          "einkaufen": false
+        },
+        {
+          "menge": 4,
+          "einheit": "EL",
+          "name": "Rahm"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Bouillon"
+        },
+        {
+          "menge": 4,
+          "einheit": "EL",
+          "name": "Reibkäse"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Tiefgekühlten Blattspinat antauen lassen."
+        },
+        {
+          "text": "Breite Fischfilets längs halbieren und mit der silbernen Seite nach oben auf das Schneidebrett legen. Zitronensaft darüber verteilen, 0.25 TL Salz und wenig Pfeffer darüberstreuen. Grobkörnigen Senf darauf verteilen und mit dem Pinsel verstreichen. Backofen auf 180 °C vorheizen."
+        },
+        {
+          "text": "Angetauten Blattspinat leicht ausdrücken und in eine Schüssel geben. Knoblauchzehe mit der Knoblauchpresse dazupressen. 0.25 TL Salz, wenig Pfeffer und wenig Muskat beigeben, mit dem Löffel mischen. Auf die Fischfilets verteilen, aufrollen, wenn nötig mit Zahnstocher feststecken und in die Gratinform stellen."
+        },
+        {
+          "text": "Wasser, Rahm und Bouillon in den Messbecher geben, mit dem Löffel verrühren und dazugiessen. Reibkäse darüber verteilen. In der Ofenmitte bei 180 °C 20–25 Min. [[backen|backen]].",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 20
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 280,
+        "protein_g": 28,
+        "kohlenhydrate_g": 4,
+        "fett_g": 16,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "pouletbruestchen-ofen",
+      "titel": "Pouletbrüstchen im Ofen",
+      "untertitel": null,
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/360"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 35,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Poulet",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Poulet",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "pouletbruestchen-ofen.jpg",
+        "alt": "Pouletbrüstchen im Speckmantel mit Kräuterrahm in einer Form"
+      },
+      "zutaten": [
+        {
+          "menge": 4,
+          "einheit": "",
+          "name": "Pouletbrüstchen"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Paprika"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": 8,
+          "einheit": "Tranchen",
+          "name": "Bratspeck"
+        },
+        {
+          "menge": 2.5,
+          "einheit": "dl",
+          "name": "Halbrahm"
+        },
+        {
+          "menge": 2,
+          "einheit": "Msp.",
+          "name": "Paprika",
+          "notiz": "für den Rahm"
+        },
+        {
+          "menge": 1,
+          "einheit": "Bund",
+          "name": "Kräuter",
+          "notiz": "z.B. Petersilie, Thymian, Rosmarin"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Pouletbrüstchen längs halbieren. 0.25 TL Salz, 0.25 TL Paprika und wenig Pfeffer darüberstreuen. Mit je Tranchen Bratspeck darumwickeln und in die Gratinform legen. Backofen auf 200 °C vorheizen."
+        },
+        {
+          "text": "Halbrahm, 0.25 TL Salz, 2 Msp. Paprika und wenig Pfeffer in den Messbecher geben. Kräuter fein schneiden, beigeben und mit dem Schwingbesen verrühren. Über die Pouletbrüstchen giessen. In der Ofenmitte bei 200 °C 20 Min. [[backen|backen]].",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 20
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 420,
+        "protein_g": 40,
+        "kohlenhydrate_g": 3,
+        "fett_g": 28,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "enchiladas",
+      "titel": "Enchiladas",
+      "untertitel": null,
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/632"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 50,
+      "schwierigkeit": "einfach",
+      "kueche": "Mexikanisch",
+      "hauptzutat": "Rindfleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fleisch",
+        "Ofen",
+        "Mexikanisch"
+      ],
+      "bild": {
+        "datei": "enchiladas.jpg",
+        "alt": "Überbackene Enchiladas mit Rahm und Käse in einer Form"
+      },
+      "zutaten": [
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Frühlingszwiebeln"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Knoblauchzehen"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Peperoncino"
+        },
+        {
+          "menge": 4,
+          "einheit": "Zweige",
+          "name": "Thymian"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "Kidneybohnen",
+          "notiz": "abgetropft ca. 270 g"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Öl"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "Rindsgeschnetzeltes"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Fajita-Gewürzmischung"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "gehackte Tomaten",
+          "notiz": "400 g"
+        },
+        {
+          "menge": 8,
+          "einheit": "",
+          "name": "Tortillas"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "saurer Halbrahm"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "geriebener Mozzarella"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Frühlingszwiebeln waschen, rüsten, in feine Ringe schneiden und in eine Schüssel geben. Knoblauchzehen mit der Knoblauchpresse dazupressen. Peperoncino waschen, längs halbieren, entkernen, fein schneiden und beigeben. Thymian fein schneiden und beigeben. Kidneybohnen in einem Sieb abgiessen, abspülen, abtropfen lassen, beigeben und beiseitestellen."
+        },
+        {
+          "text": "Öl in der Bratpfanne auf grösster Stufe erhitzen. Rindsgeschnetzeltes beigeben und auf grösster Stufe rundum [[braten|anbraten]]. Mit der Bratschaufel erst umrühren, wenn sich eine Kruste gebildet hat. Zeit insgesamt 2–3 Min.",
+          "timer": [
+            {
+              "label": "Fleisch anbraten",
+              "min": 3
+            }
+          ]
+        },
+        {
+          "text": "Vorbereitetes Gemüse beigeben und mitbraten, 2–3 Min. Fajita-Gewürzmischung, Salz und wenig Pfeffer beigeben und mischen. Gehackte Tomaten beigeben, mischen, auf mittlere Stufe zurückschalten und 5 Min. garen. Backofen auf 200 °C vorheizen.",
+          "timer": [
+            {
+              "label": "Gemüse mitbraten",
+              "min": 3
+            },
+            {
+              "label": "Tomaten garen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Je 1 Tortilla auf das Schneidebrett legen. 3–4 EL vorbereitete Füllung auf die untere Hälfte geben, seitliche Teigränder über die Füllung einschlagen, von unten satt aufrollen und in die Gratinform legen."
+        },
+        {
+          "text": "Sauren Halbrahm und geriebenen Mozzarella darüber verteilen. In der Ofenmitte bei 200 °C 10 Min. [[backen|backen]]. Tipp: Rindsgeschnetzeltes durch Hackfleisch, Schweinsgeschnetzeltes oder Pouletgeschnetzeltes ersetzen.",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 10
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 520,
+        "protein_g": 32,
+        "kohlenhydrate_g": 45,
+        "fett_g": 24,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "rahmschnitzel",
+      "titel": "Rahmschnitzel",
+      "untertitel": null,
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/153"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 10,
+      "zeit_total_min": 40,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Schweinefleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fleisch",
+        "Pfanne"
+      ],
+      "bild": {
+        "datei": "rahmschnitzel.jpg",
+        "alt": "Rahmschnitzel mit Pilzen und cremiger Sauce auf einem Teller"
+      },
+      "zutaten": [
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "Pilze"
+        },
+        {
+          "menge": 4,
+          "einheit": "",
+          "name": "Schweinsplätzli",
+          "notiz": "à 100 g"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 2,
+          "einheit": "Msp.",
+          "name": "Paprika"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Mehl",
+          "notiz": "zum Wenden",
+          "plus": {
+            "menge": 2,
+            "einheit": "TL"
+          }
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Öl"
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "Wasser",
+          "einkaufen": false
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Bouillon"
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "Rahm"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Pilze wenn nötig mit dem Pinsel reinigen, rüsten, in Scheiben schneiden und beiseitelegen."
+        },
+        {
+          "text": "Schweinsplätzli auf das Schneidebrett legen. Salz, Paprika und wenig Pfeffer darüberstreuen. Mehl in einen Teller geben und die Plätzli darin wenden."
+        },
+        {
+          "text": "Öl in der Bratpfanne auf grösster Stufe erhitzen. Plätzli beigeben und auf grösster Stufe beidseitig [[braten|anbraten]]. Mit der Bratschaufel erst wenden, wenn sich eine Kruste gebildet hat; fertig braten. Zeit insgesamt 3–4 Min. Auf eine Platte legen.",
+          "timer": [
+            {
+              "label": "Plätzli braten",
+              "min": 4
+            }
+          ]
+        },
+        {
+          "text": "Vorbereitete Pilze in dieselbe Bratpfanne geben, auf grosse Stufe zurückschalten und mit der Bratschaufel unter Rühren [[duensten|dünsten]]."
+        },
+        {
+          "text": "Wasser und Bouillon dazugiessen und zur Hälfte einkochen. Rahm und 2 TL Mehl mit dem Schwingbesen im Messbecher verrühren, dazugiessen und verrühren. Auf kleine Stufe zurückschalten, Plätzli beigeben und erwärmen. Tipp: Schweinsplätzli durch Kalbsplätzli, Trutenbrust oder Pouletbrüstchen ersetzen (Poulet insgesamt ca. 10 Min. braten)."
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "duensten": {
+          "begriff": "Dünsten",
+          "text": "Nahrungsmittel bei mittlerer Temperatur in Fett garen. Mit der Kelle unter Rühren, damit nichts ansetzt."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 450,
+        "protein_g": 30,
+        "kohlenhydrate_g": 10,
+        "fett_g": 32,
+        "geschaetzt": true
+      }
     }
   ]
 }
