@@ -1582,6 +1582,4480 @@
         "fett_g": 32,
         "geschaetzt": true
       }
+    },
+    {
+      "id": "blitzlasagne",
+      "titel": "Blitzlasagne",
+      "untertitel": "Mit fertiger Tomatensauce und schneller Käsesauce",
+      "quelle": {
+        "name": "Kleiner Tiptopf (Foto: Kleiner Tiptopf)",
+        "url": "https://derkleinetiptopf.ch/rezepte/9778"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 40,
+      "zeit_total_min": 55,
+      "schwierigkeit": "mittel",
+      "kueche": "Italienisch",
+      "hauptzutat": "Teigwaren",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Ofen",
+        "Teigwaren",
+        "Vegetarisch"
+      ],
+      "bild": {
+        "datei": "blitzlasagne.jpg",
+        "alt": "Goldbraun überbackene Lasagne in einer ovalen Gratinform mit Löffel"
+      },
+      "zutaten": [
+        {
+          "menge": 3,
+          "einheit": "dl",
+          "name": "Milch",
+          "gruppe": "Käsesauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "Becher",
+          "name": "saurer Halbrahm",
+          "gruppe": "Käsesauce"
+        },
+        {
+          "menge": 8,
+          "einheit": "EL",
+          "name": "Reibkäse",
+          "gruppe": "Käsesauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Mehl",
+          "gruppe": "Käsesauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Bouillon",
+          "gruppe": "Käsesauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Käsesauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "Gläser",
+          "name": "Tomatensauce",
+          "notiz": "je ca. 400 g",
+          "gruppe": "Lasagne"
+        },
+        {
+          "menge": 12,
+          "einheit": "",
+          "name": "Lasagneblätter",
+          "gruppe": "Lasagne"
+        },
+        {
+          "menge": 4,
+          "einheit": "EL",
+          "name": "Reibkäse",
+          "notiz": "zum Bestreuen",
+          "gruppe": "Lasagne"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Für die Käsesauce Milch, sauren Halbrahm, 8 EL Reibkäse, Mehl, Bouillon und wenig Pfeffer in den Messbecher geben und mit dem Schwingbesen verrühren."
+        },
+        {
+          "text": "Tomatensauce und Lasagneblätter abwechslungsweise mit der Käsesauce in die Gratinform einschichten, mit Käsesauce abschliessen. 4 EL Reibkäse darüberstreuen. Tipp: 2 Rüebli mit der Röstiraffel zur Tomatensauce raffeln."
+        },
+        {
+          "text": "In der Ofenmitte bei 220 °C 30–40 Min. [[backen|backen]], bis die Lasagneblätter weich sind.",
+          "timer": [
+            {
+              "label": "Lasagne backen (30–40 Min.)",
+              "min": 30
+            },
+            {
+              "label": "Lasagne fertig (max.)",
+              "min": 40
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 530,
+        "protein_g": 21,
+        "kohlenhydrate_g": 64,
+        "fett_g": 21,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "salade-nicoise",
+      "titel": "Salade niçoise",
+      "untertitel": null,
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/741"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 30,
+      "zeit_total_min": 60,
+      "schwierigkeit": "einfach",
+      "kueche": "Französisch",
+      "hauptzutat": "Fisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Salat",
+        "Fisch"
+      ],
+      "bild": {
+        "datei": "salade-nicoise.jpg",
+        "alt": "Bunter Salat mit Eiern, Thon, Bohnen und Tomaten in einer Schale mit Salatbesteck"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Wasser",
+          "einkaufen": false
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Bohnen"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "Kartoffeln",
+          "notiz": "festkochende Sorte"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Bouillon"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "hart gekochte Eier"
+        },
+        {
+          "menge": 6,
+          "einheit": "EL",
+          "name": "Olivenöl",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Essig",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Senf",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "Prisen",
+          "name": "Salz",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Tomaten",
+          "gruppe": "Salat"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "",
+          "name": "Gurke",
+          "gruppe": "Salat"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "rote Zwiebel",
+          "gruppe": "Salat"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "Thon",
+          "notiz": "abgetropft ca. 155 g",
+          "gruppe": "Salat"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Blattsalat",
+          "notiz": "z.B. Kopfsalat, Eichblatt, Lattich",
+          "gruppe": "Salat"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Dämpfeinsatz in die Pfanne legen. Wasser bis zum Dämpfeinsatz einfüllen."
+        },
+        {
+          "text": "Bohnen waschen, rüsten, halbieren und auf den Dämpfeinsatz legen. Zugedeckt auf grösster Stufe [[aufkochen|aufkochen]], auf mittlere Stufe zurückschalten und 5 Min. [[daempfen|dämpfen]].",
+          "timer": [
+            {
+              "label": "Bohnen dämpfen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Kartoffeln waschen, wenn nötig schälen, in gleichmässige Stücke schneiden und mit der Bouillon beigeben. Ca. 15 Min. dämpfen, abkühlen lassen.",
+          "timer": [
+            {
+              "label": "Kartoffeln dämpfen",
+              "min": 15
+            }
+          ]
+        },
+        {
+          "text": "[[eier-hart|Eier hart kochen]], schälen, vierteln und beiseitelegen."
+        },
+        {
+          "text": "Für die Salatsauce Olivenöl, Essig, Senf und Salz in eine Schüssel geben. Knoblauch mit der Knoblauchpresse dazupressen und mit dem Schwingbesen verrühren."
+        },
+        {
+          "text": "Tomaten und Gurke waschen, rüsten, in Würfel schneiden und beigeben. Rote Zwiebel schälen, längs halbieren, in feine Scheiben schneiden und beigeben."
+        },
+        {
+          "text": "Thon abtropfen, mit der Gabel grob zerzupfen und beigeben. Vorbereitete Kartoffeln, Bohnen und Eier beigeben."
+        },
+        {
+          "text": "Blattsalat rüsten, waschen, in der Salatschleuder trocknen, zerkleinern, beigeben und mischen. Tipp: Mit Oliven, Kapern oder Peperoni ergänzen; als Vorspeise die halbe Portion zubereiten. Vegi: Thon durch geräucherten Tofu oder Käse ersetzen."
+        }
+      ],
+      "glossar": {
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        },
+        "daempfen": {
+          "begriff": "Dämpfen",
+          "text": "Nahrungsmittel im Dampf über wenig siedendem Wasser garen (Dämpfeinsatz). Deckel drauf lassen, damit der Dampf bleibt."
+        },
+        "eier-hart": {
+          "begriff": "Eier hart kochen",
+          "text": "Eier in siedendes Wasser legen, ca. 10 Min. kochen, kalt abschrecken – dann lassen sie sich leichter schälen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 390,
+        "protein_g": 16,
+        "kohlenhydrate_g": 26,
+        "fett_g": 25,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "chili-con-carne",
+      "titel": "Chili con Carne",
+      "untertitel": null,
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/357"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 50,
+      "schwierigkeit": "einfach",
+      "kueche": "Mexikanisch",
+      "hauptzutat": "Hackfleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fleisch",
+        "Eintopf",
+        "Bohnen"
+      ],
+      "bild": {
+        "datei": "chili-con-carne.jpg",
+        "alt": "Chili con Carne in einem kleinen Topf, daneben Fladenbrot und Crème fraîche"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe"
+        },
+        {
+          "menge": 2,
+          "einheit": "Zweige",
+          "name": "Oregano"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Peperoncino"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Öl"
+        },
+        {
+          "menge": 300,
+          "einheit": "g",
+          "name": "Hackfleisch"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Mehl"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 2,
+          "einheit": "Msp.",
+          "name": "Cayennepfeffer"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Tomatenpüree"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "gehackte Tomaten",
+          "notiz": "400 g"
+        },
+        {
+          "menge": 3,
+          "einheit": "dl",
+          "name": "heisses Wasser",
+          "einkaufen": false
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "Kidneybohnen",
+          "notiz": "abgetropft ca. 270 g"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "Mais",
+          "notiz": "285 g"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Zwiebel, Knoblauch und Oregano wenn nötig rüsten, fein schneiden und beiseitelegen."
+        },
+        {
+          "text": "[[peperoncino|Peperoncino]] waschen, längs halbieren, entkernen, fein schneiden und beiseitelegen."
+        },
+        {
+          "text": "Öl in den Brattopf geben und auf grösster Stufe erhitzen. Hackfleisch beigeben und rundum [[braten|anbraten]]; mit der Bratschaufel erst umrühren, wenn sich eine Kruste gebildet hat."
+        },
+        {
+          "text": "Vorbereitete Zwiebel, Kräuter und Peperoncino, Mehl, Salz und Cayennepfeffer beigeben und mischen. Auf mittlere Stufe zurückschalten."
+        },
+        {
+          "text": "Tomatenpüree, gehackte Tomaten und heisses Wasser beigeben und mischen."
+        },
+        {
+          "text": "Kidneybohnen und Mais in ein Sieb abgiessen, abspülen, abtropfen und beigeben. Auf kleine Stufe zurückschalten und zugedeckt 20 Min. [[schmoren|schmoren]]. Tipp: Mit Fladenbrot, Tacos, Nachos, Brot oder Reis und Crème fraîche servieren. Vegi: Hackfleisch durch veganes Gehacktes oder Bohnen (z.B. Borlotti, weisse oder schwarze Bohnen) ersetzen.",
+          "timer": [
+            {
+              "label": "Chili schmoren",
+              "min": 20
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "peperoncino": {
+          "begriff": "Peperoncino",
+          "text": "Kerne und Scheidewände sind am schärfsten. Nach dem Schneiden Hände waschen und nicht in die Augen fassen."
+        },
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "schmoren": {
+          "begriff": "Schmoren",
+          "text": "Weiterführung der Garmethode Braten: Angebratenes mit wenig Flüssigkeit zugedeckt auf kleiner Stufe weich garen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 400,
+        "protein_g": 24,
+        "kohlenhydrate_g": 33,
+        "fett_g": 19,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "buchweizensalat-rueebli",
+      "titel": "Buchweizensalat mit Rüebli",
+      "untertitel": "Aus dem Ofen, mit Feta und Pfefferminze",
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/7948"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 45,
+      "zeit_kochen_min": 30,
+      "zeit_total_min": 75,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Buchweizen",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Salat",
+        "Ofen",
+        "Vegetarisch"
+      ],
+      "bild": {
+        "datei": "buchweizensalat-rueebli.jpg",
+        "alt": "Buchweizensalat mit ofengebackenen Bundrüebli, Feta und Minze auf einem Teller"
+      },
+      "zutaten": [
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Buchweizen",
+          "gruppe": "Buchweizen"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "tiefgekühlte Erbsen",
+          "gruppe": "Buchweizen"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "getrocknete Cranberrys",
+          "gruppe": "Buchweizen"
+        },
+        {
+          "menge": 4,
+          "einheit": "dl",
+          "name": "warmes Wasser",
+          "gruppe": "Buchweizen",
+          "einkaufen": false
+        },
+        {
+          "menge": 2,
+          "einheit": "TL",
+          "name": "Bouillon",
+          "gruppe": "Buchweizen"
+        },
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Bundrüebli",
+          "gruppe": "Buchweizen"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Öl",
+          "gruppe": "Buchweizen"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Buchweizen"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Limette",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 4,
+          "einheit": "EL",
+          "name": "Olivenöl",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "TL",
+          "name": "flüssiger Honig",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Salatsauce"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Feta",
+          "gruppe": "Zum Anrichten"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "Bund",
+          "name": "Pfefferminze",
+          "gruppe": "Zum Anrichten"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Buchweizen, Erbsen, Cranberrys, warmes Wasser und Bouillon in die Gratinform geben, mit dem Löffel mischen und auf ein mit Backpapier belegtes Blech stellen."
+        },
+        {
+          "text": "Bundrüebli neben die Gratinform aufs Blech legen, mit dem Pinsel mit Öl bestreichen und das Salz darüberstreuen."
+        },
+        {
+          "text": "In der unteren Ofenhälfte bei 200 °C ca. 30 Min. [[backen|backen]].",
+          "timer": [
+            {
+              "label": "Buchweizen & Rüebli backen",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Für die Salatsauce die Limette mit der Zitronenpresse auspressen und den Saft in eine Schüssel geben. Olivenöl, Honig, Salz und wenig Pfeffer beigeben und mit dem Schwingbesen verrühren."
+        },
+        {
+          "text": "Sauce über den Buchweizen giessen und mit dem Löffel mischen. Rüebli darauf verteilen."
+        },
+        {
+          "text": "Feta von Hand zerbröckeln und darüber verteilen. Pfefferminzblätter abzupfen und darüber verteilen. Tipp: Pfefferminze durch Basilikum, Rüebli und Erbsen durch anderes Gemüse ersetzen. Statt Bundrüebli normale Rüebli schälen und längs vierteln."
+        }
+      ],
+      "glossar": {
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 610,
+        "protein_g": 18,
+        "kohlenhydrate_g": 60,
+        "fett_g": 33,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "ananas-poulet",
+      "titel": "Chinesisches Ananaspoulet",
+      "untertitel": null,
+      "quelle": {
+        "name": "Tiptopf (Foto: Tiptopf)",
+        "url": "https://meintiptopf.ch/rezepte/779"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 10,
+      "zeit_total_min": 25,
+      "schwierigkeit": "einfach",
+      "kueche": "Asiatisch",
+      "hauptzutat": "Poulet",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Poulet",
+        "Pfanne",
+        "Schnell"
+      ],
+      "bild": {
+        "datei": "ananas-poulet.jpg",
+        "alt": "Pouletstücke mit Ananas in glänzender Sauce, daneben eine Schale Reis"
+      },
+      "zutaten": [
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Maisstärke",
+          "notiz": "z.B. Maizena",
+          "gruppe": "Marinade"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Sojasauce",
+          "gruppe": "Marinade"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Öl",
+          "gruppe": "Marinade"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Marinade"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "Pouletgeschnetzeltes",
+          "gruppe": "Marinade"
+        },
+        {
+          "menge": 4,
+          "einheit": "Scheiben",
+          "name": "Ananas",
+          "notiz": "mit Saft",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Wasser",
+          "gruppe": "Sauce",
+          "einkaufen": false
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Sojasauce",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Maisstärke",
+          "notiz": "z.B. Maizena",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Öl",
+          "gruppe": "Zum Braten"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Knoblauchzehen",
+          "gruppe": "Zum Braten"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Für die Marinade Maisstärke, Sojasauce, Öl und wenig Pfeffer in eine Schüssel geben und mit dem Schwingbesen verrühren. Pouletgeschnetzeltes beigeben, mischen und beiseitestellen."
+        },
+        {
+          "text": "Für die Sauce die Ananas beiseitelegen und den Saft in den Messbecher giessen. Wasser, Sojasauce und Maisstärke beigeben, mit dem Schwingbesen verrühren und beiseitestellen."
+        },
+        {
+          "text": "Öl in die Bratpfanne geben und auf grösster Stufe erhitzen. Vorbereitetes Fleisch beigeben und rundum [[braten|anbraten]]; mit der Bratschaufel erst umrühren, wenn sich eine Kruste gebildet hat. Zeit insgesamt 5 Min. Auf mittlere Stufe zurückschalten.",
+          "timer": [
+            {
+              "label": "Poulet anbraten",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Knoblauch mit der Knoblauchpresse dazupressen. Ananas wenn nötig in Stücke schneiden, beigeben, mischen und unter Rühren [[duensten|dünsten]]."
+        },
+        {
+          "text": "Vorbereitete Flüssigkeit dazugiessen und rühren, bis eine Sauce entstanden ist. Sofort servieren."
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "duensten": {
+          "begriff": "Dünsten",
+          "text": "Nahrungsmittel bei mittlerer Temperatur in Fett garen. Mit der Kelle unter Rühren, damit nichts ansetzt."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 330,
+        "protein_g": 24,
+        "kohlenhydrate_g": 30,
+        "fett_g": 13,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-aargauer-rueeblitorte",
+      "titel": "Aargauer Rüeblitorte",
+      "untertitel": "Für 1 Springform von 24 cm Ø (ca. 12 Stück; Nährwerte pro Stück) · Aargau",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": null,
+      "zeit_vorbereitung_min": 40,
+      "zeit_kochen_min": 50,
+      "zeit_total_min": 90,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Süsses",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Aargau",
+        "Kuchen",
+        "Dessert"
+      ],
+      "bild": {
+        "datei": "klassiker-aargauer-rueeblitorte.jpg",
+        "alt": "Glasierte Rüeblitorte mit Marzipanrüebli auf einem Kuchengitter"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Backpapier",
+          "einkaufen": false
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "für die Form"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Rüebli",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 5,
+          "einheit": "",
+          "name": "Eigelb",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Zucker",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "",
+          "name": "Zitrone",
+          "notiz": "abgeriebene Schale",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "gemahlene Mandeln",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 75,
+          "einheit": "g",
+          "name": "Mehl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Backpulver",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Zimtpulver",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "Msp.",
+          "name": "Gewürznelkenpulver",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 5,
+          "einheit": "",
+          "name": "Eiweiss",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "Prise",
+          "name": "Salz",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Aprikosenkonfitüre",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Puderzucker",
+          "gruppe": "Glasur"
+        },
+        {
+          "menge": 2.5,
+          "einheit": "EL",
+          "name": "Zitronensaft",
+          "gruppe": "Glasur"
+        },
+        {
+          "menge": 8,
+          "einheit": "",
+          "name": "Marzipanrüebli",
+          "alternative": {
+            "text": "bis",
+            "menge": 12,
+            "einheit": ""
+          },
+          "gruppe": "Garnitur"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Formboden mit einer Backpapierrondelle belegen, Rand bebuttern. Für den Teig die Rüebli schälen."
+        },
+        {
+          "text": "Für den Teig Eigelb, Zucker und Zitronenschale mit den Schwingbesen des Handrührgerätes rühren, bis die Masse hell und schaumig ist."
+        },
+        {
+          "text": "Mandeln darauf geben. Rüebli an der Bircherraffel dazureiben, sofort unter die Eiercrème mischen. Mehl mit Backpulver und Gewürzen mischen, dazusieben und daruntermischen."
+        },
+        {
+          "text": "[[steif-schlagen|Eiweiss mit Salz steif schlagen]], dazugeben und mit dem Teigschaber [[unterziehen|darunterziehen]]. Masse in die Form füllen. Im unteren Teil des auf 180 °C vorgeheizten Ofens 50–55 Minuten [[backen|backen]]. Herausnehmen, leicht auskühlen lassen. Torte aus der Form nehmen, auf ein Kuchengitter stürzen.",
+          "timer": [
+            {
+              "label": "Torte backen (50–55 Min.)",
+              "min": 50
+            }
+          ]
+        },
+        {
+          "text": "Konfitüre erwärmen, durch ein Sieb streichen."
+        },
+        {
+          "text": "Die noch warme Torte auf der Oberfläche und am Rand mit Konfitüre bepinseln. Vollständig auskühlen lassen."
+        },
+        {
+          "text": "Für die Glasur Puderzucker mit Zitronensaft zu einer dickflüssigen Glasur verrühren. Glasur in die Mitte der Torte giessen und durch leichtes Schräghalten gleichmässig nach allen Seiten verlaufen lassen, antrocknen lassen. Torte mit Marzipanrüebli belegen. Tipp: Die Torte schmeckt nach zwei bis drei Tagen besonders gut."
+        }
+      ],
+      "glossar": {
+        "steif-schlagen": {
+          "begriff": "Eiweiss steif schlagen",
+          "text": "Schüssel und Schwingbesen müssen fett- und eigelbfrei sein. Steif ist der Eischnee, wenn ein Schnitt mit dem Messer sichtbar bleibt."
+        },
+        "unterziehen": {
+          "begriff": "Unterziehen",
+          "text": "Mit dem Teigschaber von unten nach oben locker heben statt rühren – so bleibt die Luft im Eischnee."
+        },
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 360,
+        "protein_g": 8,
+        "kohlenhydrate_g": 52,
+        "fett_g": 13,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-appenzeller-biberli",
+      "titel": "Appenzeller Biberli",
+      "untertitel": "Für ca. 90 Stück (Nährwerte pro Stück) · Teig ruht, Biberli trocknen über Nacht · Appenzell",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": null,
+      "zeit_vorbereitung_min": 45,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 65,
+      "schwierigkeit": "anspruchsvoll",
+      "kueche": "Schweizer",
+      "hauptzutat": "Süsses",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Appenzell",
+        "Gebäck",
+        "Weihnachten"
+      ],
+      "bild": {
+        "datei": "klassiker-appenzeller-biberli.jpg",
+        "alt": "Dreieckige Biberli in einer weissen Schale, daneben ein rot gestreiftes Tuch"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Klarsichtfolie",
+          "einkaufen": false
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter und Mehl",
+          "notiz": "für das Blech"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Honig",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 175,
+          "einheit": "g",
+          "name": "Zucker",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Milch",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Ei",
+          "notiz": "verquirlt",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Eigelb",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "Päckchen",
+          "name": "Vanillezucker",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Zimtpulver",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Gewürznelkenpulver",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Kardamompulver",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "Msp.",
+          "name": "Muskatnuss",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Ruchmehl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Backpulver",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "geschälte, gemahlene Mandeln",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Zucker",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 6,
+          "einheit": "EL",
+          "name": "Honig",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Eiweiss",
+          "notiz": "verquirlt",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Rosenwasser",
+          "notiz": "oder wenig Bittermandelaroma",
+          "alternative": {
+            "text": "bis",
+            "menge": 2,
+            "einheit": "EL"
+          },
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Milch",
+          "notiz": "zum Bepinseln",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Wasser",
+          "gruppe": "Glasur",
+          "einkaufen": false
+        },
+        {
+          "menge": 2,
+          "einheit": "TL",
+          "name": "Kartoffelmehl",
+          "gruppe": "Glasur"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Honig",
+          "gruppe": "Glasur"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung Teig: Honig, Zucker und Milch in einer Pfanne bei kleiner Hitze erwärmen. In eine Schüssel giessen, unter mehrmaligem Rühren leicht auskühlen lassen."
+        },
+        {
+          "text": "Vorbereitung Füllung: Alle Zutaten in eine Schüssel geben, zu einer gleichmässigen, marzipanähnlichen Masse rühren. Wenn die Masse zu feucht ist, noch etwas Mandeln daruntermischen."
+        },
+        {
+          "text": "Vorbereitung Glasur: Wasser mit Kartoffelmehl in einem Pfännchen mit dem Schwingbesen verrühren und [[aufkochen|aufkochen]], von der Platte nehmen. Honig darunterrühren. Leicht auskühlen lassen."
+        },
+        {
+          "text": "Für den Teig Ei, Eigelb, Vanillezucker und Gewürze zum Honiggemisch geben, mit dem Schwingbesen verrühren. Mehl mit Backpulver mischen, dazusieben. Mit einer Kelle zu einem Teig zusammenfügen."
+        },
+        {
+          "text": "Teig auf wenig Mehl kneten, bis er nicht mehr klebt. Zu einem Rechteck formen. In Folie gewickelt 30 Minuten ruhen lassen.",
+          "timer": [
+            {
+              "label": "Teig ruhen",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Teig auf wenig Mehl rechteckig, 5 mm dick [[auswallen|auswallen]]. In 7 cm breite Streifen schneiden. Aus der Mandelmasse fingerdicke Rollen in der Länge der Teigstreifen formen. Teigstreifen mit Wasser bepinseln. Je 1 Mandelrolle darauflegen."
+        },
+        {
+          "text": "Teigstreifen mit der Füllung längs einrollen, gut andrücken. Rollen mit einem scharfen Messer im Zickzack in Dreiecke von ca. 3,5 cm Seitenlänge schneiden. Auf ein bebuttertes und bemehltes Blech legen. Über Nacht trocknen lassen."
+        },
+        {
+          "text": "Biberli mit Milch bepinseln. In der Mitte des auf 180 °C vorgeheizten Ofens ca. 20 Minuten [[backen|backen]].",
+          "timer": [
+            {
+              "label": "Biberli backen",
+              "min": 20
+            }
+          ]
+        },
+        {
+          "text": "Die noch heissen Biberli mit Glasur bepinseln. Auf einem Kuchengitter auskühlen lassen."
+        }
+      ],
+      "glossar": {
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        },
+        "auswallen": {
+          "begriff": "Auswallen",
+          "text": "Teig auf wenig Mehl mit dem Wallholz von der Mitte nach aussen rollen und zwischendurch drehen, damit er nicht anklebt."
+        },
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 60,
+        "protein_g": 1.5,
+        "kohlenhydrate_g": 11,
+        "fett_g": 1.5,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-basler-mehlsuppe",
+      "titel": "Basler Mehlsuppe",
+      "untertitel": "Klassiker aus dem Kanton Basel",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 40,
+      "zeit_total_min": 55,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Getreide",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Basel",
+        "Suppe",
+        "Fasnacht"
+      ],
+      "bild": {
+        "datei": "klassiker-basler-mehlsuppe.jpg",
+        "alt": "Braune Mehlsuppe mit Reibkäse in einem tiefen Teller"
+      },
+      "zutaten": [
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Bratbutter",
+          "notiz": "oder Bratcrème"
+        },
+        {
+          "menge": 5,
+          "einheit": "EL",
+          "name": "Mehl"
+        },
+        {
+          "menge": 1,
+          "einheit": "l",
+          "name": "Fleischbouillon"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Muskatnuss"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Kümmel",
+          "notiz": "nach Belieben"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Reibkäse",
+          "notiz": "zum Bestreuen"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Bratbutter oder Bratcrème in einer Pfanne oder einem Brattopf erwärmen."
+        },
+        {
+          "text": "Mehl beifügen."
+        },
+        {
+          "text": "Mehl unter ständigem Rühren mit dem Schwingbesen bei mittlerer Hitze kastanienbraun [[mehl-roesten|rösten]]."
+        },
+        {
+          "text": "Pfanne von der Platte nehmen. Bouillon unter ständigem Rühren dazugiessen."
+        },
+        {
+          "text": "Pfanne auf die Platte zurückstellen. Suppe unter Rühren aufkochen und zugedeckt bei kleiner Hitze 40 Minuten köcheln, [[abschmecken|abschmecken]]. Mit Reibkäse servieren.",
+          "timer": [
+            {
+              "label": "Suppe köcheln",
+              "min": 40
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "mehl-roesten": {
+          "begriff": "Mehl rösten",
+          "text": "Bei mittlerer Hitze ständig rühren. Braunes Mehl wird schnell bitter – sobald es nussig duftet und die gewünschte Farbe hat, sofort weiterfahren."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 210,
+        "protein_g": 7,
+        "kohlenhydrate_g": 16,
+        "fett_g": 13,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-berner-roesti",
+      "titel": "Berner Rösti",
+      "untertitel": "Klassiker aus dem Kanton Bern",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 35,
+      "zeit_total_min": 55,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Gemüse",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Bern",
+        "Kartoffeln",
+        "Beilage"
+      ],
+      "bild": {
+        "datei": "klassiker-berner-roesti.jpg",
+        "alt": "Goldbraune Rösti in einer Bratpfanne"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "kg",
+          "name": "vorwiegend festkochende Kartoffeln"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "magere Speckwürfelchen",
+          "notiz": "nach Belieben"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Bratbutter",
+          "notiz": "oder Bratcrème"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Kartoffeln im Dampfkochtopf je nach Grösse 10–12 Minuten knapp weich garen. Vollständig auskühlen lassen. Tipp: Gschwellti vom Vortag verwenden.",
+          "timer": [
+            {
+              "label": "Kartoffeln garen (10–12 Min.)",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "Kartoffeln schälen und an der Röstiraffel in eine Schüssel raffeln. Salz und Speckwürfelchen daruntermischen."
+        },
+        {
+          "text": "Bratbutter oder Bratcrème in einer beschichteten Bratpfanne erhitzen. Kartoffeln beifügen, bei kleiner Hitze 10–15 Minuten [[braten|anbraten]], ab und zu mit der Bratschaufel wenden.",
+          "timer": [
+            {
+              "label": "Rösti anbraten (10–15 Min.)",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "Kartoffeln zu einem «Kuchen» zusammenfügen."
+        },
+        {
+          "text": "Pfanne mit einem grossen Teller oder einer runden Platte zudecken. Rösti bei kleiner Hitze ca. 15 Minuten weiterbraten, bis sich eine schöne braune Kruste gebildet hat, nicht mehr bewegen.",
+          "timer": [
+            {
+              "label": "Rösti weiterbraten",
+              "min": 15
+            }
+          ]
+        },
+        {
+          "text": "Rösti auf den Teller oder die Platte stürzen."
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 340,
+        "protein_g": 9,
+        "kohlenhydrate_g": 38,
+        "fett_g": 17,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-freiburger-fondue",
+      "titel": "Freiburger Fondue moitié-moitié",
+      "untertitel": "Halb Gruyère, halb Vacherin · Freiburg",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 35,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Käse",
+      "saison": [
+        "Herbst",
+        "Winter"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Freiburg",
+        "Käse",
+        "Fondue",
+        "Vegetarisch"
+      ],
+      "bild": {
+        "datei": "klassiker-freiburger-fondue.jpg",
+        "alt": "Fondue im Caquelon auf dem Rechaud, daneben Brotwürfel und Fonduegabeln"
+      },
+      "zutaten": [
+        {
+          "menge": 600,
+          "einheit": "g",
+          "name": "Weissbrot",
+          "notiz": "mit viel Rinde"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe"
+        },
+        {
+          "menge": 3,
+          "einheit": "dl",
+          "name": "Wasser",
+          "notiz": "oder alkoholfreier Apfelwein"
+        },
+        {
+          "menge": 300,
+          "einheit": "g",
+          "name": "Gruyère AOP",
+          "notiz": "fein gehobelt"
+        },
+        {
+          "menge": 3,
+          "einheit": "TL",
+          "name": "Maisstärke"
+        },
+        {
+          "menge": 300,
+          "einheit": "g",
+          "name": "Vacherin Fribourgeois AOP",
+          "notiz": "fein gehobelt"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Muskatnuss"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Brot in mundgerechte Würfel schneiden. Knoblauch schälen, halbieren."
+        },
+        {
+          "text": "Fondue-Caquelon mit Knoblauch ausreiben."
+        },
+        {
+          "text": "Wasser oder Apfelwein ins Caquelon giessen."
+        },
+        {
+          "text": "Gruyère beifügen. Maisstärke mit einem Löffel darüberstreuen."
+        },
+        {
+          "text": "Unter Rühren mit einer Kelle bei mittlerer Hitze [[aufkochen|aufkochen]]. Hitze reduzieren."
+        },
+        {
+          "text": "Vacherin Fribourgeois dazugeben und rühren, bis er schmilzt. Fondue würzen. Auf das Rechaud stellen. Mit Brot servieren. Tipps: Dem Käse eine gepresste Knoblauchzehe beifügen. 1–2 TL Zitronensaft mit dem Wasser oder Apfelwein dazugeben – das erhöht den Säuregehalt und verringert die Gefahr des Gerinnens."
+        }
+      ],
+      "glossar": {
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 860,
+        "protein_g": 46,
+        "kohlenhydrate_g": 75,
+        "fett_g": 42,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-omble-chevalier-genf",
+      "titel": "Omble chevalier nach Genfer Art",
+      "untertitel": "Seesaibling an Sauce genevoise · Genf",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 40,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Genf",
+        "Fisch",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "klassiker-omble-chevalier-genf.jpg",
+        "alt": "Vier Seesaiblinge mit Kräutern in einer Bratform"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "für die Form"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Alufolie",
+          "einkaufen": false
+        },
+        {
+          "menge": 4,
+          "einheit": "",
+          "name": "Ombles chevaliers",
+          "notiz": "Seesaiblinge, küchenfertig"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Schalotten"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "zum Dämpfen"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "weisser Pfeffer"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Bund",
+          "name": "Petersilie"
+        },
+        {
+          "menge": 3,
+          "einheit": "Zweiglein",
+          "name": "Estragon",
+          "alternative": {
+            "text": "bis",
+            "menge": 4,
+            "einheit": "Zweiglein"
+          }
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "alkoholfreier Apfelwein"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "",
+          "name": "Zitrone",
+          "notiz": "Saft"
+        },
+        {
+          "menge": 40,
+          "einheit": "g",
+          "name": "Butter",
+          "notiz": "weich",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Mehl",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Eigelb",
+          "notiz": "mit 1 EL Milch verrührt",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "weisser Pfeffer",
+          "gruppe": "Sauce"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Eine Ofenform von ca. 36 × 30 cm ausbuttern. Fische innen und aussen kalt abspülen, mit Haushaltpapier abtupfen. Schalotten schälen, fein hacken und in einem Pfännchen in Butter bei kleiner Hitze [[andaempfen|andämpfen]]."
+        },
+        {
+          "text": "Fische innen würzen. Mit Kräutern füllen."
+        },
+        {
+          "text": "Schalotten in die Form geben. Fische darauflegen. Apfelwein und Zitronensaft dazugiessen. Form mit Folie zudecken. Im unteren Teil des auf 180 °C vorgeheizten Ofens 20 Minuten [[pochieren|pochieren]].",
+          "timer": [
+            {
+              "label": "Fische pochieren",
+              "min": 20
+            }
+          ]
+        },
+        {
+          "text": "Fische herausnehmen. Auf einer Platte zugedeckt warm stellen."
+        },
+        {
+          "text": "Für die Sauce Fischsud in ein Pfännchen absieben, [[aufkochen|aufkochen]]."
+        },
+        {
+          "text": "Butter und Mehl mit einer Gabel verrühren. Unter Rühren mit dem Schwingbesen zum Fischsud geben."
+        },
+        {
+          "text": "Eigelb darunterrühren, nicht mehr kochen. Sauce [[abschmecken|abschmecken]], zum Fisch servieren."
+        }
+      ],
+      "glossar": {
+        "pochieren": {
+          "begriff": "Pochieren",
+          "text": "Garen knapp unter dem Siedepunkt, in Flüssigkeit oder im Wasserbad. Die Flüssigkeit darf nicht sprudeln."
+        },
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 340,
+        "protein_g": 34,
+        "kohlenhydrate_g": 10,
+        "fett_g": 18,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-glarner-zoggle",
+      "titel": "Glarner Zoggle",
+      "untertitel": "Knöpfli mit Schabziger · Glarus",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 25,
+      "zeit_kochen_min": 5,
+      "zeit_total_min": 30,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Getreide",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Glarus",
+        "Knöpfli",
+        "Vegetarisch"
+      ],
+      "bild": {
+        "datei": "klassiker-glarner-zoggle.jpg",
+        "alt": "Grünliche Zoggle mit Zwiebeln in einer Schüssel mit Löffel"
+      },
+      "zutaten": [
+        {
+          "menge": 80,
+          "einheit": "g",
+          "name": "Schabziger",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Weissmehl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Knöpflimehl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 2,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Milch",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Wasser",
+          "gruppe": "Teig",
+          "einkaufen": false
+        },
+        {
+          "menge": 4,
+          "einheit": "",
+          "name": "Eier",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Bund",
+          "name": "Petersilie",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": 30,
+          "einheit": "g",
+          "name": "Butter",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Muskatnuss",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "geriebener Schabziger",
+          "notiz": "zum Bestreuen",
+          "gruppe": "Zum Fertigstellen"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Für den Teig den Schabziger an der Bircherraffel reiben. Zwiebel schälen, hacken. Petersilie hacken. Eine grosse Pfanne mit Salzwasser bereitstellen."
+        },
+        {
+          "text": "Für den Teig Weiss-, Knöpflimehl und Salz in einer Schüssel mischen, eine Mulde formen. Milch, Wasser und Eier verquirlen, hineingiessen. Mit einer Kelle zu einem Teig verrühren."
+        },
+        {
+          "text": "Teig mit der Kelle klopfen, bis er glatt ist und Blasen wirft. Schabziger darunterrühren. Teig zugedeckt 30 Minuten ruhen lassen.",
+          "timer": [
+            {
+              "label": "Teig ruhen",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Teig portionenweise durch das Knöpflisieb in knapp siedendes Salzwasser streichen."
+        },
+        {
+          "text": "Zoggle [[ziehen-lassen|ziehen lassen]], bis sie an die Oberfläche steigen. Mit einer Schaumkelle herausnehmen, abtropfen lassen. In einer vorgewärmten Schüssel zugedeckt warm stellen."
+        },
+        {
+          "text": "Zwiebeln in Butter bei kleiner Hitze 5 Minuten [[andaempfen|andämpfen]]. Petersilie beifügen und kurz dämpfen, würzen.",
+          "timer": [
+            {
+              "label": "Zwiebeln andämpfen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Zwiebel-Petersilien-Mischung über die Zoggle geben. Nach Belieben mit Schabziger bestreuen."
+        }
+      ],
+      "glossar": {
+        "ziehen-lassen": {
+          "begriff": "Ziehen lassen",
+          "text": "In knapp siedender Flüssigkeit garen: Es steigen nur vereinzelt kleine Blasen auf. Sprudelndes Kochen lässt Würste platzen und Teig zerfallen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 540,
+        "protein_g": 25,
+        "kohlenhydrate_g": 78,
+        "fett_g": 14,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-capuns",
+      "titel": "Capuns",
+      "untertitel": "Gefüllte Krautstielblätter · Graubünden",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 40,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 60,
+      "schwierigkeit": "anspruchsvoll",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Graubünden",
+        "Fleisch",
+        "Gemüse"
+      ],
+      "bild": {
+        "datei": "klassiker-capuns.jpg",
+        "alt": "Capuns mit geschmolzenem Käse in einer rechteckigen Form"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Salsiz",
+          "notiz": "ca. 100 g",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 75,
+          "einheit": "g",
+          "name": "Weissbrot",
+          "notiz": "ohne Rinde",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Bund",
+          "name": "Petersilie",
+          "vor": "knapp",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Bund",
+          "name": "Schnittlauch",
+          "vor": "knapp",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 75,
+          "einheit": "g",
+          "name": "magere Speckwürfelchen",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "zum Dämpfen",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Weissmehl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "dl",
+          "name": "Milch",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "dl",
+          "name": "Wasser",
+          "gruppe": "Teig",
+          "einkaufen": false
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Eier",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 12,
+          "einheit": "",
+          "name": "Krautstielblätter",
+          "vor": "ca.",
+          "notiz": "oder 24 Schnittmangoldblätter",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": 5,
+          "einheit": "dl",
+          "name": "Gemüsebouillon",
+          "vor": "ca.",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Alpkäse",
+          "notiz": "gerieben",
+          "gruppe": "Zum Fertigstellen"
+        },
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "Butter",
+          "gruppe": "Zum Fertigstellen"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung Füllung: Salsiz häuten, in Würfelchen schneiden. Brot in Würfelchen schneiden. Zwiebel schälen, fein hacken. Kräuter fein hacken. Salsiz, Speckwürfelchen, Brot und Zwiebeln in einer Bratpfanne in Butter bei mittlerer Hitze 3 Minuten [[andaempfen|andämpfen]], Pfanne von der Platte nehmen. Kräuter dazumischen.",
+          "timer": [
+            {
+              "label": "Füllung andämpfen",
+              "min": 3
+            }
+          ]
+        },
+        {
+          "text": "Vorbereitung: Bei den Krautstielblättern die dicke Blattrippe herausschneiden."
+        },
+        {
+          "text": "Für den Teig Mehl und Salz in einer Schüssel mischen, eine Mulde formen. Milch, Wasser und Eier verquirlen, hineingiessen. Mit einer Kelle zu einem Teig verrühren. Teig klopfen, bis er glatt ist und Blasen wirft."
+        },
+        {
+          "text": "Fleisch-Kräuter-Brot-Mischung unter den Teig rühren."
+        },
+        {
+          "text": "Krautstiel- oder Mangoldblätter in siedendem Salzwasser 1–2 Minuten [[blanchieren|blanchieren]]. Kalt abschrecken, abtropfen lassen. Auf einem Küchentuch auslegen.",
+          "timer": [
+            {
+              "label": "Blätter blanchieren",
+              "min": 1
+            }
+          ]
+        },
+        {
+          "text": "Je 1 EL Füllung in die Mitte der Blätter geben. Längsseiten der Blätter über die Füllung schlagen, aufrollen."
+        },
+        {
+          "text": "Capuns in eine weite Pfanne legen. Bouillon dazugiessen. Zugedeckt knapp unter dem Siedepunkt 15–20 Minuten [[ziehen-lassen|ziehen lassen]]. Mit einer Schaumkelle herausnehmen, auf einer Platte warm stellen.",
+          "timer": [
+            {
+              "label": "Capuns ziehen lassen (15–20 Min.)",
+              "min": 15
+            }
+          ]
+        },
+        {
+          "text": "Butter in einem Pfännchen aufschäumen lassen, von der Platte nehmen. Käse auf den Capuns verteilen. Mit Butter beträufeln."
+        }
+      ],
+      "glossar": {
+        "blanchieren": {
+          "begriff": "Blanchieren",
+          "text": "Kurz in siedendem Salzwasser garen, dann sofort kalt abschrecken – so bleiben Farbe und Biss, Blätter werden biegsam."
+        },
+        "ziehen-lassen": {
+          "begriff": "Ziehen lassen",
+          "text": "In knapp siedender Flüssigkeit garen: Es steigen nur vereinzelt kleine Blasen auf. Sprudelndes Kochen lässt Würste platzen und Teig zerfallen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 610,
+        "protein_g": 30,
+        "kohlenhydrate_g": 48,
+        "fett_g": 33,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-jura-milchragout",
+      "titel": "Milchragoût aus dem Jura",
+      "untertitel": "Lammragout in Milch · Für 4–6 Personen · Jura",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 25,
+      "zeit_kochen_min": 75,
+      "zeit_total_min": 100,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Jura",
+        "Fleisch",
+        "Eintopf"
+      ],
+      "bild": {
+        "datei": "klassiker-jura-milchragout.jpg",
+        "alt": "Lammragout mit Kartoffeln in Milchsauce in einer weissen Schüssel"
+      },
+      "zutaten": [
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Zwiebeln"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Bund",
+          "name": "glattblättrige Petersilie"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Mehl"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Paprikapulver"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": 1,
+          "einheit": "kg",
+          "name": "Lammragout"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Bratbutter",
+          "notiz": "oder Bratcrème"
+        },
+        {
+          "menge": 1,
+          "einheit": "l",
+          "name": "Vollmilch"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Natronpulver"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Fleischbouillonpaste",
+          "notiz": "oder -pulver"
+        },
+        {
+          "menge": 1,
+          "einheit": "kg",
+          "name": "fest kochende Kartoffeln"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Zwiebeln schälen, in Ringe schneiden. Petersilie fein hacken."
+        },
+        {
+          "text": "Mehl und Gewürze in einem Suppenteller mischen. Fleisch darin wenden, auf einen Teller geben."
+        },
+        {
+          "text": "Fleisch in einer Bratpfanne oder einem Brattopf portionenweise in Bratbutter oder Bratcrème bei grosser Hitze rundum [[braten|anbraten]], aus der Pfanne nehmen. Hitze reduzieren."
+        },
+        {
+          "text": "Zwiebeln in wenig Bratbutter [[andaempfen|andämpfen]]. Fleisch dazugeben."
+        },
+        {
+          "text": "Milch [[aufkochen|aufkochen]]. Natronpulver beifügen, mit dem Schwingbesen verrühren. Tipp: Natron verhindert, dass die Milch ausflockt; erhältlich in Drogerien und Apotheken."
+        },
+        {
+          "text": "Milch zum Fleisch giessen. Bouillon dazugeben. Ragout zugedeckt bei kleiner Hitze 1 Stunde köcheln.",
+          "timer": [
+            {
+              "label": "Ragout köcheln",
+              "min": 60
+            }
+          ]
+        },
+        {
+          "text": "Kartoffeln schälen und in 2,5 cm grosse Würfel schneiden, zum Ragoût geben. Zugedeckt 15–20 Minuten weich köcheln. Mit Petersilie bestreuen.",
+          "timer": [
+            {
+              "label": "Kartoffeln köcheln (15–20 Min.)",
+              "min": 15
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 780,
+        "protein_g": 58,
+        "kohlenhydrate_g": 58,
+        "fett_g": 35,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-luzerner-chuegelipastete",
+      "titel": "Luzerner Chügelipastete",
+      "untertitel": "Für 4–6 Personen · Luzern",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 40,
+      "zeit_kochen_min": 55,
+      "zeit_total_min": 95,
+      "schwierigkeit": "anspruchsvoll",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Luzern",
+        "Fleisch",
+        "Festtag",
+        "Blätterteig"
+      ],
+      "bild": {
+        "datei": "klassiker-luzerner-chuegelipastete.jpg",
+        "alt": "Goldbraune Chügelipastete mit Teigverzierungen, gefüllt, auf einer Platte"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Seidenpapier",
+          "einkaufen": false
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Backpapier",
+          "einkaufen": false
+        },
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Butterblätterteig",
+          "alternative": {
+            "text": "bis",
+            "menge": 600,
+            "einheit": "g"
+          },
+          "gruppe": "Pastetenhaus"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Eiweiss",
+          "notiz": "verquirlt",
+          "gruppe": "Pastetenhaus"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Eigelb",
+          "notiz": "mit 1 EL Vollrahm verrührt",
+          "gruppe": "Pastetenhaus"
+        },
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "Sultaninen",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "alkoholfreier Apfelwein",
+          "alternative": {
+            "text": "bis",
+            "menge": 3,
+            "einheit": "EL"
+          },
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Kalbfleisch",
+          "notiz": "z.B. Stotzen, in 1,5 cm grosse Würfel geschnitten",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Bratbutter",
+          "notiz": "oder Bratcrème",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "Champignons",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "zum Dämpfen",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 4,
+          "einheit": "EL",
+          "name": "Mehl",
+          "alternative": {
+            "text": "bis",
+            "menge": 5,
+            "einheit": "EL"
+          },
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "alkoholfreier Apfelwein",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 6,
+          "einheit": "dl",
+          "name": "Fleischbouillon",
+          "vor": "ca.",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Lorbeerblatt",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Gewürznelken",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer aus der Mühle",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Kalbsbrät",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Schweinsbrät",
+          "gruppe": "Füllung"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung Pastetenhaus: Aus Seidenpapierschnitzeln eine Kugel von ca. 18 cm Ø formen."
+        },
+        {
+          "text": "Vorbereitung Füllung: Sultaninen in Apfelwein einlegen. Fleisch portionenweise in heisser Bratbutter oder Bratcrème kurz [[braten|anbraten]], aus der Pfanne nehmen und würzen. Champignons putzen, in feine Scheiben schneiden. Zwiebel schälen, hacken."
+        },
+        {
+          "text": "Für das Pastetenhaus ⅓ des Teiges rund [[auswallen|auswallen]]. Mit Hilfe eines Tellers eine Rondelle von ca. 24 cm Ø ausschneiden, auf ein mit Backpapier belegtes Blech geben. Papierkugel in die Mitte legen. Teigrand mit Eiweiss bepinseln."
+        },
+        {
+          "text": "Aus restlichem Teig eine Rondelle von ca. 30 cm Ø auswallen. In der Mitte ein Einfüllloch von ca. 6 cm Ø einritzen und ein kleines Luftloch ausstechen."
+        },
+        {
+          "text": "Teigrondelle über die Papierkugel legen. Teigränder gut zusammendrücken, gerade schneiden. Teig mit Eigelb bepinseln. Aus den Teigresten Garnituren ausschneiden oder ausstechen, Deckel damit garnieren. Pastetenhaus mit Eigelb bepinseln. 15 Minuten kühl stellen.",
+          "timer": [
+            {
+              "label": "Pastetenhaus kühlen",
+              "min": 15
+            }
+          ]
+        },
+        {
+          "text": "Pastetenhaus im unteren Teil des auf 180 °C vorgeheizten Ofens 30–40 Minuten [[backen|backen]], herausnehmen. Eingeritzten Deckel vorsichtig herausschneiden. Seidenpapier sorgfältig herausziehen. Tipp: Das Pastetenhaus kann 1–2 Tage im Voraus gebacken werden; trocken und kühl aufbewahren.",
+          "timer": [
+            {
+              "label": "Pastetenhaus backen (30–40 Min.)",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Für die Füllung Champignons und Zwiebeln in Butter [[andaempfen|andämpfen]]. Mehl darüberstreuen, kurz rösten. Apfelwein und Bouillon dazugiessen. Sultaninen und Gewürze dazugeben. Sauce unter Rühren aufkochen."
+        },
+        {
+          "text": "Kalbs- und Schweinsbrät nacheinander in einen Spritzsack mit glatter Tülle geben. Chügeli direkt in die Sauce abschneiden, 5–10 Minuten [[ziehen-lassen|ziehen lassen]]. Fleisch beifügen, erhitzen. Pastetenhaus im Ofen bei 100 °C 10 Minuten erwärmen. In eine tiefe Platte stellen. Füllung sorgfältig einfüllen. Tipps: Das Kalbfleisch bereits von der Metzgerei in Würfel schneiden lassen. Es kann auch nur eine Sorte Fleisch verwendet werden.",
+          "timer": [
+            {
+              "label": "Chügeli ziehen lassen (5–10 Min.)",
+              "min": 5
+            },
+            {
+              "label": "Pastetenhaus erwärmen",
+              "min": 10
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "auswallen": {
+          "begriff": "Auswallen",
+          "text": "Teig auf wenig Mehl mit dem Wallholz von der Mitte nach aussen rollen und zwischendurch drehen, damit er nicht anklebt."
+        },
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        },
+        "ziehen-lassen": {
+          "begriff": "Ziehen lassen",
+          "text": "In knapp siedender Flüssigkeit garen: Es steigen nur vereinzelt kleine Blasen auf. Sprudelndes Kochen lässt Würste platzen und Teig zerfallen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 980,
+        "protein_g": 52,
+        "kohlenhydrate_g": 62,
+        "fett_g": 58,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-neuenburger-saucisson",
+      "titel": "Neuenburger Saucisson im Teig",
+      "untertitel": "Im Quarkteig · Neuenburg",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 75,
+      "zeit_total_min": 95,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Neuenburg",
+        "Fleisch",
+        "Wurst",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "klassiker-neuenburger-saucisson.jpg",
+        "alt": "Saucisson im Teig, angeschnitten auf einem Holzbrett mit Messer"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Backpapier",
+          "einkaufen": false
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Klarsichtfolie",
+          "einkaufen": false
+        },
+        {
+          "menge": 75,
+          "einheit": "g",
+          "name": "kalte Butter",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 225,
+          "einheit": "g",
+          "name": "Mehl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Halbfettquark",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Neuenburger Saucissons",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Knoblauchzehen",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "TL",
+          "name": "Senf",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Milch",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 4,
+          "einheit": "Tranchen",
+          "name": "Schinken",
+          "notiz": "dünn geschnitten",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Eigelb",
+          "notiz": "mit 1 TL Milch verrührt",
+          "gruppe": "Füllung"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Für den Teig Butter in Stücke schneiden. Saucissons in einer Pfanne in knapp siedendem Wasser 15 Minuten [[ziehen-lassen|ziehen lassen]], herausnehmen. Knoblauch schälen, in ein Schälchen pressen. Mit Senf und Milch verrühren.",
+          "timer": [
+            {
+              "label": "Saucissons ziehen lassen",
+              "min": 15
+            }
+          ]
+        },
+        {
+          "text": "Für den Teig Mehl und Salz in einer Schüssel mischen. Butter beifügen und zu einer krümeligen Masse verreiben, eine Mulde formen. Quark hineingeben."
+        },
+        {
+          "text": "Mit dem Teighorn zu einem Teig zusammenfügen, [[teig-nicht-kneten|nicht kneten]]. In Folie gewickelt 30 Minuten kühl stellen.",
+          "timer": [
+            {
+              "label": "Teig kühlen",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Saucissons rundum mit Knoblauch-Senf-Mischung bepinseln. Mit je 2 Schinkentranchen umwickeln."
+        },
+        {
+          "text": "Teig auf wenig Mehl 48 × 34 cm gross [[auswallen|auswallen]]. Halbieren, Ränder gerade schneiden und mit Wasser bepinseln. Je 1 Saucisson auf die Teigstücke legen."
+        },
+        {
+          "text": "Saucissons in den Teig einpacken. Teigenden verdrehen."
+        },
+        {
+          "text": "Auf ein mit Backpapier belegtes Blech geben. Mit Eigelb bepinseln. Im unteren Teil des auf 220 °C vorgeheizten Ofens ca. 30 Minuten [[backen|backen]].",
+          "timer": [
+            {
+              "label": "Saucisson backen",
+              "min": 30
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "ziehen-lassen": {
+          "begriff": "Ziehen lassen",
+          "text": "In knapp siedender Flüssigkeit garen: Es steigen nur vereinzelt kleine Blasen auf. Sprudelndes Kochen lässt Würste platzen und Teig zerfallen."
+        },
+        "teig-nicht-kneten": {
+          "begriff": "Teig nicht kneten",
+          "text": "Butter und Mehl nur zwischen den Fingern zu Krümeln verreiben und den Teig mit dem Teighorn zusammenschieben. Kneten macht ihn zäh; kalte Butter macht ihn mürbe."
+        },
+        "auswallen": {
+          "begriff": "Auswallen",
+          "text": "Teig auf wenig Mehl mit dem Wallholz von der Mitte nach aussen rollen und zwischendurch drehen, damit er nicht anklebt."
+        },
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 780,
+        "protein_g": 38,
+        "kohlenhydrate_g": 45,
+        "fett_g": 50,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-schaffhauser-boelletuenne",
+      "titel": "Schaffhauser Bölletünne",
+      "untertitel": "Zwiebelkuchen · Für 1 Blech von 28 cm Ø (ca. 4 Portionen; Nährwerte pro ¼) · Schaffhausen",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": null,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 30,
+      "zeit_total_min": 60,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Gemüse",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Schaffhausen",
+        "Wähe",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "klassiker-schaffhauser-boelletuenne.jpg",
+        "alt": "Goldbraune Zwiebelwähe auf einem Holzbrett mit Tortenheber"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Backpapier",
+          "einkaufen": false
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Klarsichtfolie",
+          "einkaufen": false
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "kalte Butter",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Mehl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Essig",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "kaltes Wasser",
+          "vor": "ca.",
+          "gruppe": "Teig",
+          "einkaufen": false
+        },
+        {
+          "menge": 750,
+          "einheit": "g",
+          "name": "Zwiebeln",
+          "gruppe": "Belag"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Butter",
+          "gruppe": "Belag"
+        },
+        {
+          "menge": 75,
+          "einheit": "g",
+          "name": "magere Speckwürfelchen",
+          "gruppe": "Belag"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Milch",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Crème fraîche",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Eier",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Kümmel",
+          "notiz": "nach Belieben",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Muskatnuss",
+          "gruppe": "Guss"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Blech mit Backpapier belegen. Für den Teig Butter in Stücke schneiden. Für den Belag Zwiebeln schälen, in dünne Streifchen schneiden."
+        },
+        {
+          "text": "Für den Teig Mehl und Salz in einer Schüssel mischen. Butter beifügen und zu einer krümeligen Masse verreiben, eine Mulde formen. Essig und Wasser hineingiessen."
+        },
+        {
+          "text": "Mit dem Teighorn zu einem Teig zusammenfügen, [[teig-nicht-kneten|nicht kneten]]. In Folie gewickelt 30 Minuten kühl stellen.",
+          "timer": [
+            {
+              "label": "Teig kühlen",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Für den Belag Butter in einer Bratpfanne schmelzen lassen. Zwiebeln und Speckwürfelchen dazugeben, bei mittlerer Hitze ca. 5 Minuten [[andaempfen|andämpfen]], ohne dass die Zwiebeln Farbe annehmen. Auskühlen lassen.",
+          "timer": [
+            {
+              "label": "Zwiebeln andämpfen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Für den Guss Milch, Crème fraîche und Eier in einem Massbecher verquirlen, würzen."
+        },
+        {
+          "text": "Teig auf wenig Mehl rund [[auswallen|auswallen]]. Im Blech auslegen, Teigboden mit einer Gabel dicht einstechen. 15 Minuten kühl stellen.",
+          "timer": [
+            {
+              "label": "Teigboden kühlen",
+              "min": 15
+            }
+          ]
+        },
+        {
+          "text": "Zwiebelgemisch auf dem Teigboden verteilen. Guss darübergiessen. Bölletünne auf der untersten Rille des auf 220 °C vorgeheizten Ofens 25–30 Minuten [[backen|backen]].",
+          "timer": [
+            {
+              "label": "Bölletünne backen (25–30 Min.)",
+              "min": 25
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "teig-nicht-kneten": {
+          "begriff": "Teig nicht kneten",
+          "text": "Butter und Mehl nur zwischen den Fingern zu Krümeln verreiben und den Teig mit dem Teighorn zusammenschieben. Kneten macht ihn zäh; kalte Butter macht ihn mürbe."
+        },
+        "auswallen": {
+          "begriff": "Auswallen",
+          "text": "Teig auf wenig Mehl mit dem Wallholz von der Mitte nach aussen rollen und zwischendurch drehen, damit er nicht anklebt."
+        },
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 820,
+        "protein_g": 18,
+        "kohlenhydrate_g": 70,
+        "fett_g": 52,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-schwyzer-reis-kastanien-suppe",
+      "titel": "Schwyzer Reis-Kastanien-Suppe",
+      "untertitel": "Klassiker aus dem Kanton Schwyz",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 40,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Getreide",
+      "saison": [
+        "Herbst",
+        "Winter"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Schwyz",
+        "Suppe",
+        "Vegetarisch"
+      ],
+      "bild": {
+        "datei": "klassiker-schwyzer-reis-kastanien-suppe.jpg",
+        "alt": "Reis-Kastanien-Suppe mit Sbrinz in einem tiefen Teller"
+      },
+      "zutaten": [
+        {
+          "menge": 180,
+          "einheit": "g",
+          "name": "frische Kastanien",
+          "notiz": "oder 100 g tiefgekühlte Kastanien"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel"
+        },
+        {
+          "menge": 1,
+          "einheit": "Bund",
+          "name": "Petersilie",
+          "notiz": "oder Schnittlauch"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Butter"
+        },
+        {
+          "menge": 60,
+          "einheit": "g",
+          "name": "Risottoreis",
+          "notiz": "z.B. Arborio"
+        },
+        {
+          "menge": 1,
+          "einheit": "l",
+          "name": "Gemüsebouillon"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer aus der Mühle"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Sbrinz AOP",
+          "notiz": "gerieben"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung (frische Kastanien): Mit einem scharfen Messer auf der gewölbten Seite einschneiden. Portionenweise in siedendem Wasser 5 Minuten [[blanchieren|blanchieren]]. Mit einer Schaumkelle herausnehmen, abtropfen lassen. Die noch heissen Kastanien schälen, alle braunen Häutchen entfernen. In siedendem Wasser 20 Minuten vorkochen.",
+          "timer": [
+            {
+              "label": "Kastanien blanchieren",
+              "min": 5
+            },
+            {
+              "label": "Kastanien vorkochen",
+              "min": 20
+            }
+          ]
+        },
+        {
+          "text": "Vorbereitung: Zwiebel schälen, fein hacken. Petersilie oder Schnittlauch fein hacken."
+        },
+        {
+          "text": "Butter in einer grossen Pfanne schmelzen lassen. Zwiebeln beifügen, bei mittlerer Hitze [[andaempfen|andämpfen]]."
+        },
+        {
+          "text": "Reis dazugeben und [[duensten|dünsten]], bis er glasig ist."
+        },
+        {
+          "text": "Mit Bouillon ablöschen."
+        },
+        {
+          "text": "Kastanien beifügen, [[aufkochen|aufkochen]]. Zugedeckt bei kleiner Hitze ca. 20 Minuten köcheln.",
+          "timer": [
+            {
+              "label": "Suppe köcheln",
+              "min": 20
+            }
+          ]
+        },
+        {
+          "text": "Kurz vor dem Servieren Petersilie oder Schnittlauch dazugeben, [[abschmecken|abschmecken]]."
+        },
+        {
+          "text": "Suppe in vorgewärmten Suppentellern anrichten. Mit Sbrinz bestreuen."
+        }
+      ],
+      "glossar": {
+        "blanchieren": {
+          "begriff": "Blanchieren",
+          "text": "Kurz in siedendem Salzwasser garen, dann sofort kalt abschrecken – so bleiben Farbe und Biss, Blätter werden biegsam."
+        },
+        "duensten": {
+          "begriff": "Dünsten",
+          "text": "Nahrungsmittel bei mittlerer Temperatur in Fett garen. Mit der Kelle unter Rühren, damit nichts ansetzt."
+        },
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 300,
+        "protein_g": 12,
+        "kohlenhydrate_g": 32,
+        "fett_g": 14,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-solothurner-kuchen",
+      "titel": "Solothurner Kuchen",
+      "untertitel": "Haselnusstorte · Für 1 Springform von 22 cm Ø (ca. 12 Stück; Nährwerte pro Stück) · Solothurn",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": null,
+      "zeit_vorbereitung_min": 40,
+      "zeit_kochen_min": 40,
+      "zeit_total_min": 80,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Süsses",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Solothurn",
+        "Kuchen",
+        "Dessert"
+      ],
+      "bild": {
+        "datei": "klassiker-solothurner-kuchen.jpg",
+        "alt": "Ein Stück Solothurner Haselnusstorte auf einem weissen Teller mit Gabel"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Backpapier",
+          "einkaufen": false
+        },
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "geschälte Haselnüsse",
+          "gruppe": "Biskuit"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Eiweiss",
+          "gruppe": "Biskuit"
+        },
+        {
+          "menge": 1,
+          "einheit": "Prise",
+          "name": "Salz",
+          "gruppe": "Biskuit"
+        },
+        {
+          "menge": 60,
+          "einheit": "g",
+          "name": "Zucker",
+          "gruppe": "Biskuit"
+        },
+        {
+          "menge": 3,
+          "einheit": "",
+          "name": "Eigelb",
+          "gruppe": "Biskuit"
+        },
+        {
+          "menge": 20,
+          "einheit": "g",
+          "name": "Mehl",
+          "notiz": "ca. 2 EL",
+          "gruppe": "Biskuit"
+        },
+        {
+          "menge": 20,
+          "einheit": "g",
+          "name": "Weizen- oder Maisstärke",
+          "gruppe": "Biskuit"
+        },
+        {
+          "menge": 3,
+          "einheit": "",
+          "name": "Eiweiss",
+          "gruppe": "Japonaisböden"
+        },
+        {
+          "menge": 130,
+          "einheit": "g",
+          "name": "Zucker",
+          "gruppe": "Japonaisböden"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "gemahlene Haselnüsse",
+          "gruppe": "Japonaisböden"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "EL",
+          "name": "Mehl",
+          "gruppe": "Japonaisböden"
+        },
+        {
+          "menge": 125,
+          "einheit": "g",
+          "name": "geschälte Haselnüsse",
+          "gruppe": "Buttercrème"
+        },
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "Butter",
+          "notiz": "weich",
+          "gruppe": "Buttercrème"
+        },
+        {
+          "menge": 125,
+          "einheit": "g",
+          "name": "Puderzucker",
+          "gruppe": "Buttercrème"
+        },
+        {
+          "menge": 75,
+          "einheit": "g",
+          "name": "geschälte Haselnüsse",
+          "gruppe": "Garnitur"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Formboden mit einer Backpapierrondelle belegen. Auf 2 Backpapiere mit Bleistift je 1 Kreis von 22 cm Ø zeichnen."
+        },
+        {
+          "text": "Für Biskuit, Buttercrème und Garnitur die insgesamt 250 g Haselnüsse ohne Fett in einer Bratpfanne hellbraun rösten. Herausnehmen, auskühlen lassen. 75 g Nüsse fein hacken. Restliche Nüsse fein mahlen."
+        },
+        {
+          "text": "Biskuit: [[steif-schlagen|Eiweiss mit Salz in einer Schüssel steif schlagen]]. Zucker einrieseln lassen und weiterschlagen, bis die Masse glänzt. Eigelb beifügen, mit dem Schwingbesen kurz verrühren. Mehl und Stärke mischen, dazusieben. 50 g gemahlene Haselnüsse daraufgeben, mit dem Schwingbesen sorgfältig, kurz [[unterziehen|darunterheben]]. Masse in die Form füllen. Im auf 160 °C vorgeheizten Heiss-/Umluftofen ca. 30 Minuten backen (konventioneller Ofen: 180 °C). Biskuit aus der Form nehmen, auf einem Kuchengitter auskühlen lassen.",
+          "timer": [
+            {
+              "label": "Biskuit backen",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Für die Japonaisböden Eiweiss mit den Schwingbesen des Handrührgerätes steif schlagen. Zucker einrieseln lassen und weiterschlagen, bis die Masse glänzt. Haselnüsse mit Mehl mischen, dazugeben und mit dem Teigschaber sorgfältig darunterziehen."
+        },
+        {
+          "text": "Teig in einen Spritzsack mit kleiner, glatter Tülle geben. Von der Mitte aus spiralförmig auf die Backpapierkreise spritzen. Japonaisböden zusammen im auf 180 °C vorgeheizten Heiss-/Umluftofen 10–12 Minuten [[backen|backen]] (konventioneller Ofen: nacheinander in der Mitte bei 200 °C je 10–12 Minuten). Herausnehmen und sofort mit einem Spachtel sorgfältig vom Papier lösen, auf einem Kuchengitter auskühlen lassen.",
+          "timer": [
+            {
+              "label": "Japonaisböden backen (10–12 Min.)",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "Für die Buttercrème Butter mit den Schwingbesen des Handrührgerätes rühren, bis sich Spitzchen bilden. Puderzucker beifügen, 3–4 Minuten schaumig rühren. 125 g gemahlene Haselnüsse dazugeben, mit dem Teigschaber daruntermischen."
+        },
+        {
+          "text": "1 Japonaisboden mit der gerillten Seite nach unten auf Backpapier legen. Mit ⅓ der Buttercrème bestreichen. Biskuit darauflegen, mit der Hälfte der restlichen Buttercrème bestreichen."
+        },
+        {
+          "text": "Zweiten Japonaisboden mit der gerillten Seite nach oben darauflegen. Kuchenrand mit einem kleinen Spachtel oder Messer mit restlicher Buttercrème bestreichen, glatt streichen."
+        },
+        {
+          "text": "Kuchenrand mit gehackten Haselnüssen bestreuen."
+        }
+      ],
+      "glossar": {
+        "steif-schlagen": {
+          "begriff": "Eiweiss steif schlagen",
+          "text": "Schüssel und Schwingbesen müssen fett- und eigelbfrei sein. Steif ist der Eischnee, wenn ein Schnitt mit dem Messer sichtbar bleibt."
+        },
+        "unterziehen": {
+          "begriff": "Unterziehen",
+          "text": "Mit dem Teigschaber von unten nach oben locker heben statt rühren – so bleibt die Luft im Eischnee."
+        },
+        "backen": {
+          "begriff": "Backen",
+          "text": "Nahrungsmittel in trockener Heissluft im Ofen garen. Ober-/Unterhitze, nicht Umluft, wenn nichts anderes steht."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 410,
+        "protein_g": 7,
+        "kohlenhydrate_g": 33,
+        "fett_g": 28,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-st-galler-tuerggeribel",
+      "titel": "St. Galler Türggeribel",
+      "untertitel": "Gerösteter Ribelmais · Maisgriess quillt 1–2 Std. · St. Gallen",
+      "quelle": {
+        "name": "Rheintaler Ribelmais – ribelmais.ch (Foto: Swissmilk PDF 2014)",
+        "url": "https://ribelmais.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 40,
+      "zeit_total_min": 55,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Getreide",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "St. Gallen",
+        "Mais",
+        "Vegetarisch",
+        "Zmorge"
+      ],
+      "bild": {
+        "datei": "klassiker-st-galler-tuerggeribel.jpg",
+        "alt": "Goldgelber Türggeribel in einer Bratpfanne mit Holzkelle"
+      },
+      "zutaten": [
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "fein gemahlener weisser Maisgriess",
+          "notiz": "Rheintaler Ribelmais"
+        },
+        {
+          "menge": 2.5,
+          "einheit": "dl",
+          "name": "Wasser",
+          "einkaufen": false
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "Milch"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Butter"
+        },
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "kalte Butter"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Maisgriess in eine Schüssel geben. Wasser, Milch und Salz in einer Pfanne [[aufkochen|aufkochen]], über den Maisgriess giessen und mischen. 1–2 Stunden quellen lassen.",
+          "timer": [
+            {
+              "label": "Maisgriess quellen (1–2 Std.)",
+              "min": 60
+            }
+          ]
+        },
+        {
+          "text": "3 EL Butter in einer weiten Bratpfanne erwärmen."
+        },
+        {
+          "text": "Maisgriess beifügen."
+        },
+        {
+          "text": "Bei kleiner Hitze unter häufigem Rühren und Stochern mit der Bratschaufel 30–40 Minuten rösten, bis sich kleine Ribel (Knöllchen) bilden. Pfanne ab und zu für einige Minuten zudecken, damit der Ribel feucht bleibt.",
+          "timer": [
+            {
+              "label": "Ribel rösten (30–40 Min.)",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Butter in Stücke schneiden, portionenweise unter Rühren dazugeben. Türggeribel ca. 10 Minuten fertig braten. Tipps: Statt weissen auch fein gemahlenen gelben Maisgriess verwenden. Dazu passt Milchkaffee, Joghurt oder Kompott. Rheintaler Ribelmais gibt es z.B. über www.ribelmais.ch.",
+          "timer": [
+            {
+              "label": "Fertig braten",
+              "min": 10
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 480,
+        "protein_g": 10,
+        "kohlenhydrate_g": 64,
+        "fett_g": 21,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-tessiner-minestrone",
+      "titel": "Tessiner Minestrone",
+      "untertitel": "Bohnen über Nacht einweichen · Tessin",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 80,
+      "zeit_total_min": 110,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Gemüse",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Tessin",
+        "Suppe",
+        "Gemüse"
+      ],
+      "bild": {
+        "datei": "klassiker-tessiner-minestrone.jpg",
+        "alt": "Minestrone mit Gemüse und Sbrinz in einem tiefen Teller"
+      },
+      "zutaten": [
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "Borlottibohnen"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Rüebli"
+        },
+        {
+          "menge": 1,
+          "einheit": "Stück",
+          "name": "Knollensellerie"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "kleiner Lauchstängel"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Wirz"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehen",
+          "alternative": {
+            "text": "bis",
+            "menge": 2,
+            "einheit": ""
+          }
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Tomaten"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Butter"
+        },
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "Speckwürfelchen"
+        },
+        {
+          "menge": 1,
+          "einheit": "l",
+          "name": "Fleischbouillon"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Tomatenpüree"
+        },
+        {
+          "menge": 1,
+          "einheit": "Zweiglein",
+          "name": "Rosmarin"
+        },
+        {
+          "menge": 2,
+          "einheit": "Zweiglein",
+          "name": "Basilikum",
+          "alternative": {
+            "text": "bis",
+            "menge": 3,
+            "einheit": "Zweiglein"
+          }
+        },
+        {
+          "menge": 2,
+          "einheit": "Zweiglein",
+          "name": "Thymian",
+          "notiz": "oder Majoran"
+        },
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "Risottoreis"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "geriebener Sbrinz AOP",
+          "notiz": "zum Bestreuen"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Bohnen über Nacht in Wasser einweichen, abgiessen."
+        },
+        {
+          "text": "Gemüse rüsten: Zwiebel fein hacken. Rüebli und Sellerie schälen, in kleine Stücke schneiden. Lauch und Wirz in Streifen schneiden. Knoblauch pressen. Tomaten kreuzweise einschneiden, kurz in kochendes Wasser tauchen, enthäuten, vierteln, entkernen und in Würfelchen schneiden."
+        },
+        {
+          "text": "Butter in einer grossen Pfanne schmelzen lassen. Speckwürfelchen und Zwiebeln beifügen, bei mittlerer Hitze [[andaempfen|andünsten]]."
+        },
+        {
+          "text": "Rüebli, Sellerie, Lauch, Wirz und Knoblauch dazugeben, dämpfen."
+        },
+        {
+          "text": "Mit Bouillon [[abloeschen|ablöschen]]. Bohnen beifügen, [[aufkochen|aufkochen]]. Zugedeckt bei kleiner Hitze 1–1½ Stunden köcheln.",
+          "timer": [
+            {
+              "label": "Minestrone köcheln (1–1½ Std.)",
+              "min": 60
+            }
+          ]
+        },
+        {
+          "text": "Tomaten, Tomatenpüree, Kräuterzweiglein und Reis dazugeben. 20 Minuten fertig garen.",
+          "timer": [
+            {
+              "label": "Fertig garen",
+              "min": 20
+            }
+          ]
+        },
+        {
+          "text": "Kräuterzweiglein entfernen. Minestrone mit Sbrinz servieren."
+        }
+      ],
+      "glossar": {
+        "abloeschen": {
+          "begriff": "Ablöschen",
+          "text": "Flüssigkeit zum Angebratenen giessen und mit der Kelle den Bratsatz vom Boden lösen – er gibt der Sauce Geschmack."
+        },
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 260,
+        "protein_g": 13,
+        "kohlenhydrate_g": 30,
+        "fett_g": 10,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-thurgauer-sauerbraten",
+      "titel": "Thurgauer Sauerbraten mit Apfelwein",
+      "untertitel": "Fleisch 5 Tage in der Beize · Thurgau",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 120,
+      "zeit_total_min": 150,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Thurgau",
+        "Fleisch",
+        "Sonntag"
+      ],
+      "bild": {
+        "datei": "klassiker-thurgauer-sauerbraten.jpg",
+        "alt": "Tranchierter Sauerbraten auf einem Brett mit Fleischgabel, daneben eine Sauciere"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Rüebli",
+          "gruppe": "Beize"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "kleiner Lauchstängel",
+          "gruppe": "Beize"
+        },
+        {
+          "menge": 7.5,
+          "einheit": "dl",
+          "name": "alkoholfreier Apfelwein",
+          "gruppe": "Beize"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Schalotten",
+          "notiz": "mit Lorbeerblatt und Gewürznelke besteckt",
+          "gruppe": "Beize"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe",
+          "gruppe": "Beize"
+        },
+        {
+          "menge": 1,
+          "einheit": "kg",
+          "name": "Rindfleisch für Schmorbraten",
+          "gruppe": "Braten"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz",
+          "gruppe": "Braten"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Braten"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Bratbutter",
+          "notiz": "oder Bratcrème",
+          "gruppe": "Braten"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Saucenknochen",
+          "gruppe": "Braten"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "EL",
+          "name": "Mehl",
+          "gruppe": "Braten"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Crème fraîche",
+          "gruppe": "Braten"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung Beize: Rüebli schälen, in Stücke schneiden. Lauch in Stücke schneiden. Mit restlichen Zutaten in eine Schüssel geben."
+        },
+        {
+          "text": "Fleisch in die Beize legen, zugedeckt im Kühlschrank 5 Tage marinieren. Fleisch aus der Beize nehmen, abtropfen lassen. Mit Haushaltpapier trockentupfen."
+        },
+        {
+          "text": "Beize in eine Pfanne absieben. Abgesiebtes Gemüse beiseitestellen."
+        },
+        {
+          "text": "Beize [[aufkochen|aufkochen]]. Entstehenden Schaum mit einer Schaumkelle entfernen. 5 dl Beize abmessen, beiseitestellen."
+        },
+        {
+          "text": "Fleisch würzen. In einer Bratpfanne oder einem Brattopf in Bratbutter oder Bratcrème bei grosser Hitze rundum [[braten|anbraten]]. Saucenknochen dazugeben, kurz mitbraten."
+        },
+        {
+          "text": "Fleisch und Knochen herausnehmen. Bratfett in der Pfanne mit Haushaltpapier wegtupfen. Mehl in die Pfanne geben, bei mittlerer Hitze dunkelbraun [[mehl-roesten|rösten]]. Mit Beize unter Rühren [[abloeschen|ablöschen]]."
+        },
+        {
+          "text": "Fleisch, Knochen und abgesiebtes Gemüse beifügen. Zugedeckt bei kleiner Hitze 2 Stunden [[schmoren|schmoren]].",
+          "timer": [
+            {
+              "label": "Sauerbraten schmoren",
+              "min": 120
+            }
+          ]
+        },
+        {
+          "text": "Fleisch aus der Sauce nehmen, zugedeckt beiseitestellen. Knochen, Lorbeer und Gewürznelken entfernen. Flüssigkeit und Gemüse mit dem Stabmixer pürieren. Crème fraîche beifügen, unter Rühren kurz aufkochen. Sauce [[abschmecken|abschmecken]]. Sauerbraten tranchieren, mit der Sauce anrichten."
+        }
+      ],
+      "glossar": {
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        },
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "mehl-roesten": {
+          "begriff": "Mehl rösten",
+          "text": "Bei mittlerer Hitze ständig rühren. Braunes Mehl wird schnell bitter – sobald es nussig duftet und die gewünschte Farbe hat, sofort weiterfahren."
+        },
+        "abloeschen": {
+          "begriff": "Ablöschen",
+          "text": "Flüssigkeit zum Angebratenen giessen und mit der Kelle den Bratsatz vom Boden lösen – er gibt der Sauce Geschmack."
+        },
+        "schmoren": {
+          "begriff": "Schmoren",
+          "text": "Weiterführung der Garmethode Braten: Angebratenes mit wenig Flüssigkeit zugedeckt auf kleiner Stufe weich garen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 590,
+        "protein_g": 55,
+        "kohlenhydrate_g": 25,
+        "fett_g": 30,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-unterwaldner-ofeguck",
+      "titel": "Unterwaldner Ofeguck",
+      "untertitel": "Überbackener Kartoffelstock mit Eigelb · Ob- und Nidwalden",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 25,
+      "zeit_total_min": 45,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Gemüse",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Unterwalden",
+        "Kartoffeln",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "klassiker-unterwaldner-ofeguck.jpg",
+        "alt": "Überbackener Kartoffelstock mit Speck in einer blau umrandeten Gratinform"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "für die Form"
+        },
+        {
+          "menge": 800,
+          "einheit": "g",
+          "name": "mehlig kochende Kartoffeln"
+        },
+        {
+          "menge": 125,
+          "einheit": "g",
+          "name": "magerer Speck"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Milch"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Butter"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Eigelb"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Muskatnuss"
+        },
+        {
+          "menge": 4,
+          "einheit": "",
+          "name": "Eiweiss"
+        },
+        {
+          "menge": 4,
+          "einheit": "",
+          "name": "Eigelb",
+          "notiz": "siehe Tipp in Schritt 1"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer aus der Mühle"
+        },
+        {
+          "menge": 75,
+          "einheit": "g",
+          "name": "Sbrinz AOP",
+          "notiz": "gerieben"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Eine ovale oder rechteckige Gratinform von ca. 24 cm Länge ausbuttern. Kartoffeln schälen, in gleichmässige Stücke schneiden. Speck in Stäbchen schneiden. Tipp: Das getrennte Eigelb in die halbierten Eierschalen zurückgeben und bis zur Verwendung in die Eierschachtel legen."
+        },
+        {
+          "text": "Kartoffeln im Dampfkochtopf 5–8 Minuten weich garen. In ein Salatsieb geben, Wasser verdampfen lassen.",
+          "timer": [
+            {
+              "label": "Kartoffeln garen (5–8 Min.)",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Kartoffeln durchs Passe-vite in den Kochtopf passieren."
+        },
+        {
+          "text": "Milch, Butter und Eigelb mit einer Kelle daruntermischen, würzen."
+        },
+        {
+          "text": "[[steif-schlagen|Eiweiss steif schlagen]], dazugeben und mit dem Teigschaber sorgfältig [[unterziehen|darunterziehen]]."
+        },
+        {
+          "text": "Kartoffelmasse bergartig in der Form verteilen. Mit Speck spicken."
+        },
+        {
+          "text": "Mit einem abgespülten Esslöffel 4 Vertiefungen in die Kartoffelmasse drücken. Je 1 Eigelb hineingeben, mit Pfeffer würzen. Sbrinz über den Ofeguck streuen. Im unteren Teil des auf 200 °C vorgeheizten Ofens 20–30 Minuten überbacken.",
+          "timer": [
+            {
+              "label": "Überbacken (20–30 Min.)",
+              "min": 20
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "steif-schlagen": {
+          "begriff": "Eiweiss steif schlagen",
+          "text": "Schüssel und Schwingbesen müssen fett- und eigelbfrei sein. Steif ist der Eischnee, wenn ein Schnitt mit dem Messer sichtbar bleibt."
+        },
+        "unterziehen": {
+          "begriff": "Unterziehen",
+          "text": "Mit dem Teigschaber von unten nach oben locker heben statt rühren – so bleibt die Luft im Eischnee."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 480,
+        "protein_g": 25,
+        "kohlenhydrate_g": 33,
+        "fett_g": 28,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-urner-aelplermagrone",
+      "titel": "Urner Älplermagrone",
+      "untertitel": "Klassiker aus dem Kanton Uri",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 10,
+      "zeit_total_min": 30,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Teigwaren",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Uri",
+        "Teigwaren",
+        "Käse",
+        "Vegetarisch"
+      ],
+      "bild": {
+        "datei": "klassiker-urner-aelplermagrone.jpg",
+        "alt": "Älplermagronen mit Käse in einer weissen Form, daneben eine rote Serviette"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "für die Form"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Zwiebeln",
+          "alternative": {
+            "text": "bis",
+            "menge": 3,
+            "einheit": ""
+          }
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Urner Bergkäse",
+          "notiz": "oder anderer rezenter Käse"
+        },
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Magronen"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Bratbutter",
+          "notiz": "oder Bratcrème"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "dl",
+          "name": "Voll- oder Halbrahm"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "dl",
+          "name": "Milch"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Muskatnuss"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Zwiebeln schälen, in feine Ringe schneiden. Käse reiben."
+        },
+        {
+          "text": "Magronen in reichlich siedendem Salzwasser [[al-dente|al dente]] kochen. Tipp: Zusätzlich 2–3 Kartoffeln schälen, in Würfel schneiden und 5 Minuten vor den Magronen ins siedende Salzwasser geben."
+        },
+        {
+          "text": "Magronen abgiessen und kurz kalt abspülen, abtropfen lassen."
+        },
+        {
+          "text": "Bratbutter oder Bratcrème in einer Bratpfanne erhitzen. Zwiebeln beifügen und bei mittlerer Hitze goldgelb [[braten|braten]], ab und zu wenden. Beiseitestellen."
+        },
+        {
+          "text": "Rahm und Milch in der Magronen-Pfanne [[aufkochen|aufkochen]]. Die Hälfte des Käses dazugeben, gut umrühren und würzen."
+        },
+        {
+          "text": "Magronen in eine ausgebutterte ofenfeste Form geben. Die Hälfte des restlichen Käses daruntermischen."
+        },
+        {
+          "text": "Käsesauce über die Magronen giessen. Restlichen Käse darauf verteilen. Zwiebeln darübergeben. In der Mitte des auf 160 °C vorgeheizten Ofens 10 Minuten erwärmen, bis der Käse schmilzt. Tipp: Dazu passen Apfelschnitze oder Apfelmus.",
+          "timer": [
+            {
+              "label": "Im Ofen erwärmen",
+              "min": 10
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "al-dente": {
+          "begriff": "Al dente",
+          "text": "Teigwaren sind al dente, wenn sie beim Draufbeissen noch leichten Widerstand haben. Kurz vor Ende der Packungszeit probieren."
+        },
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "aufkochen": {
+          "begriff": "Aufkochen",
+          "text": "Erhitzen auf grösster Stufe bis zum Siedepunkt von 100 °C. Danach Stufe zurückschalten und köcheln lassen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 840,
+        "protein_g": 32,
+        "kohlenhydrate_g": 98,
+        "fett_g": 36,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-papet-vaudois",
+      "titel": "Papet vaudois",
+      "untertitel": "Laucheintopf mit Waadtländer Wurst · Waadt",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 35,
+      "zeit_total_min": 55,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Herbst",
+        "Winter"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Waadt",
+        "Wurst",
+        "Eintopf",
+        "Gemüse"
+      ],
+      "bild": {
+        "datei": "klassiker-papet-vaudois.jpg",
+        "alt": "Lauch-Kartoffel-Eintopf mit Waadtländer Würsten in einem Topf"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Zahnstocher",
+          "einkaufen": false
+        },
+        {
+          "menge": 800,
+          "einheit": "g",
+          "name": "Lauchstängel"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "vorwiegend festkochende Kartoffeln"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Saucisse aux choux"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Saucisson vaudois",
+          "notiz": "oder 2 Saucisses vaudoises"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "zum Dämpfen"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Fleischbouillon"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Rahm"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Lauch waschen, schräg in 3 cm lange Stücke schneiden. Zwiebel schälen, fein hacken. Kartoffeln schälen, in Stücke schneiden. Die Wurstenden mit je 1 Zahnstocher durchstechen (drinlassen), damit die Würste beim Garen nicht platzen und der Saft beim Aufschneiden nicht herausspritzt."
+        },
+        {
+          "text": "Butter in einer grossen Pfanne schmelzen lassen. Zwiebeln beifügen, [[andaempfen|andämpfen]]."
+        },
+        {
+          "text": "Lauch dazugeben, bei kleiner bis mittlerer Hitze 5 Minuten andämpfen.",
+          "timer": [
+            {
+              "label": "Lauch andämpfen",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Mit Bouillon [[abloeschen|ablöschen]]."
+        },
+        {
+          "text": "Kartoffeln beifügen. Zugedeckt bei kleiner Hitze 10 Minuten köcheln. Rahm dazugiessen.",
+          "timer": [
+            {
+              "label": "Kartoffeln köcheln",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "Würste auf das Gemüse legen. Zugedeckt bei kleiner Hitze 20–25 Minuten [[ziehen-lassen|ziehen lassen]].",
+          "timer": [
+            {
+              "label": "Würste ziehen lassen (20–25 Min.)",
+              "min": 20
+            }
+          ]
+        },
+        {
+          "text": "Würste herausnehmen und Zahnstocher entfernen, mit einem scharfen Messer schräg in 1,5 cm dicke Tranchen schneiden. Gemüse auf einer vorgewärmten Platte anrichten, Wursttranchen darauflegen."
+        }
+      ],
+      "glossar": {
+        "abloeschen": {
+          "begriff": "Ablöschen",
+          "text": "Flüssigkeit zum Angebratenen giessen und mit der Kelle den Bratsatz vom Boden lösen – er gibt der Sauce Geschmack."
+        },
+        "ziehen-lassen": {
+          "begriff": "Ziehen lassen",
+          "text": "In knapp siedender Flüssigkeit garen: Es steigen nur vereinzelt kleine Blasen auf. Sprudelndes Kochen lässt Würste platzen und Teig zerfallen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 590,
+        "protein_g": 25,
+        "kohlenhydrate_g": 28,
+        "fett_g": 42,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-walliser-aprikosenflan",
+      "titel": "Walliser Aprikosenflan",
+      "untertitel": "Für 1 Gratinform (ca. 4 Portionen; Nährwerte pro ¼) · Wallis",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": null,
+      "zeit_vorbereitung_min": 25,
+      "zeit_kochen_min": 30,
+      "zeit_total_min": 55,
+      "schwierigkeit": "einfach",
+      "kueche": "Schweizer",
+      "hauptzutat": "Süsses",
+      "saison": [
+        "Sommer"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Wallis",
+        "Dessert",
+        "Früchte"
+      ],
+      "bild": {
+        "datei": "klassiker-walliser-aprikosenflan.jpg",
+        "alt": "Aprikosenflan in einer runden Form auf einem Gitter, mit Puderzucker bestäubt"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Butter",
+          "notiz": "für die Form"
+        },
+        {
+          "menge": 750,
+          "einheit": "g",
+          "name": "reife Aprikosen"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Zucker"
+        },
+        {
+          "menge": 3,
+          "einheit": "",
+          "name": "Eier",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 3,
+          "einheit": "dl",
+          "name": "Halbrahm",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 1,
+          "einheit": "Prise",
+          "name": "Salz",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 60,
+          "einheit": "g",
+          "name": "Zucker",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Päckchen",
+          "name": "Vanillezucker",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Puderzucker",
+          "notiz": "zum Bestäuben",
+          "gruppe": "Guss"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Eine ovale Gratinform von ca. 24 cm Länge oder eine runde von 22 cm Ø ausbuttern. Bereitstellen: 1 etwas grössere Ofenform und 1 Küchentuch oder Lappen. Aprikosen halbieren, entsteinen."
+        },
+        {
+          "text": "Aprikosen mit der Rundung nach oben in 2 Lagen in die Gratinform legen, dabei jede Lage mit 1 EL Zucker bestreuen."
+        },
+        {
+          "text": "Für den Guss Eier, Rahm, Salz, Zucker und Vanillezucker mit dem Schwingbesen gut verrühren."
+        },
+        {
+          "text": "Guss über die Aprikosen giessen."
+        },
+        {
+          "text": "Küchentuch oder Lappen in die Ofenform legen, Gratinform daraufstellen. Siedend heisses Wasser bis zur halben Höhe der Gratinform in die Ofenform giessen. Im unteren Teil des auf 180 °C vorgeheizten Ofens 25–35 Minuten garen (= [[pochieren|pochieren]]). Die Crème soll fest, aber nicht trocken werden.",
+          "timer": [
+            {
+              "label": "Flan pochieren (25–35 Min.)",
+              "min": 25
+            }
+          ]
+        },
+        {
+          "text": "Aprikosenflan mit Puderzucker bestäuben. Warm oder kalt servieren."
+        }
+      ],
+      "glossar": {
+        "pochieren": {
+          "begriff": "Pochieren",
+          "text": "Garen knapp unter dem Siedepunkt, in Flüssigkeit oder im Wasserbad. Die Flüssigkeit darf nicht sprudeln."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 390,
+        "protein_g": 9,
+        "kohlenhydrate_g": 40,
+        "fett_g": 22,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-zuger-chabisbuenteli",
+      "titel": "Zuger Chabisbünteli",
+      "untertitel": "Gefüllte Kabisblätter · Zug",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 25,
+      "zeit_total_min": 55,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Herbst",
+        "Winter"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Zug",
+        "Fleisch",
+        "Gemüse"
+      ],
+      "bild": {
+        "datei": "klassiker-zuger-chabisbuenteli.jpg",
+        "alt": "Mit Schnur gebundene Kabisbünteli in Bratensauce auf einer Platte"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Küchenschnur",
+          "einkaufen": false
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "grosser Weisskabis",
+          "notiz": "ca. 1,5–2 kg"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Weggli",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Bund",
+          "name": "Petersilie",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "kleines Zweiglein Rosmarin",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "gehacktes Rindfleisch",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Bratbutter",
+          "notiz": "oder Bratcrème",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Tomatenpüree",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "dl",
+          "name": "Fleischbouillon",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Füllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "TL",
+          "name": "Bratensauce aus der Tube",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 2.5,
+          "einheit": "dl",
+          "name": "Wasser",
+          "gruppe": "Sauce",
+          "einkaufen": false
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Vom Kabis den Strunk wegschneiden, 8–12 Blätter ablösen. Das Kabisinnere für einen Salat verwenden."
+        },
+        {
+          "text": "Vorbereitung Füllung: Zwiebel schälen, hacken. Weggli zerzupfen und mit 1,5 dl warmem Wasser übergiessen, 10 Minuten einweichen. Weggli ausdrücken, mit einer Gabel zerdrücken. Kräuter hacken. 2,5 dl Wasser aufkochen, Bratensauce darin auflösen.",
+          "timer": [
+            {
+              "label": "Weggli einweichen",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "Kabisblätter in reichlich siedendem Salzwasser ca. 8 Minuten köcheln.",
+          "timer": [
+            {
+              "label": "Kabisblätter köcheln",
+              "min": 8
+            }
+          ]
+        },
+        {
+          "text": "Kabisblätter herausnehmen, abtropfen lassen. Auf einem Küchentuch auslegen."
+        },
+        {
+          "text": "Für die Füllung Fleisch in Bratbutter oder Bratcrème bei grosser Hitze [[braten|anbraten]], ab und zu wenden. Hitze reduzieren."
+        },
+        {
+          "text": "Zwiebeln beifügen, dämpfen. Tomatenpüree, Weggli und Kräuter dazugeben, kurz [[duensten|dünsten]]. Mit Bouillon [[abloeschen|ablöschen]], würzen. Pfanne von der Platte nehmen."
+        },
+        {
+          "text": "Je 2–3 EL Füllung in die Mitte der Kabisblätter geben. Zu Bünteli formen, mit Küchenschnur zubinden."
+        },
+        {
+          "text": "Chabisbünteli in eine weite Pfanne stellen. Bratensauce dazugiessen, aufkochen. Zugedeckt bei kleiner Hitze 15–20 Minuten [[schmoren|schmoren]]. Tipp: Dazu passt Kartoffelstock.",
+          "timer": [
+            {
+              "label": "Bünteli schmoren (15–20 Min.)",
+              "min": 15
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "duensten": {
+          "begriff": "Dünsten",
+          "text": "Nahrungsmittel bei mittlerer Temperatur in Fett garen. Mit der Kelle unter Rühren, damit nichts ansetzt."
+        },
+        "abloeschen": {
+          "begriff": "Ablöschen",
+          "text": "Flüssigkeit zum Angebratenen giessen und mit der Kelle den Bratsatz vom Boden lösen – er gibt der Sauce Geschmack."
+        },
+        "schmoren": {
+          "begriff": "Schmoren",
+          "text": "Weiterführung der Garmethode Braten: Angebratenes mit wenig Flüssigkeit zugedeckt auf kleiner Stufe weich garen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 290,
+        "protein_g": 18,
+        "kohlenhydrate_g": 22,
+        "fett_g": 14,
+        "geschaetzt": true
+      }
+    },
+    {
+      "id": "klassiker-zuercher-geschnetzeltes",
+      "titel": "Zürcher Geschnetzeltes",
+      "untertitel": "Züri-Gschnätzlets mit Kalbfleisch und Champignons · Zürich",
+      "quelle": {
+        "name": "Swissmilk – Schweizer Klassiker (PDF 2014; Foto: Swissmilk)",
+        "url": "https://www.swissmilk.ch"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 40,
+      "schwierigkeit": "mittel",
+      "kueche": "Schweizer",
+      "hauptzutat": "Fleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Schweizer Klassiker",
+        "Zürich",
+        "Fleisch",
+        "Pfanne"
+      ],
+      "bild": {
+        "datei": "klassiker-zuercher-geschnetzeltes.jpg",
+        "alt": "Zürcher Geschnetzeltes mit Champignons und Petersilie in einer Bratpfanne"
+      },
+      "zutaten": [
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Schalotten"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Champignons"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Bund",
+          "name": "Petersilie"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Bratbutter",
+          "notiz": "oder Bratcrème"
+        },
+        {
+          "menge": 600,
+          "einheit": "g",
+          "name": "Kalbfleisch",
+          "notiz": "z.B. falsches Filet oder Unterspälte, von der Metzgerei in kleine, dünne Scheiben geschnitten"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Mehl"
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "Fleischbouillon"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "dl",
+          "name": "Vollrahm"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Vorbereitung: Schalotten schälen, fein hacken. Champignons putzen, in Scheibchen schneiden. Petersilie fein hacken. Ofen auf 75 °C vorheizen, eine Platte darin vorwärmen."
+        },
+        {
+          "text": "Bratbutter oder Bratcrème in einer Bratpfanne erhitzen. Fleisch portionenweise beifügen, bei grosser Hitze kurz [[braten|anbraten]], ab und zu wenden."
+        },
+        {
+          "text": "Fleisch aus der Pfanne nehmen, auf die vorgewärmte Platte geben und würzen. Im Ofen warm stellen."
+        },
+        {
+          "text": "Hitze reduzieren. Wenig Bratbutter oder Bratcrème in die Bratpfanne geben. Schalotten beifügen, bei mittlerer Hitze kurz [[andaempfen|andämpfen]]. Champignons dazugeben, dämpfen."
+        },
+        {
+          "text": "Mehl darüberstreuen, kurz rösten."
+        },
+        {
+          "text": "Mit Bouillon [[abloeschen|ablöschen]], zur Hälfte einkochen. Rahm dazugiessen, leicht einköcheln."
+        },
+        {
+          "text": "Fleisch in die Sauce geben und [[abschmecken|abschmecken]], nicht mehr kochen. Mit Petersilie bestreuen."
+        }
+      ],
+      "glossar": {
+        "braten": {
+          "begriff": "Braten",
+          "text": "Nahrungsmittel bei hoher Temperatur in Fett garen. Erst umrühren oder wenden, wenn sich eine Kruste gebildet hat – sonst bleibt es am Boden kleben."
+        },
+        "abloeschen": {
+          "begriff": "Ablöschen",
+          "text": "Flüssigkeit zum Angebratenen giessen und mit der Kelle den Bratsatz vom Boden lösen – er gibt der Sauce Geschmack."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 370,
+        "protein_g": 36,
+        "kohlenhydrate_g": 6,
+        "fett_g": 22,
+        "geschaetzt": true
+      }
     }
   ]
 }

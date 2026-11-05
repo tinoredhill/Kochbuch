@@ -247,6 +247,26 @@ function gruppeVon(r) {
   return 'Vegetarisch';
 }
 
+/* Hauptzutat-Filterchips: feine Werte (Poulet, Rüebli, …) auf wenige Gruppen bündeln.
+   Rezeptfeld «hauptzutat» bleibt für Suche/Abwechslung unangetastet (bzw. schon grob bei Klassikern). */
+const HZ_CHIP = {
+  Fleisch: 'Fleisch', Rindfleisch: 'Fleisch', Kalbfleisch: 'Fleisch', Schweinefleisch: 'Fleisch',
+  Hackfleisch: 'Fleisch', Poulet: 'Fleisch', Lammfleisch: 'Fleisch', Wurst: 'Fleisch',
+  Fisch: 'Fisch',
+  Gemüse: 'Gemüse', Kartoffeln: 'Gemüse', Pilze: 'Gemüse', Rüebli: 'Gemüse', Kabis: 'Gemüse',
+  Lauch: 'Gemüse', Zwiebeln: 'Gemüse', Krautstiel: 'Gemüse',
+  Käse: 'Käse',
+  Teigwaren: 'Teigwaren',
+  Getreide: 'Getreide', Mais: 'Getreide', Buchweizen: 'Getreide', Mehl: 'Getreide', Kastanien: 'Getreide',
+  Süsses: 'Süsses', Aprikosen: 'Süsses', Mandeln: 'Süsses', Haselnüsse: 'Süsses',
+  Tofu: 'Tofu'
+};
+function hauptzutatChip(r) {
+  const h = r.hauptzutat;
+  if (!h) return null;
+  return HZ_CHIP[h] || h;
+}
+
 /* ---------- Zuletzt gekocht ---------- */
 const zuletztVon = rid => { const z = Store.get('zuletzt', []).find(x => x.rid === rid); return z ? z.ts : null; };
 
@@ -656,14 +676,14 @@ function likesHTML(rid) { const b = bewertungVon(rid), n = b.personen.filter(x =
 const ZEITEN = [['bis30', 'bis 30 Min.', m => m <= 30], ['30bis60', '30–60 Min.', m => m > 30 && m <= 60], ['ueber60', 'über 60 Min.', m => m > 60]];
 function filterGruppen() {
   const werte = f => [...new Set(DATA.rezepte.flatMap(f).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'de'));
-  return [['kueche', 'Küche', werte(r => [r.kueche])], ['hauptzutat', 'Hauptzutat', werte(r => [r.hauptzutat])], ['saison', 'Saison', werte(r => r.saison || [])], ['zeit', 'Zeitaufwand', ZEITEN.map(z => z[1])]]
+  return [['kueche', 'Küche', werte(r => [r.kueche])], ['hauptzutat', 'Hauptzutat', werte(r => [hauptzutatChip(r)])], ['saison', 'Saison', werte(r => r.saison || [])], ['zeit', 'Zeitaufwand', ZEITEN.map(z => z[1])]]
     .filter(g => g[2].length);
 }
 function passt(r) {
   const f = ui.filter;
   if (f.fav && !istFav(r.id)) return false;
   if (f.kueche && r.kueche !== f.kueche) return false;
-  if (f.hauptzutat && r.hauptzutat !== f.hauptzutat) return false;
+  if (f.hauptzutat && hauptzutatChip(r) !== f.hauptzutat) return false;
   if (f.saison && !(r.saison || []).includes(f.saison)) return false;
   if (f.zeit) { const z = ZEITEN.find(x => x[1] === f.zeit); if (r.zeit_total_min == null || !z[2](r.zeit_total_min)) return false; }
   if (ui.suche) {

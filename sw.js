@@ -1,8 +1,8 @@
 'use strict';
-const C = 'kochbuch-v9d';
+const C = 'kochbuch-v9f';
 const F = ['./', 'index.html', 'style.css', 'firebase-config.js', 'store.js', 'icons.js', 'vorrat-kern.js', 'vorrat.js', 'app.js', 'fonts/cormorant-garamond-latin-500-normal.woff2', 'fonts/cormorant-garamond-latin-600-normal.woff2', 'manifest.webmanifest', 'rezepte/rezepte.json',
   'icons/v7/apple-touch-icon-180.png', 'icons/v7/favicon-32.png', 'icons/v7/favicon-16.png', 'icons/v7/icon-192.png', 'icons/v7/icon-512.png', 'icons/v7/icon-maskable-512.png'];
-// v9d: 6 Tiptopf-Rezepte; v9.1c: Vorrat nachführen auch Plan/Rezept-Gekocht; v9.1: Wenig/Kopfwort/Marke/im Vorrat/nach Kochen; v9: Abteilungen, Menü-Fix; v8: Vorrat; Strichcode erst beim Scannen
+// v9f: Klassiker Zeiten/Schwierigkeit + Hauptzutat-Chips gebündelt; v9e: 5 Tiptopf + 23 Swissmilk-Klassiker; v9d: 6 Tiptopf-Rezepte; v9.1c: Vorrat nachführen auch Plan/Rezept-Gekocht; v9.1: Wenig/Kopfwort/Marke/im Vorrat/nach Kochen; v9: Abteilungen, Menü-Fix; v8: Vorrat; Strichcode erst beim Scannen
 // v7: neue Version übernimmt sofort (kein Warten auf «Aktualisieren»); die offene Seite lädt dann einmal neu (siehe app.js, controllerchange)
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(F.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== C).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
