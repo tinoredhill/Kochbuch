@@ -6,7 +6,7 @@
    - Offline: Firestore-Zwischenspeicher (IndexedDB) + lokale Kopie in localStorage. */
 import { initializeApp, getApps } from './vendor/firebase/firebase-app.js';
 import { getAuth, signInAnonymously, onAuthStateChanged, connectAuthEmulator } from './vendor/firebase/firebase-auth.js';
-import { initializeFirestore, getFirestore, persistentLocalCache, persistentMultipleTabManager, doc, setDoc, onSnapshot, connectFirestoreEmulator } from './vendor/firebase/firebase-firestore.js';
+import { initializeFirestore, getFirestore, persistentLocalCache, persistentMultipleTabManager, doc, setDoc, FieldPath, onSnapshot, connectFirestoreEmulator } from './vendor/firebase/firebase-firestore.js';
 
 const KEYS_V6 = ['plan', 'einkauf_eigen', 'einkauf_haken', 'einkauf_weg', 'notizen', 'favoriten', 'zuletzt'];
 const KEYS_V7 = ['tagesplan', 'gewohnheiten', 'bewertungen'];   // neu in v7 – brauchen die Regeln v7 in der Firebase-Konsole
@@ -96,7 +96,10 @@ export async function starten(config, code, geraet, optionen = {}) {
     }
     if (!Object.keys(e).length) return Promise.resolve();
     if (keyStand[key] === 'fehler') return Promise.resolve();   // z.B. alte Regeln: bleibt lokal, wird beim nächsten Verbinden nachgeladen
-    return setDoc(ref(key), { e }, { merge: true }).catch(err => { console.warn('Sync-Schreibfehler', err); setStatus('fehler', 'Fehler beim Speichern: ' + (err.code || err.message)); });
+    // v9h: den ganzen Geräte-Datensatz ersetzen. Rekursives merge:true lässt nach
+    // Löschen -> Setzen das alte x:true (und alte Felder in v) stehen.
+    // Andere Einträge/Geräte bleiben durch die gezielte Feldmaske unverändert.
+    return setDoc(ref(key), { e }, { mergeFields: Object.keys(e).map(id => new FieldPath('e', id, geraet)) }).catch(err => { console.warn('Sync-Schreibfehler', err); setStatus('fehler', 'Fehler beim Speichern: ' + (err.code || err.message)); });
   }
 
   const adapter = {

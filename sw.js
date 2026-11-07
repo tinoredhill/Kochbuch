@@ -1,6 +1,6 @@
-// v9g: 14 Fooby/BBC-Rezepte und konsistente Sheet-Reihenfolge beim Entfernen im Wochenplan.
+// v9h: Sync ersetzt Geräte-Datensätze vollständig; Neuwahl nach Entfernen bleibt sichtbar.
 'use strict';
-const C = 'kochbuch-v9g';
+const C = 'kochbuch-v9h';
 const F = ['./', 'index.html', 'style.css', 'firebase-config.js', 'store.js', 'icons.js', 'vorrat-kern.js', 'vorrat.js', 'app.js', 'fonts/cormorant-garamond-latin-500-normal.woff2', 'fonts/cormorant-garamond-latin-600-normal.woff2', 'manifest.webmanifest', 'rezepte/rezepte.json',
   'icons/v7/apple-touch-icon-180.png', 'icons/v7/favicon-32.png', 'icons/v7/favicon-16.png', 'icons/v7/icon-192.png', 'icons/v7/icon-512.png', 'icons/v7/icon-maskable-512.png'];
 // v9f: Klassiker Zeiten/Schwierigkeit + Hauptzutat-Chips gebündelt; v9e: 5 Tiptopf + 23 Swissmilk-Klassiker; v9d: 6 Tiptopf-Rezepte; v9.1c: Vorrat nachführen auch Plan/Rezept-Gekocht; v9.1: Wenig/Kopfwort/Marke/im Vorrat/nach Kochen; v9: Abteilungen, Menü-Fix; v8: Vorrat; Strichcode erst beim Scannen
