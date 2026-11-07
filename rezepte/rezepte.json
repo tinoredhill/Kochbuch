@@ -6056,6 +6056,2168 @@
         "fett_g": 22,
         "geschaetzt": true
       }
+    },
+    {
+      "id": "cremige-pesto-butterbohnen",
+      "titel": "Cremige Pesto-Butterbohnen",
+      "untertitel": "Vorbereitung: unter 30 Min.; Kochen: 10–30 Min. (Zeitbereiche der Quelle)",
+      "quelle": {
+        "name": "BBC Food (Foto: BBC; Originaltitel: Creamy pesto butter beans)",
+        "url": "https://www.bbc.co.uk/food/recipes/creamy_pesto_butter_95231"
+      },
+      "portionen_basis": 2,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 30,
+      "zeit_total_min": null,
+      "schwierigkeit": null,
+      "kueche": null,
+      "hauptzutat": "Tofu",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Vegan",
+        "Vegetarisch",
+        "Bohnen"
+      ],
+      "bild": {
+        "datei": "cremige-pesto-butterbohnen.jpg",
+        "alt": "Cremige Pesto-Butterbohnen"
+      },
+      "zutaten": [
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Cherrytomaten"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Olivenöl"
+        },
+        {
+          "menge": 30,
+          "einheit": "g",
+          "name": "frisches Basilikum",
+          "notiz": "plus zusätzliche Blätter zum Garnieren"
+        },
+        {
+          "menge": 300,
+          "einheit": "g",
+          "name": "Seidentofu"
+        },
+        {
+          "menge": 20,
+          "einheit": "g",
+          "name": "Pinienkerne",
+          "notiz": "geröstet"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe",
+          "notiz": "grob gehackt"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zitrone",
+          "notiz": "nur Saft"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Hefeflocken"
+        },
+        {
+          "menge": 2,
+          "einheit": "Dosen",
+          "name": "Butterbohnen",
+          "notiz": "je 400 g, abgetropft und abgespült"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "knuspriges Brot",
+          "notiz": "zum Servieren (optional)"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Den Ofen auf 220 °C / 200 °C Umluft / Gas Stufe 7 vorheizen."
+        },
+        {
+          "text": "Die Tomaten auf ein Backblech geben. Mit dem Öl beträufeln und mit einer Prise Salz würzen. 20–25 Minuten rösten, bis sie weich eingekocht sind und die Haut Blasen wirft.",
+          "timer": [
+            {
+              "label": "Tomaten rösten (20–25 Minuten)",
+              "min": 20
+            },
+            {
+              "label": "Tomaten rösten (obere Zeitgrenze)",
+              "min": 25
+            }
+          ]
+        },
+        {
+          "text": "Inzwischen eine Schüssel mit kochendem Wasser und eine Schüssel mit Eiswasser vorbereiten. Das Basilikum mit einer Zange vorsichtig 5–15 Sekunden in das kochende Wasser tauchen, bis es leuchtend grün wird. Sofort ins Eiswasser geben, damit es seine Farbe behält."
+        },
+        {
+          "text": "Basilikum, Tofu, zwei Drittel der Pinienkerne, Knoblauch, Zitronensaft und Hefeflocken in einem Mixer oder einer Küchenmaschine vollständig glatt pürieren."
+        },
+        {
+          "text": "Die Pesto-Mischung in eine grosse Bratpfanne oder einen Kochtopf giessen. Die Butterbohnen beigeben und bei mittlerer Hitze etwa 3–5 Minuten sanft erhitzen, bis alles warm ist. Nicht kochen lassen, da die Sauce sonst ihre leuchtende Farbe verliert.",
+          "timer": [
+            {
+              "label": "Bohnen erwärmen (3–5 Minuten)",
+              "min": 3
+            },
+            {
+              "label": "Bohnen erwärmen (obere Zeitgrenze)",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Zum Servieren die Pesto-Bohnen in Schüsseln geben und die Tomaten darauf verteilen. Mit den restlichen Pinienkernen bestreuen und mit den zusätzlichen Basilikumblättern garnieren. Nach Belieben mit dem knusprigen Brot servieren."
+        }
+      ],
+      "glossar": {
+        "cremige-pesto-butterbohnen-geraet": {
+          "begriff": "Benötigtes Gerät",
+          "text": "Für dieses Rezept wird ein Mixer oder eine Küchenmaschine benötigt."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 562,
+        "protein_g": 31.1,
+        "kohlenhydrate_g": 40.7,
+        "fett_g": 26.8,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "herbstlicher-fenchelsalat",
+      "titel": "Herbstlicher Fenchelsalat",
+      "untertitel": null,
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/18268/herbstlicher-fenchelsalat"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 40,
+      "zeit_kochen_min": null,
+      "zeit_total_min": 40,
+      "schwierigkeit": null,
+      "kueche": null,
+      "hauptzutat": "Gemüse",
+      "saison": [
+        "Herbst"
+      ],
+      "kategorien": [
+        "Vegan",
+        "Vegetarisch",
+        "Salat"
+      ],
+      "bild": {
+        "datei": "herbstlicher-fenchelsalat.jpg",
+        "alt": "Herbstlicher Fenchelsalat"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Olivenöl",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Fenchel",
+          "notiz": "in Schnitzchen, evtl. Grün beiseite gestellt",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Schalotten",
+          "notiz": "in Ringen",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Salbei",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Dukkah (Gewürzmischung)",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Gemüse",
+          "vor": "wenig"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Eierschwämme",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Aceto balsamico",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "Olivenöl",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "rosa Trauben",
+          "notiz": "halbiert",
+          "gruppe": "Sauce"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Öl in einer beschichteten Bratpfanne erhitzen. Fenchel beigeben unter gelegentlichem Wenden ca. 10 Min. anbraten. Schalotten und Salbei beigeben, ca. 5 Min. mitbraten, würzen. Gemüse in eine Schüssel geben. Evtl. wenig Öl in die Pfanne geben. Pilze unter gelegentlichem Wenden ca. 5 Min. braten, salzen, beiseite stellen.",
+          "timer": [
+            {
+              "label": "Gemüse",
+              "min": 10
+            },
+            {
+              "label": "Gemüse",
+              "min": 5
+            },
+            {
+              "label": "Gemüse",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "text": "Aceto in dieselbe Pfanne geben, aufkochen. Öl beigeben, gut verrühren, Trauben beigeben, nur noch erwärmen. Sauce über das Gemüse giessen, Pilze darauf verteilen, mit beiseite gestelltem Fenchelgrün garnieren."
+        }
+      ],
+      "glossar": {},
+      "naehrwerte": {
+        "kcal": 125,
+        "protein_g": 3,
+        "kohlenhydrate_g": 13,
+        "fett_g": 5,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "poulet-stroganoff",
+      "titel": "Poulet-Stroganoff",
+      "untertitel": null,
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/9261/poulet-stroganoff"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 25,
+      "zeit_kochen_min": null,
+      "zeit_total_min": 25,
+      "schwierigkeit": null,
+      "kueche": null,
+      "hauptzutat": "Poulet",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Poulet",
+        "Schnell"
+      ],
+      "bild": {
+        "datei": "poulet-stroganoff.jpg",
+        "alt": "Poulet-Stroganoff"
+      },
+      "zutaten": [
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Bio-Orangen"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Bratbutter zum Braten"
+        },
+        {
+          "menge": 600,
+          "einheit": "g",
+          "name": "geschnetzeltes Pouletfleisch"
+        },
+        {
+          "menge": 0.75,
+          "einheit": "TL",
+          "name": "Salz"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Hühnerbouillon",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "Saucen-Halbrahm",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Ketchup",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel",
+          "notiz": "in 12 Schnitzen",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "EL",
+          "name": "Paprika",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Sauce"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Von den Orangen wenig Schale abreiben. Boden und Deckel, dann Schale ringsum bis auf das Fruchtfleisch abschneiden. Orangen sechsteln, in ca. 1 cm dicke Scheiben schneiden. Saft auffangen, mit der abgeriebenen Schale und den Scheiben beiseite stellen. Bratbutter in einer beschichteten Bratpfanne heiss werden lassen. Fleisch portionenweise ca. 3 Min. braten, herausnehmen, würzen. Bratfett auftupfen.",
+          "timer": [
+            {
+              "label": "Zubereitung",
+              "min": 3
+            }
+          ]
+        },
+        {
+          "text": "Bouillon, Rahm und Ketchup in derselben Pfanne aufkochen, Hitze reduzieren, Zwiebel beigeben, Sauce zugedeckt ca. 4 Min. köcheln, würzen. Beiseite gestellte Orangenscheiben, -schale und -saft, sowie Fleisch wieder beigeben, nur noch heiss werden lassen.",
+          "timer": [
+            {
+              "label": "Sauce",
+              "min": 4
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "poulet-stroganoff-tipp-1": {
+          "begriff": "Dazu passen",
+          "text": "Nudeln, Reis und Gemüse."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 352,
+        "protein_g": 37,
+        "kohlenhydrate_g": 12,
+        "fett_g": 17,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "scharfe-lachs-reisbowl",
+      "titel": "Scharfe Lachs-Reisbowl",
+      "untertitel": "Vorbereitung: unter 30 Min.; Kochen: unter 10 Min. (Zeitbereiche der Quelle)",
+      "quelle": {
+        "name": "BBC Food (Foto: BBC; Originaltitel: Spicy salmon rice bowls)",
+        "url": "https://www.bbc.co.uk/food/recipes/spicy_salmon_bite_rice_16300"
+      },
+      "portionen_basis": 2,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 10,
+      "zeit_total_min": null,
+      "schwierigkeit": null,
+      "kueche": "Asiatisch",
+      "hauptzutat": "Fisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fisch",
+        "Reis"
+      ],
+      "bild": {
+        "datei": "scharfe-lachs-reisbowl.jpg",
+        "alt": "Scharfe Lachs-Reisbowl"
+      },
+      "zutaten": [
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Gochujang"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Reisessig"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Sojasauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "kleine Knoblauchzehe",
+          "notiz": "gepresst"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "frischer Ingwer",
+          "notiz": "fein gehackt"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "grosse Lachsfilets",
+          "notiz": "ohne Haut, in 2 cm grosse Würfel geschnitten"
+        },
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Mikrowellen-Klebreis",
+          "notiz": "im Beutel"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "Pflanzenöl"
+        },
+        {
+          "menge": 0.3333333333333333,
+          "einheit": "",
+          "name": "Gurke",
+          "notiz": "geschält und in 1 cm grosse Würfel geschnitten"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Kimchi",
+          "notiz": "grob gehackt"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "gerösteter Sesam",
+          "notiz": "zum Servieren (optional)"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Gochujang, Reisessig, Sojasauce, Knoblauch und Ingwer in einer flachen Schale mit dem Schwingbesen zu einer glatten Paste verrühren."
+        },
+        {
+          "text": "Die Lachswürfel zur Gochujang-Mischung geben und mischen."
+        },
+        {
+          "text": "Den Reis nach Packungsanleitung zubereiten und beiseitestellen."
+        },
+        {
+          "text": "Das Öl in einer beschichteten Bratpfanne bei hoher Hitze erhitzen. Sobald das Öl schimmert, die Lachsstücke beigeben. Die Stücke fast unmittelbar nach dem Beigeben mit einer Zange wenden. Die restliche Sauce aus der Schale beigeben und umrühren, dann vom Herd nehmen. Die Lachsstücke sollen gerade durchgegart sein."
+        },
+        {
+          "text": "Den Lachs und die Sauce aus der Pfanne mit Reis, Gurke und Kimchi servieren. Nach Belieben mit geröstetem Sesam bestreuen."
+        }
+      ],
+      "glossar": {
+        "scharfe-lachs-reisbowl-tipps": {
+          "begriff": "Rezepttipps",
+          "text": "Lachsfilets mit gleichmässiger Dicke wählen statt solcher, die an einem Ende sehr dünn sind. So entstehen gleich grosse Stücke, die gleich schnell garen. Gochujang ist inzwischen in den meisten grossen Supermärkten erhältlich. Mit Vollkornreis erhöht sich der Ballaststoffgehalt um etwa 3 g pro Portion. Eine Beilage aus gedämpftem grünem Gemüse wie Broccoli macht das Gericht sättigender und ausgewogener, ohne viele Kalorien hinzuzufügen. Für eine glutenfreie Variante Tamari statt Sojasauce verwenden und die Etiketten von Kimchi und Reisessig prüfen (die meisten sind glutenfrei, einige enthalten jedoch geringe Mengen Gluten)."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 527,
+        "protein_g": 35.5,
+        "kohlenhydrate_g": 45,
+        "fett_g": 22.4,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "schweinsfilet-ingwer-soja",
+      "titel": "Schweinsfilet mit Ingwer und Soja",
+      "untertitel": "Vorbereitung: unter 30 Min.; Kochen: 10–30 Min. (Zeitbereiche der Quelle)",
+      "quelle": {
+        "name": "BBC Food (Foto: BBC; Originaltitel: Stir-fried pork with ginger and soy)",
+        "url": "https://www.bbc.co.uk/food/recipes/stir_fried_pork_with_85173"
+      },
+      "portionen_basis": 2,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 30,
+      "zeit_total_min": null,
+      "schwierigkeit": null,
+      "kueche": "Asiatisch",
+      "hauptzutat": "Schweinefleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fleisch",
+        "Gemüse"
+      ],
+      "bild": {
+        "datei": "schweinsfilet-ingwer-soja.jpg",
+        "alt": "Schweinsfilet mit Ingwer und Soja"
+      },
+      "zutaten": [
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Schweinsfilet",
+          "notiz": "alles sichtbare Fett entfernt, in Stücke geschnitten"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Maisstärke"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "dunkle Sojasauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "kalorienarmes Bratspray"
+        },
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "Champignons",
+          "notiz": "in Scheiben"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "rote Peperoni",
+          "notiz": "entkernt und in Streifen"
+        },
+        {
+          "menge": 75,
+          "einheit": "g",
+          "name": "Kefen",
+          "notiz": "gerüstet"
+        },
+        {
+          "menge": 15,
+          "einheit": "g",
+          "name": "frischer Ingwer",
+          "notiz": "in dünne Stäbchen geschnitten"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe",
+          "notiz": "in dünne Scheiben geschnitten"
+        },
+        {
+          "menge": 4,
+          "einheit": "",
+          "name": "Bundzwiebeln",
+          "notiz": "in kurze Stücke geschnitten"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "frisch gemahlener schwarzer Pfeffer"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "kaltes Wasser",
+          "einkaufen": false
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Das Schweinsfilet mit Pfeffer würzen. Die Maisstärke mit zwei Esslöffeln kaltem Wasser glatt rühren, dann die Sojasauce darunterrühren."
+        },
+        {
+          "text": "Einen grossen Wok oder eine tiefe Bratpfanne mit Bratspray einsprühen und bei hoher Hitze erhitzen. Das Schweinsfilet 1–2 Minuten unter Rühren braten, bis es leicht gebräunt, aber noch nicht durchgegart ist. Auf einen Teller geben.",
+          "timer": [
+            {
+              "label": "Schweinsfilet anbraten (1–2 Minuten)",
+              "min": 1
+            },
+            {
+              "label": "Schweinsfilet anbraten (obere Zeitgrenze)",
+              "min": 2
+            }
+          ]
+        },
+        {
+          "text": "Die Pfanne wieder erhitzen, die Hitze etwas reduzieren und mit mehr Öl einsprühen. Champignons und Peperoni 2 Minuten unter Rühren braten. Die Kefen beigeben und eine Minute mitbraten. Ingwer, Knoblauch und Bundzwiebeln beigeben und einige Sekunden unter Rühren braten.",
+          "timer": [
+            {
+              "label": "Gemüse braten",
+              "min": 2
+            },
+            {
+              "label": "Kefen mitbraten",
+              "min": 1
+            }
+          ]
+        },
+        {
+          "text": "Das Schweinsfilet zurück in die Pfanne geben und die Sojasaucen-Mischung darübergiessen. 1–2 Minuten garen, bis die Sauce eingedickt und das Schweinsfilet durchgegart ist. Sofort servieren.",
+          "timer": [
+            {
+              "label": "Schweinsfilet fertig garen (1–2 Minuten)",
+              "min": 1
+            },
+            {
+              "label": "Schweinsfilet fertig garen (obere Zeitgrenze)",
+              "min": 2
+            }
+          ]
+        }
+      ],
+      "glossar": {},
+      "naehrwerte": {
+        "kcal": 359,
+        "protein_g": 40.3,
+        "kohlenhydrate_g": 12.4,
+        "fett_g": 15.4,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "sesam-chicken",
+      "titel": "Sesam-Chicken",
+      "untertitel": null,
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/27566/sesam-chicken"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 25,
+      "zeit_kochen_min": null,
+      "zeit_total_min": 25,
+      "schwierigkeit": "einfach",
+      "kueche": "Asiatisch",
+      "hauptzutat": "Poulet",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Poulet",
+        "Schnell"
+      ],
+      "bild": {
+        "datei": "sesam-chicken.jpg",
+        "alt": "Sesam-Chicken"
+      },
+      "zutaten": [
+        {
+          "menge": 250,
+          "einheit": "g",
+          "name": "Basmatireis",
+          "gruppe": "Reis"
+        },
+        {
+          "menge": 4,
+          "einheit": "dl",
+          "name": "Wasser",
+          "gruppe": "Reis",
+          "einkaufen": false
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Reis"
+        },
+        {
+          "menge": 2.5,
+          "einheit": "EL",
+          "name": "Maizena",
+          "gruppe": "Poulet"
+        },
+        {
+          "menge": 2.5,
+          "einheit": "EL",
+          "name": "Weissmehl",
+          "gruppe": "Poulet"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Sojasauce",
+          "gruppe": "Poulet"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Wasser",
+          "gruppe": "Poulet",
+          "einkaufen": false
+        },
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Pouletbrust-Würfel",
+          "gruppe": "Poulet"
+        },
+        {
+          "menge": 1,
+          "einheit": "dl",
+          "name": "Erdnussöl",
+          "gruppe": "Poulet"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Sojasauce",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "EL",
+          "name": "flüssiger Honig",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "Tomatenpüree",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "geröstetes Sesamöl",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Reisessig",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe",
+          "notiz": "gepresst",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Sesam",
+          "gruppe": "Sauce"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Reis im Sieb unter fliessendem kaltem Wasser so lange spülen, bis dieses klar ist, gut abtropfen. Wasser mit dem Reis in eine Pfanne geben, aufkochen, salzen. Reis zugedeckt auf kleinster Hitze ca. 15 Min. quellen lassen, dabei Deckel nie abheben. Reis mit einer Gabel lockern.",
+          "timer": [
+            {
+              "label": "Reis",
+              "min": 15
+            }
+          ]
+        },
+        {
+          "text": "Maizena, Mehl, Sojasauce und Wasser in eine Schüssel geben, zu einem dickflüssigen, klebrigen Teig mischen. Poulet beigeben, gut mischen. Öl in einem Brattopf erhitzen. Poulet portionenweise beigeben, je ca. 6 Min. knusprig braten. Herausnehmen, auf Haushaltpapier abtropfen.",
+          "timer": [
+            {
+              "label": "Poulet",
+              "min": 6
+            }
+          ]
+        },
+        {
+          "text": "Sojasauce und alle restlichen Zutaten bis und mit Knoblauch in eine Schüssel geben. Poulet beigeben, mischen, mit dem Basmatireis anrichten. Sesam darüberstreuen."
+        }
+      ],
+      "glossar": {
+        "sesam-chicken-tipp-1": {
+          "begriff": "Tipp",
+          "text": "3 Zweiglein Koriander, Blättchen abgezupft, darauf verteilen."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 724,
+        "protein_g": 31,
+        "kohlenhydrate_g": 61,
+        "fett_g": 39,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "broccoli-kaese-waehe",
+      "titel": "Broccoli-Käse-Wähe",
+      "untertitel": "Für 1 Wähenblech (ca. 30 cm Ø), 12 Stücke; Nährwerte pro Stück",
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/26553/broccoli-kaese-waehe"
+      },
+      "portionen_basis": null,
+      "zeit_vorbereitung_min": 40,
+      "zeit_kochen_min": 35,
+      "zeit_total_min": 75,
+      "schwierigkeit": null,
+      "kueche": null,
+      "hauptzutat": "Gemüse",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Vegetarisch",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "broccoli-kaese-waehe.jpg",
+        "alt": "Broccoli-Käse-Wähe"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "rund ausgewallter Dinkel-Kuchenteig (ca. 32 cm Ø)",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Broccoli",
+          "notiz": "in Röschen, evtl. halbiert",
+          "gruppe": "Broccoli"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salzwasser",
+          "notiz": "siedend",
+          "gruppe": "Broccoli",
+          "einkaufen": false
+        },
+        {
+          "menge": 60,
+          "einheit": "g",
+          "name": "Baumnusskerne",
+          "notiz": "grob gehackt",
+          "gruppe": "Broccoli"
+        },
+        {
+          "menge": 2.5,
+          "einheit": "dl",
+          "name": "Halbrahm",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Eier",
+          "notiz": "verklopft",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "milder Tilsiter",
+          "notiz": "grob gerieben",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe",
+          "notiz": "gepresst",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 4,
+          "einheit": "Zweiglein",
+          "name": "Thymian",
+          "notiz": "Blättchen abgezupft",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Guss"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Guss",
+          "vor": "wenig"
+        },
+        {
+          "menge": 4,
+          "einheit": "Zweiglein",
+          "name": "Thymian",
+          "notiz": "Blättchen abgezupft",
+          "gruppe": "Backen"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Für ein Wähenblech (ca. 30 cm Ø)"
+        },
+        {
+          "text": "Teig entrollen, mit dem Backpapier in das Blech legen. Teigboden mit einer Gabel dicht einstechen."
+        },
+        {
+          "text": "Broccoli im siedenden Salzwasser ca. 4 Min. kochen, kalt abspülen, gut abtropfen. Baumnusskerne auf dem Teigboden verteilen, Broccoli darauf legen.",
+          "timer": [
+            {
+              "label": "Broccoli",
+              "min": 4
+            }
+          ]
+        },
+        {
+          "text": "Rahm und alle Zutaten bis und mit Pfeffer in einen Messbecher geben, verrühren, über den Broccoli giessen."
+        },
+        {
+          "text": "Ca. 35 Min. auf der untersten Rille des auf 220 °C vorgeheizten Ofens. Herausnehmen, Thymian darüberstreuen, anrichten.",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 35
+            }
+          ]
+        }
+      ],
+      "glossar": {},
+      "naehrwerte": {
+        "kcal": 252,
+        "protein_g": 8,
+        "kohlenhydrate_g": 10,
+        "fett_g": 19,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "kuerbis-lasagne-mit-feta",
+      "titel": "Kürbis-Lasagne mit Feta",
+      "untertitel": null,
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/6832/kuerbis-lasagne-mit-feta"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 50,
+      "zeit_kochen_min": 35,
+      "zeit_total_min": 85,
+      "schwierigkeit": null,
+      "kueche": "Italienisch",
+      "hauptzutat": "Teigwaren",
+      "saison": [
+        "Herbst"
+      ],
+      "kategorien": [
+        "Vegetarisch",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "kuerbis-lasagne-mit-feta.jpg",
+        "alt": "Kürbis-Lasagne mit Feta"
+      },
+      "zutaten": [
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "Butter",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Zwiebeln",
+          "notiz": "fein gehackt",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Knoblauchzehen",
+          "notiz": "fein gehackt",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "tiefgekühlter gehackter Spinat",
+          "notiz": "aufgetaut, abgetropft",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 800,
+          "einheit": "g",
+          "name": "Kürbis (z.B. Delica)",
+          "notiz": "grob gerieben, ergibt ca. 600 g",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 180,
+          "einheit": "g",
+          "name": "Feta",
+          "notiz": "grob gerieben",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "geriebener Parmesan",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Salbei",
+          "notiz": "fein geschnitten",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Muskat",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Zimt",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Gemüse"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Gemüse",
+          "vor": "wenig"
+        },
+        {
+          "menge": 30,
+          "einheit": "g",
+          "name": "Butter",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Weissmehl",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 6,
+          "einheit": "dl",
+          "name": "Milch",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 60,
+          "einheit": "g",
+          "name": "geriebener Parmesan",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Muskat",
+          "gruppe": "Sauce",
+          "vor": "wenig"
+        },
+        {
+          "menge": 0.75,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Sauce",
+          "vor": "wenig"
+        },
+        {
+          "menge": 9,
+          "einheit": "",
+          "name": "weisse Lasagneblätter",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 50,
+          "einheit": "g",
+          "name": "geriebener Parmesan",
+          "gruppe": "Einschichten"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Kürbiskerne",
+          "gruppe": "Einschichten"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Butter warm werden lassen, Zwiebeln ca. 3 Min. andämpfen, Knoblauch kurz mitdämpfen. Spinat beigeben, ca. 3 Min. weiterdämpfen, etwas abkühlen. Kürbis, Feta, Parmesan und Salbei mit dem Spinat mischen, würzen.",
+          "timer": [
+            {
+              "label": "Gemüse",
+              "min": 3
+            },
+            {
+              "label": "Gemüse",
+              "min": 3
+            }
+          ]
+        },
+        {
+          "text": "Butter warm werden lassen, Mehl beigeben, unter Rühren mit dem Schwingbesen bei mittlerer Hitze dünsten, das Mehl darf keine Farbe annehmen. Pfanne von der Platte nehmen. Milch dazugiessen, unter Rühren aufkochen, Hitze reduzieren. Sauce unter gelegentlichem Rühren bei mittlerer Hitze ca. 10 Min. köcheln, bis die Sauce sämig ist. Käse daruntermischen, würzen.",
+          "timer": [
+            {
+              "label": "Sauce",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "3 Lasagneblätter in die vorbereitete Form legen. Pastablätter mit 1/3 der Sauce ganz bedecken. 1/2 des Gemüses darauf verteilen. Vorgang wiederholen. Mit den restlichen 3 Lasagneblättern belegen, wiederum mit der restlichen Sauce bedecken. Käse und Kürbiskerne darüberstreuen."
+        },
+        {
+          "text": "Ca. 35 Min. in der unteren Hälfte des auf 200  °C vorgeheizten Ofens gratinieren.",
+          "timer": [
+            {
+              "label": "Gratinieren",
+              "min": 35
+            }
+          ]
+        }
+      ],
+      "glossar": {},
+      "naehrwerte": {
+        "kcal": 759,
+        "protein_g": 39,
+        "kohlenhydrate_g": 53,
+        "fett_g": 41,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "lasagne-al-forno",
+      "titel": "Lasagne al forno",
+      "untertitel": null,
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/14229/lasagne-al-forno"
+      },
+      "portionen_basis": 6,
+      "zeit_vorbereitung_min": 50,
+      "zeit_kochen_min": 60,
+      "zeit_total_min": 110,
+      "schwierigkeit": null,
+      "kueche": "Italienisch",
+      "hauptzutat": "Hackfleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fleisch"
+      ],
+      "bild": {
+        "datei": "lasagne-al-forno.jpg",
+        "alt": "Lasagne al forno"
+      },
+      "zutaten": [
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Öl zum Anbraten",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 600,
+          "einheit": "g",
+          "name": "Hackfleisch (Rind)",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Zwiebeln",
+          "notiz": "fein gehackt",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Knoblauchzehen",
+          "notiz": "gepresst",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 4,
+          "einheit": "EL",
+          "name": "Tomatenpüree",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Rüebli",
+          "notiz": "in Würfeli",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Stangensellerie",
+          "notiz": "in Würfeli",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 3,
+          "einheit": "dl",
+          "name": "Rotwein",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 3,
+          "einheit": "dl",
+          "name": "Fleischbouillon",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 2,
+          "einheit": "Zweiglein",
+          "name": "Thymian",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz",
+          "notiz": "Pfeffer, nach Bedarf",
+          "gruppe": "Fleischfüllung"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Butter",
+          "gruppe": "Bechamelsauce"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Weissmehl",
+          "gruppe": "Bechamelsauce"
+        },
+        {
+          "menge": 6,
+          "einheit": "dl",
+          "name": "Milch",
+          "gruppe": "Bechamelsauce"
+        },
+        {
+          "menge": 0.75,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Bechamelsauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Bechamelsauce",
+          "vor": "wenig"
+        },
+        {
+          "menge": 15,
+          "einheit": "",
+          "name": "weisse Lasagneblätter",
+          "gruppe": "Lasagne einschichten"
+        },
+        {
+          "menge": 80,
+          "einheit": "g",
+          "name": "geriebener Parmesan",
+          "gruppe": "Lasagne einschichten"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Für eine ofenfeste Form (ca. 2 ½ Liter), gefettet"
+        },
+        {
+          "text": "Öl im Brattopf heiss werden lassen. Fleisch portionenweise anbraten, herausnehmen. Hitze reduzieren, Bratfett auftupfen, evtl. wenig Öl beigeben. Zwiebeln und Knoblauch andämpfen, Tomatenpüree kurz mitdämpfen. Gemüse beigeben, ca. 2 Min. weiterdämpfen, Fleisch wieder beigeben, mischen. Wein und Bouillon dazugiessen, aufkochen, Hitze reduzieren. Kräuter beigeben, zugedeckt unter gelegentlichem Rühren ca. 30 Min. schmoren. Kräuter entfernen, Sauce würzen.",
+          "timer": [
+            {
+              "label": "Fleischfüllung",
+              "min": 2
+            },
+            {
+              "label": "Fleischfüllung",
+              "min": 30
+            }
+          ]
+        },
+        {
+          "text": "Butter in einer Pfanne warm werden lassen. Mehl beigeben, unter Rühren mit dem Schwingbesen bei mittlerer Hitze dünsten, das Mehl darf dabei keine Farbe annhemen. Milch auf einmal dazugiessen, unter Rühren aufkochen, Hitze reduzieren, würzen, unter gelegentlichem Rühren ca. 10 Min. köcheln, bis die Sauce sämig ist.",
+          "timer": [
+            {
+              "label": "Bechamelsauce",
+              "min": 10
+            }
+          ]
+        },
+        {
+          "text": "4 EL Bechamelsauce in der vorbereitete Form verteilen. Dann 3 Lasagneblätter darauflegen, ¼ Fleischfüllung darauf verteilen. Vorgang wiederholen, bis die Lasagneblätter und die Fleischfüllung aufgebraucht sind. Mit restlicher Bechamelsauce abschliessen. Parmesan darüberstreuen."
+        },
+        {
+          "text": "Ca. 30 Min. in der Mitte des auf 220  °C vorgeheizten Ofens. Lasagne herausnhemen, ca. 5 Min. ruhen lassen.",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 30
+            },
+            {
+              "label": "Backen",
+              "min": 5
+            }
+          ]
+        }
+      ],
+      "glossar": {},
+      "naehrwerte": {
+        "kcal": 612,
+        "protein_g": 34,
+        "kohlenhydrate_g": 44,
+        "fett_g": 31,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "spinat-lasagne-mit-pesto",
+      "titel": "Spinat-Lasagne mit Pesto",
+      "untertitel": null,
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/28174/spinat-lasagne-mit-pesto"
+      },
+      "portionen_basis": 6,
+      "zeit_vorbereitung_min": 25,
+      "zeit_kochen_min": 40,
+      "zeit_total_min": 65,
+      "schwierigkeit": null,
+      "kueche": "Italienisch",
+      "hauptzutat": "Teigwaren",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Vegetarisch",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "spinat-lasagne-mit-pesto.jpg",
+        "alt": "Spinat-Lasagne mit Pesto"
+      },
+      "zutaten": [
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Ricotta",
+          "gruppe": "Spinatmasse"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "saurer Halbrahm",
+          "gruppe": "Spinatmasse"
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "Milch",
+          "gruppe": "Spinatmasse"
+        },
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "Jungspinat",
+          "gruppe": "Spinatmasse"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe",
+          "notiz": "halbiert",
+          "gruppe": "Spinatmasse"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Spinatmasse"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Spinatmasse",
+          "vor": "wenig"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "geriebener Gruyère",
+          "gruppe": "Spinatmasse"
+        },
+        {
+          "menge": 9,
+          "einheit": "",
+          "name": "grüne Lasagne-Blätter",
+          "gruppe": "Lasagne"
+        },
+        {
+          "menge": 150,
+          "einheit": "g",
+          "name": "Jungspinat",
+          "gruppe": "Lasagne"
+        },
+        {
+          "menge": 60,
+          "einheit": "g",
+          "name": "geriebener Gruyère",
+          "gruppe": "Lasagne"
+        },
+        {
+          "menge": 40,
+          "einheit": "g",
+          "name": "Pinienkerne",
+          "gruppe": "Lasagne"
+        },
+        {
+          "menge": 1,
+          "einheit": "Bund",
+          "name": "Basilikum",
+          "notiz": "Blätter abgezupft",
+          "gruppe": "Pesto"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "EL",
+          "name": "Pinienkerne",
+          "gruppe": "Pesto"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "dl",
+          "name": "Olivenöl",
+          "gruppe": "Pesto"
+        },
+        {
+          "menge": 1,
+          "einheit": "Prise",
+          "name": "Salz",
+          "gruppe": "Pesto"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Für eine ofenfeste Form (ca. 2 Liter), gefettet"
+        },
+        {
+          "text": "Ricotta und alle Zutaten bis und mit Pfeffer in eine Schüssel geben, pürieren. Käse daruntermischen."
+        },
+        {
+          "text": "5 EL Spinatmasse in der vorbereiteten Form verteilen. Lasagne-Blätter, Spinatmasse und Spinat lagenweise in die Form schichten, mit der Spinatmasse abschliessen. Käse und Pinienkerne darüberstreuen."
+        },
+        {
+          "text": "Ca. 40 Min. in der unteren Hälfte des auf 200 °C vorgeheizten Ofens. Herausnehmen, etwas abkühlen.",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 40
+            }
+          ]
+        },
+        {
+          "text": "Basilikum, Pinienkerne und Öl in einen Messbecher geben,  pürieren, salzen. Pesto auf der Lasagne verteilen, anrichten."
+        }
+      ],
+      "glossar": {},
+      "naehrwerte": {
+        "kcal": 573,
+        "protein_g": 22,
+        "kohlenhydrate_g": 26,
+        "fett_g": 42,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "flammkuchen-mit-raclettekaese-und-birnen",
+      "titel": "Flammkuchen mit Raclettekäse und Birnen",
+      "untertitel": null,
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/12206/flammkuchen-mit-raclettekaese-und-birnen"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 15,
+      "zeit_kochen_min": 20,
+      "zeit_total_min": 35,
+      "schwierigkeit": null,
+      "kueche": null,
+      "hauptzutat": "Käse",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Vegetarisch",
+        "Ofen"
+      ],
+      "bild": {
+        "datei": "flammkuchen-mit-raclettekaese-und-birnen.jpg",
+        "alt": "Flammkuchen mit Raclettekäse und Birnen"
+      },
+      "zutaten": [
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "rund ausgewallte Pizzateige (je ca. 28 cm Ø)",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 180,
+          "einheit": "g",
+          "name": "saurer Halbrahm",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Teig",
+          "vor": "wenig"
+        },
+        {
+          "menge": 240,
+          "einheit": "g",
+          "name": "Raclettekäse",
+          "notiz": "grob gerieben",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 4,
+          "einheit": "",
+          "name": "rote Zwiebeln",
+          "notiz": "in feinen Streifen",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Birnen",
+          "notiz": "in feinen Scheiben",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Pfefferminze",
+          "notiz": "fein geschnitten",
+          "gruppe": "Backen"
+        },
+        {
+          "menge": 20,
+          "einheit": "g",
+          "name": "Rucola",
+          "gruppe": "Backen"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Teige mit dem Backpapier je auf ein Blech legen, Rahm darauf verteilen, würzen. Käse, Zwiebeln und Birnen darauf verteilen."
+        },
+        {
+          "text": "Ca. 20 Min. im auf 200  °C vorgeheizten Ofen (Heissluft). Herausnehmen, Pfefferminze darüberstreuen, Rucola darauf verteilen, sofort servieren.",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 20
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "flammkuchen-mit-raclettekaese-und-birnen-tipp-1": {
+          "begriff": "Dazu passt",
+          "text": "Salat."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 853,
+        "protein_g": 27,
+        "kohlenhydrate_g": 94,
+        "fett_g": 38,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "flammkuchen",
+      "titel": "Flammkuchen",
+      "untertitel": "20 Min. aktiv · ca. 15 Min. aufgehen lassen · 2 Flammkuchen nacheinander backen",
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/21737/flammkuchen"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 20,
+      "zeit_kochen_min": 30,
+      "zeit_total_min": 65,
+      "schwierigkeit": null,
+      "kueche": null,
+      "hauptzutat": "Schweinefleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fleisch"
+      ],
+      "bild": {
+        "datei": "flammkuchen.jpg",
+        "alt": "Flammkuchen"
+      },
+      "zutaten": [
+        {
+          "menge": 300,
+          "einheit": "g",
+          "name": "Weissmehl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "Würfel",
+          "name": "Hefe (ca. 10 g)",
+          "notiz": "zerbröckelt",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "dl",
+          "name": "Wasser",
+          "gruppe": "Teig",
+          "einkaufen": false
+        },
+        {
+          "menge": 0.5,
+          "einheit": "dl",
+          "name": "Sonnenblumenöl",
+          "gruppe": "Teig"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Crème fraîche",
+          "gruppe": "Belag"
+        },
+        {
+          "menge": 0.25,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Belag"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Belag",
+          "vor": "wenig"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Bauernspeck",
+          "notiz": "in Stängelchen",
+          "gruppe": "Belag"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Zwiebeln",
+          "notiz": "in feinen Ringen",
+          "gruppe": "Belag"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Mehl, Salz und Hefe in eine Schüssel geben, mischen. Wasser und Öl beigeben, mit dem Teighörnchen rasch zu einem weichen Teig zusammenfügen, kurz kneten, zugedeckt ca. 15 Min. aufgehen lassen.",
+          "timer": [
+            {
+              "label": "Teig",
+              "min": 15
+            }
+          ]
+        },
+        {
+          "text": "Teig halbieren, auf wenig Mehl ca. 3 mm dick rechteckig auswallen, auf zwei mit Backpapier belegte Bleche legen. Teigböden mit einer Gabel dicht einstechen. Crème fraîche darauf verteilen, dabei ringsum einen Rand von ca. 1 cm frei lassen, würzen. Speck und Zwiebeln darauf verteilen."
+        },
+        {
+          "text": "Ca. 15 Min. auf der untersten Rille des auf 240 °C vorgeheizten Ofens. Flammkuchen herausnehmen, zweiten Flammkuchen gleich backen.",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 15
+            }
+          ]
+        }
+      ],
+      "glossar": {
+        "flammkuchen-tipp-1": {
+          "begriff": "Dazu passt",
+          "text": "Salat"
+        },
+        "flammkuchen-tipp-2": {
+          "begriff": "Tipp",
+          "text": "Statt den Teig selbst zuzubereiten, bereits ausgewallten Flammkuchenteig verwenden."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 800,
+        "protein_g": 20,
+        "kohlenhydrate_g": 57,
+        "fett_g": 54,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "pizza-napoli",
+      "titel": "Pizza napoli",
+      "untertitel": "50 Min. aktiv · ca. 1 Std. aufgehen lassen · 2 Pizzen nacheinander backen",
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/14309/pizza-napoli"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 50,
+      "zeit_kochen_min": 40,
+      "zeit_total_min": 150,
+      "schwierigkeit": null,
+      "kueche": "Italienisch",
+      "hauptzutat": "Fisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fisch"
+      ],
+      "bild": {
+        "datei": "pizza-napoli.jpg",
+        "alt": "Pizza napoli"
+      },
+      "zutaten": [
+        {
+          "menge": 500,
+          "einheit": "g",
+          "name": "Weissmehl",
+          "gruppe": "Pizzateig"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Pizzateig"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Würfel",
+          "name": "Hefe (ca. 20 g)",
+          "notiz": "zerbröckelt",
+          "gruppe": "Pizzateig"
+        },
+        {
+          "menge": 3.5,
+          "einheit": "dl",
+          "name": "Wasser",
+          "gruppe": "Pizzateig",
+          "einkaufen": false
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Olivenöl",
+          "gruppe": "Pizzateig"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Olivenöl",
+          "gruppe": "Tomatensauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel",
+          "notiz": "fein gehackt",
+          "gruppe": "Tomatensauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "",
+          "name": "Knoblauchzehen",
+          "notiz": "gepresst",
+          "gruppe": "Tomatensauce"
+        },
+        {
+          "menge": 3,
+          "einheit": "EL",
+          "name": "Tomatenpüree",
+          "gruppe": "Tomatensauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "gehackte Tomaten (ca. 400 g)",
+          "gruppe": "Tomatensauce"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "Bund",
+          "name": "Rosmarin",
+          "notiz": "fein geschnitten",
+          "gruppe": "Tomatensauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "Prise",
+          "name": "Zucker",
+          "gruppe": "Tomatensauce"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Tomatensauce"
+        },
+        {
+          "menge": 300,
+          "einheit": "g",
+          "name": "Mozzarella",
+          "notiz": "zerzupft",
+          "gruppe": "Pizza Napoli"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "entsteinte schwarze Olive (ca. 85 g)",
+          "gruppe": "Pizza Napoli"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "Sardelle (ca. 30 g)",
+          "notiz": "abgespült, abgetropft",
+          "gruppe": "Pizza Napoli"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Basilikumblätter",
+          "gruppe": "Backen",
+          "vor": "einige"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Backen",
+          "vor": "wenig"
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Mehl und Salz in einer Schüssel mischen. Hefe, Wasser und Öl beigeben, mit einer Kelle mischen. Zu einem weichen, glatten Teig kneten. Zugedeckt bei Raumtemperatur ca. 1 Std. aufs Doppelte aufgehen lassen.",
+          "timer": [
+            {
+              "label": "Pizzateig",
+              "min": 60
+            }
+          ]
+        },
+        {
+          "text": "Öl in einer Pfanne warm werden lassen. Zwiebel und Knoblauch andämpfen, Tomatenpüree kurz mitdämpfen. Tomaten, Rosmarin, Zucker und Salz beigeben, aufkochen. Sauce unter gelegentlichem Rühren bei mittlerer Hitze ca. 20 Min. köcheln, auskühlen.",
+          "timer": [
+            {
+              "label": "Tomatensauce",
+              "min": 20
+            }
+          ]
+        },
+        {
+          "text": "Teig halbieren, 2 Kugeln formen, beide Teige etwas flach drücken, auf wenig Mehl rund auswallen, auf je ein vorbereitetes Blech legen. Die Tomatensauce auf beiden Teigböden verteilen, dabei einen ca. 1½ cm breiten Rand frei lassen, mit Mozzarella, Oliven und Sardellen belegen."
+        },
+        {
+          "text": "Ca. 20 Min. auf der untersten Rille des auf 240  °C vorgeheizten Ofens. Herausnehmen, Basilikum und Pfeffer darüberstreuen. Die zweite Pizza genau gleich backen.",
+          "timer": [
+            {
+              "label": "Backen",
+              "min": 20
+            }
+          ]
+        }
+      ],
+      "glossar": {},
+      "naehrwerte": {
+        "kcal": 784,
+        "protein_g": 33,
+        "kohlenhydrate_g": 96,
+        "fett_g": 29,
+        "geschaetzt": false
+      }
+    },
+    {
+      "id": "spaghetti-bolognese",
+      "titel": "Spaghetti Bolognese",
+      "untertitel": null,
+      "quelle": {
+        "name": "Fooby (Foto: Fooby)",
+        "url": "https://fooby.ch/de/rezepte/16042/spaghetti-bolognese"
+      },
+      "portionen_basis": 4,
+      "zeit_vorbereitung_min": 30,
+      "zeit_kochen_min": 45,
+      "zeit_total_min": 75,
+      "schwierigkeit": null,
+      "kueche": "Italienisch",
+      "hauptzutat": "Hackfleisch",
+      "saison": [
+        "Ganzjährig"
+      ],
+      "kategorien": [
+        "Fleisch"
+      ],
+      "bild": {
+        "datei": "spaghetti-bolognese.jpg",
+        "alt": "Spaghetti Bolognese"
+      },
+      "zutaten": [
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Olivenöl",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 600,
+          "einheit": "g",
+          "name": "Hackfleisch (Rind)",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 0.5,
+          "einheit": "TL",
+          "name": "Salz",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Pfeffer",
+          "gruppe": "Sauce",
+          "vor": "wenig"
+        },
+        {
+          "menge": 1.5,
+          "einheit": "TL",
+          "name": "Weissmehl",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Zwiebel",
+          "notiz": "fein gehackt",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "",
+          "name": "Knoblauchzehe",
+          "notiz": "gepresst",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 200,
+          "einheit": "g",
+          "name": "Rüebli",
+          "notiz": "in Würfeli",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Lauch",
+          "notiz": "in feinen Streifen",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 100,
+          "einheit": "g",
+          "name": "Stangensellerie",
+          "notiz": "in Würfeli",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "EL",
+          "name": "Tomatenpüree",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 2,
+          "einheit": "dl",
+          "name": "Rotwein",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "Dose",
+          "name": "gehackte Tomaten (klein",
+          "notiz": "ca. 240 g)",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 3,
+          "einheit": "dl",
+          "name": "Fleischbouillon",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 1,
+          "einheit": "EL",
+          "name": "Oregano",
+          "notiz": "fein geschnitten",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salz",
+          "notiz": "Pfeffer, nach Bedarf",
+          "gruppe": "Sauce"
+        },
+        {
+          "menge": 400,
+          "einheit": "g",
+          "name": "Spaghetti",
+          "gruppe": "Spaghetti"
+        },
+        {
+          "menge": null,
+          "einheit": "",
+          "name": "Salzwasser",
+          "notiz": "siedend",
+          "gruppe": "Spaghetti",
+          "einkaufen": false
+        }
+      ],
+      "schritte": [
+        {
+          "text": "Öl in einem Brattopf erhitzen. Fleisch portionenweise je ca. 2 Min. anbraten, würzen, mit Mehl bestäuben, herausnehmen. Zwiebel und alle Zutaten bis und mit Sellerie in derselben Pfanne ca. 5 Min. andämpfen. Tomatenpüree beigeben, kurz mitdämpfen. Wein dazugiessen, vollständig einkochen. Tomaten, beigeben, Bouillon dazugiesssen, aufkochen. Hitze reduzieren, Fleisch wieder beigeben, zugedeckt ca. 45 Min. schmoren. Oregano beigeben, würzen.",
+          "timer": [
+            {
+              "label": "Sauce",
+              "min": 2
+            },
+            {
+              "label": "Sauce",
+              "min": 5
+            },
+            {
+              "label": "Sauce",
+              "min": 45
+            }
+          ]
+        },
+        {
+          "text": "Spaghetti im Salzwasser al dente kochen, abtropfen, mit der Sauce servieren."
+        }
+      ],
+      "glossar": {
+        "spaghetti-bolognese-tipp-1": {
+          "begriff": "Dazu passt",
+          "text": "Geriebener Parmesan."
+        }
+      },
+      "naehrwerte": {
+        "kcal": 802,
+        "protein_g": 53,
+        "kohlenhydrate_g": 82,
+        "fett_g": 23,
+        "geschaetzt": false
+      }
     }
   ]
 }

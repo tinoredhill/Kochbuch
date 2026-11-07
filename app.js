@@ -1001,7 +1001,8 @@ document.addEventListener('click', e => {
     return;
   }
   if (d.pm) { const [k, dir] = d.pm.split('|'); planAendern(p => { const r = R[p[k].rid]; p[k].portionen = stepScale(r, p[k].portionen || defaultScale(r), +dir); }); if (!$('#sheet').hidden && $('.sheetknoepfe')) eintragSheet(k); return; }
-  if (d.pdel) { planAendern(p => { delete p[d.pdel]; }); return closeSheet(); }
+  // v9g: wie beim Setzen zuerst schliessen; Store.set meldet Änderungen synchron an offene Sheets.
+  if (d.pdel) { const datum = d.pdel; closeSheet(); return planAendern(p => { delete p[datum]; }); }
   if (d.planclear) { const tage = wocheTage(+d.planclear); if (confirm(`${+d.planclear ? 'Nächste' : 'Diese'} Woche leeren?`)) planAendern(p => { tage.forEach(t => delete p[t.key]); }); return; }
   if (d.zutaten) { const r = R[d.zutaten], f = factorOf(r, getScale(r)); return openSheet(`<h3>Zutaten · ${esc(scaleLabel(r, getScale(r)))}</h3>${zutatenListe(r, f)}`); }
   if (d.stern) return setzeSterne(route.id, +d.stern);
